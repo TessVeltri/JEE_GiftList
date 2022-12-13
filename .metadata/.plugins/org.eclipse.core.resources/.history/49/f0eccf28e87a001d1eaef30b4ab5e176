@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gift List Website</title>
+</head>
+<style>
+.vertical-center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+</style>
+<body>
+	<div align="center">
+		<divclass="vertical-center">
+			<h1>Welcome to GiftList Website</h1>
+			<form action="Connection" method="POST">
+				<table border="1" cellspacing="0" cellpadding="5">
+					<tr>
+						<td>Email :</td>
+						<td><input type="text" name="email" id="email" value=""
+							size="20" /></td>
+					</tr>
+					<tr>
+						<td>Password :</td>
+						<td><input type="text" name="password" id="password" value=""
+							size="20" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><input type="submit"
+							name="submit" id="submit" value="Valider" /></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

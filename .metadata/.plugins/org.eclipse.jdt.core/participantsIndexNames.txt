@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4158046106.index
+\Veltri_GiftList\src\main\java

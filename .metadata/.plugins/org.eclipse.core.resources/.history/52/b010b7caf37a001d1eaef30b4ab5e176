@@ -1,0 +1,29 @@
+package be.veltri.DAO;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+public interface class DAO<T> {
+	
+	public abstract boolean create(T obj);
+	
+	public abstract boolean delete(T obj);
+	
+	public abstract boolean update(T obj);
+	
+	public abstract T find(T obj);
+	
+	default  String getApiUrl() {
+		Context ctx;
+		String api="";
+		try {
+			ctx = new InitialContext();
+			Context env = (Context) ctx.lookup("java:comp/env");
+		    api= (String) env.lookup("apiUrl");
+		} catch (NamingException e) {
+			System.out.println("Error to get api url");
+		}
+		return api;
+	}
+}
