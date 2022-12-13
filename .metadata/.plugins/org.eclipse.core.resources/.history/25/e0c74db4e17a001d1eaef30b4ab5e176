@@ -1,0 +1,40 @@
+
+import java.io.Serializable;
+import java.util.*;
+
+/**
+ * 
+ */
+public class User implements Serializable{
+
+    /**
+     * Default constructor
+     */
+    public User() {
+    }
+
+    /**
+     * 
+     */
+    private String name;
+
+    /**
+     * 
+     */
+    private String firstname;
+
+    /**
+     * 
+     */
+    private String email;
+
+    /**
+     * 
+     */
+    private String password;
+
+
+
+
+
+}

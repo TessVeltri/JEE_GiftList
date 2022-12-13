@@ -1,0 +1,50 @@
+package be.veltri.JAVABEANS;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class User implements Serializable{
+
+    private static final long serialVersionUID = 6393298679126542829L;
+    private String name;
+    private String firstname;
+    private String email;
+    private String password;
+    private ArrayList<GiftList> myLists;
+    private ArrayList<GiftList> lstGiftList;
+    private ArrayList<Notification> lstNotification;
+    private ArrayList<Reserve> lstReserve;
+
+	// Constructeurs
+    public User() {}
+
+	public User(String name, String firstname, String email, String password, ArrayList<GiftList> myLists,
+			ArrayList<GiftList> lstGiftList, ArrayList<Notification> lstNotification, ArrayList<Reserve> lstReserve) {
+		super();
+		this.name = name;
+		this.firstname = firstname;
+		this.email = email;
+		this.password = password;
+		this.myLists = myLists;
+		this.lstGiftList = lstGiftList;
+		this.lstNotification = lstNotification;
+		this.lstReserve = lstReserve;
+	}
+	
+	public User(String name, String firstname, String email, String password) {
+		super();
+		this.name = name;
+		this.firstname = firstname;
+		this.email = email;
+		this.password = password;
+		this.myLists = new ArrayList<>();
+		this.lstGiftList = new ArrayList<>();
+		this.lstNotification = new ArrayList<>();
+		this.lstReserve = new ArrayList<>();
+	}
+
+    
+
+
+
+}

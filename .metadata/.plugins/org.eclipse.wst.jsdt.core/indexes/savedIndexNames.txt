@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1076317624.index
+2562257612.index
+3966504164.index
+26375684.index
+2294620077.index
+3597022092.index
+724535768.index

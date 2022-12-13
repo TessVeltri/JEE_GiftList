@@ -1,0 +1,17 @@
+package be.veltri.JAVABEANS;
+
+import java.io.Serializable;
+import java.util.*;
+
+public class Reserve implements Serializable{
+
+    /**
+     * Default constructor
+     */
+    public Reserve() {
+    }
+
+    private int amount;
+
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;be.veltri.POJO&apos; to &apos;be.veltri.JAVABEANS&apos;&#x0D;&#x0A;- Original project: &apos;Veltri_GiftListAPI&apos;&#x0D;&#x0A;- Original element: &apos;Veltri_GiftListAPI/src/main/java/be.veltri.POJO&apos;&#x0D;&#x0A;- Renamed element: &apos;Veltri_GiftListAPI/src/main/java/be.veltri.JAVABEANS&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;be.veltri.POJO&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;be.veltri.POJO" name="be.veltri.JAVABEANS" qualified="false" references="true" stamp="1670604491303" textual="false" version="1.0"/>
+</session>

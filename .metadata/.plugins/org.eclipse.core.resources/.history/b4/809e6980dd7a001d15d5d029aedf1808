@@ -1,0 +1,9 @@
+
+/**
+ * 
+ */
+public enum EnumStatusList {
+    Active,
+    Inactive,
+    Expired
+}

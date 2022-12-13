@@ -1,0 +1,30 @@
+
+import java.util.*;
+
+/**
+ * 
+ */
+public class Image {
+
+    /**
+     * Default constructor
+     */
+    public Image() {
+    }
+
+    /**
+     * 
+     */
+    private byte [ ] image;
+
+    /**
+     * 
+     */
+    private String name;
+
+    /**
+     * 
+     */
+    private String extension;
+
+}

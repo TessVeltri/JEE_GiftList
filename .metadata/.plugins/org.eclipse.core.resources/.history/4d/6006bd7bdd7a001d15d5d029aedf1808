@@ -1,0 +1,9 @@
+
+/**
+ * 
+ */
+public enum EnumStatusGift {
+    Free,
+    Reserved,
+    Shared
+}

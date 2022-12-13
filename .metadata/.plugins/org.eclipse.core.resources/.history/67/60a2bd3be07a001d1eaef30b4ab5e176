@@ -1,0 +1,26 @@
+
+import java.util.*;
+
+/**
+ * 
+ */
+public class Notification {
+
+    /**
+     * Default constructor
+     */
+    public Notification() {
+    }
+
+    /**
+     * 
+     */
+    private String comment;
+
+    /**
+     * 
+     */
+    private boolean isRead;
+
+
+}

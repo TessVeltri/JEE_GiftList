@@ -1,0 +1,21 @@
+
+import java.util.*;
+
+/**
+ * 
+ */
+public class Reserve {
+
+    /**
+     * Default constructor
+     */
+    public Reserve() {
+    }
+
+    /**
+     * 
+     */
+    private int amount;
+
+
+}

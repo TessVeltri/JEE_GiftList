@@ -1,0 +1,35 @@
+package be.veltri.JAVABEANS;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.*;
+
+public class GiftList implements Serializable{
+
+    private static final long serialVersionUID = 8295878032338476601L;
+    private String nameList;
+    private LocalDate limitDate;
+    private String occasion;
+    private EnumStatusList statusList;
+    private boolean isActive;
+    private ArrayList<Gift> lstGift = new ArrayList<>();
+
+	public GiftList() {}
+
+	public GiftList(String nameList, LocalDate limitDate, String occasion, EnumStatusList statusList, boolean isActive,
+			ArrayList<Gift> lstGift) {
+		super();
+		this.nameList = nameList;
+		this.limitDate = limitDate;
+		this.occasion = occasion;
+		this.statusList = statusList;
+		this.isActive = isActive;
+		this.lstGift = lstGift;
+	}
+	
+	
+
+    
+
+
+}
