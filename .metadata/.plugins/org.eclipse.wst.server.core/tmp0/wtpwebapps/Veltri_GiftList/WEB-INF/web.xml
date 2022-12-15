@@ -9,4 +9,39 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>Connection</servlet-name>
+  	<servlet-class>be.veltri.SERVLETS.Connection</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Authentication</servlet-name>
+  	<servlet-class>be.veltri.SERVLETS.Authentication</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Inscription</servlet-name>
+  	<servlet-class>be.veltri.SERVLETS.Inscription</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CreateUser</servlet-name>
+  	<servlet-class>be.veltri.SERVLETS.CreateUser</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Connection</servlet-name>
+  	<url-pattern>/connection</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Authentication</servlet-name>
+  	<url-pattern>/authentication</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Inscription</servlet-name>
+  	<url-pattern>/inscription</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CreateUser</servlet-name>
+  	<url-pattern>/createUser</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

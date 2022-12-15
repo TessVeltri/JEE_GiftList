@@ -3,6 +3,10 @@ package be.veltri.JAVABEANS;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import be.veltri.DAO.GiftDAO;
+import be.veltri.ENUMS.EnumPriority;
+import be.veltri.ENUMS.EnumStatusGift;
+
 public class Gift implements Serializable{
 
 	// Attributs
@@ -17,6 +21,8 @@ public class Gift implements Serializable{
     private String nameImage;
     private String extensionImage;
     private ArrayList<Reserve> lstReserve;
+    
+    private static GiftDAO giftDAO = new GiftDAO();
     
     // Constructeurs 
     public Gift() {}
@@ -134,5 +140,8 @@ public class Gift implements Serializable{
 	
 	// Méthodes
 	
+	public static Gift findById(int id) {
+		return giftDAO.findById(id);
+	}
     
 }

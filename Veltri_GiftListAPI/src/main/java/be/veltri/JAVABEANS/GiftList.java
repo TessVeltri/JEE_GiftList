@@ -4,23 +4,28 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import be.veltri.DAO.GiftListDAO;
+import be.veltri.ENUMS.EnumStatusList;
+
 public class GiftList implements Serializable{
 
 	// Attributs
     private static final long serialVersionUID = 8295878032338476601L;
     private String nameList;
-    private LocalDate limitDate;
+    private String limitDate;
     private String occasion;
     private EnumStatusList statusList;
     private boolean isActive;
     private ArrayList<Gift> lstGift = new ArrayList<>();
     private User owner;
     private ArrayList<User> lstParticipant;
+    
+    private static GiftListDAO giftlistDAO = new GiftListDAO();
 
     // Constructeurs
 	public GiftList() {}
 
-	public GiftList(String nameList, LocalDate limitDate, String occasion, EnumStatusList statusList, boolean isActive,
+	public GiftList(String nameList, String limitDate, String occasion, EnumStatusList statusList, boolean isActive,
 			ArrayList<Gift> lstGift, User owner) {
 		super();
 		this.nameList = nameList;
@@ -33,15 +38,17 @@ public class GiftList implements Serializable{
 		this.lstParticipant = new ArrayList<>();
 	}
 	
-	public GiftList(String nameList, LocalDate limitDate, String occasion, EnumStatusList statusList, boolean isActive,
-			Gift gift) {
+	public GiftList(String nameList, String limitDate, String occasion, EnumStatusList statusList, boolean isActive,
+			User owner, Gift gift) {
 		super();
 		this.nameList = nameList;
 		this.limitDate = limitDate;
 		this.occasion = occasion;
 		this.statusList = statusList;
 		this.isActive = isActive;
+		this.owner = owner;
 		this.lstGift.add(gift);
+		this.lstParticipant = new ArrayList<>();
 	}
 
 	// Getters et Setters
@@ -53,11 +60,11 @@ public class GiftList implements Serializable{
 		this.nameList = nameList;
 	}
 
-	public LocalDate getLimitDate() {
+	public String getLimitDate() {
 		return limitDate;
 	}
 
-	public void setLimitDate(LocalDate limitDate) {
+	public void setLimitDate(String limitDate) {
 		this.limitDate = limitDate;
 	}
 
@@ -111,7 +118,9 @@ public class GiftList implements Serializable{
 	
 	// Méthodes
 	
-
+	public static ArrayList<GiftList> getAll(){
+		return giftlistDAO.findAll();
+	}
     
 
 

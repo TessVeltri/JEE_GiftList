@@ -8,7 +8,9 @@ import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.UriBuilder;
 import be.veltri.JAVABEANS.User;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.config.ClientConfig;
@@ -36,7 +38,19 @@ public class UserDAO implements DAO<User> {
 
 	@Override
 	public boolean create(User obj) {
-		// TODO Auto-generated method stub
+		MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
+		parameters.add("name", obj.getName());
+		parameters.add("firstname", obj.getFirstname());
+		parameters.add("email", obj.getEmail());
+		parameters.add("password", obj.getPassword());
+		ClientResponse res= resource
+				.path("user")
+				.path("create")
+				.post(ClientResponse.class,parameters);
+		int StatusCode=res.getStatus();
+		if(StatusCode == 201) {
+			return true;
+		}
 		return false;
 	}
 
@@ -65,6 +79,7 @@ public class UserDAO implements DAO<User> {
 			try {
 				return (User) mapper.readValue(response, User.class);
 			} catch (Exception e) {
+				System.out.println(e);
 				return null;
 			}
 
@@ -75,8 +90,17 @@ public class UserDAO implements DAO<User> {
 
 	@Override
 	public ArrayList<User> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String res = resource.path("user").path("all").get(String.class);
+		ArrayList<User> users = new ArrayList<>();
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			users = mapper.readValue(res, new TypeReference<ArrayList<User>>() {
+			});
+			return users;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
 	}
 
 }

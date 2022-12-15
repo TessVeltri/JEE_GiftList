@@ -119,6 +119,14 @@ public class User implements Serializable{
     	User find = new User ("", "", email, password);
     	return userDAO.find(find);
     }
+    
+    public static ArrayList<User> getAll() {
+    	return userDAO.findAll();
+    }
+    
+    public boolean create () {
+    	return userDAO.create(this);
+    }
 
 
 

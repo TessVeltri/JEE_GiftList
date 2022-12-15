@@ -4,12 +4,14 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import be.veltri.ENUMS.EnumStatusList;
+
 public class GiftList implements Serializable{
 
 	// Attributs
     private static final long serialVersionUID = 8295878032338476601L;
     private String nameList;
-    private LocalDate limitDate;
+    private String limitDate;
     private String occasion;
     private EnumStatusList statusList;
     private boolean isActive;
@@ -20,7 +22,7 @@ public class GiftList implements Serializable{
     // Constructeurs
 	public GiftList() {}
 
-	public GiftList(String nameList, LocalDate limitDate, String occasion, EnumStatusList statusList, boolean isActive,
+	public GiftList(String nameList, String limitDate, String occasion, EnumStatusList statusList, boolean isActive,
 			ArrayList<Gift> lstGift, User owner) {
 		super();
 		this.nameList = nameList;
@@ -33,7 +35,7 @@ public class GiftList implements Serializable{
 		this.lstParticipant = new ArrayList<>();
 	}
 	
-	public GiftList(String nameList, LocalDate limitDate, String occasion, EnumStatusList statusList, boolean isActive,
+	public GiftList(String nameList, String limitDate, String occasion, EnumStatusList statusList, boolean isActive,
 			Gift gift) {
 		super();
 		this.nameList = nameList;
@@ -53,11 +55,11 @@ public class GiftList implements Serializable{
 		this.nameList = nameList;
 	}
 
-	public LocalDate getLimitDate() {
+	public String getLimitDate() {
 		return limitDate;
 	}
 
-	public void setLimitDate(LocalDate limitDate) {
+	public void setLimitDate(String limitDate) {
 		this.limitDate = limitDate;
 	}
 

@@ -1,6 +1,8 @@
 package be.veltri.SERVLETS;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +15,6 @@ import be.veltri.JAVABEANS.User;
 /**
  * Servlet implementation class Authentication
  */
-@WebServlet("/Authentication")
 public class Authentication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,17 +30,7 @@ public class Authentication extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-		if(session!=null) {
-			User user = (User) session.getAttribute("user");
-			if(user !=null) {
-				request.getRequestDispatcher("/WEB-INF/JSP/Home.jsp").forward(request,response);
-				return;
-			}
-		} else {
-			request.getRequestDispatcher("/WEB-INF/JSP/Connection.jsp").forward(request,response);
-		}
-		
+		doPost(request, response);
 	}
 
 	/**
@@ -48,17 +39,36 @@ public class Authentication extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		ArrayList<String> errors = new ArrayList<>();
 		
-		User user = User.login(email, password);
-		if (user != null) {
-			HttpSession session=request.getSession();
-			if(!session.isNew()) {
-				session.invalidate();
-				session=request.getSession();
+		if (email == null || email.equals("") || password == null || password.equals("")) {
+			errors.add("Complete all fields");
+			User u = new User("","",email, password);
+			request.getSession().setAttribute("userConnect", u);
+			request.setAttribute("errorsConnect", errors);
+			request.getRequestDispatcher("/WEB-INF/JSP/Connection.jsp").forward(request,response);
+		} else {
+			User user = User.login(email, password);
+			if (user == null)
+				errors.add("Password or email incorrect");
+	
+			if (errors.size() == 0) {
+				HttpSession session=request.getSession();
+				if(!session.isNew()) {
+					session.invalidate();
+					session=request.getSession();
+				}
+				session.setAttribute("user", user);
+				request.getRequestDispatcher("/WEB-INF/JSP/Home.jsp").forward(request,response);
+			} else {
+				User u = new User("","",email, password);
+				request.getSession().setAttribute("userConnect", u);
+				request.setAttribute("errorsConnect", errors);
+				request.getRequestDispatcher("/WEB-INF/JSP/Connection.jsp").forward(request,response);
 			}
-			session.setAttribute("user", user);
-			doGet(request, response);
 		}
+		
+		
 	}
 
 }

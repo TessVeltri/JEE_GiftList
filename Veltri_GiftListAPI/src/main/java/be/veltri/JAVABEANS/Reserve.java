@@ -1,6 +1,9 @@
 package be.veltri.JAVABEANS;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+
+import be.veltri.DAO.ReserveDAO;
 
 public class Reserve implements Serializable{
 
@@ -9,6 +12,8 @@ public class Reserve implements Serializable{
     private int amount;
     private User user;
     private Gift gift;
+    
+    private static ReserveDAO reserveDAO = new ReserveDAO();
 
 	// Constructeurs
     public Reserve() {}
@@ -47,5 +52,8 @@ public class Reserve implements Serializable{
 
 	// Méthodes
     
+	public static ArrayList<Reserve> getAll (){
+		return reserveDAO.findAll();
+	}
 
 }

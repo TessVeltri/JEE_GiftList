@@ -3,6 +3,9 @@ package be.veltri.JAVABEANS;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import be.veltri.ENUMS.EnumPriority;
+import be.veltri.ENUMS.EnumStatusGift;
+
 public class Gift implements Serializable{
 
 	// Attributs
