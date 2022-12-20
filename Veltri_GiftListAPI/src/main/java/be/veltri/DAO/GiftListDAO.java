@@ -44,14 +44,17 @@ public class GiftListDAO implements DAO<GiftList> {
 	public ArrayList<GiftList> findAll() {
 		ArrayList<GiftList> lstGiftList = new ArrayList<>();
 		User owner = null;
+		String date = null;
 		try {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeQuery("SELECT * FROM JEE_GiftList");
 			while (result.next()) {
 				owner = User.findById(result.getInt("idOwner"));
-				GiftList lst = new GiftList(result.getString("nameList"), result.getDate("dateLimit").toLocalDate().toString(),
+				if (result.getDate("dateLimit") != null)
+					date = result.getDate("dateLimit").toLocalDate().toString();
+				GiftList lst = new GiftList(result.getString("nameList"), date,
 						result.getString("occasion"), EnumStatusList.valueOf(result.getString("statusList")),
-						result.getBoolean("isActive"), owner, null);
+						result.getBoolean("isActive"), owner);
 				try {
 					ResultSet result2 = this.conn
 							.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
@@ -60,6 +63,19 @@ public class GiftListDAO implements DAO<GiftList> {
 					while (result2.next()) {
 						User user = User.findById(result2.getInt("idUser"));
 						lst.getLstParticipant().add(user);
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+					return null;
+				}
+				try {
+					ResultSet result3 = this.conn
+							.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
+							.executeQuery("SELECT * FROM JEE_Gift WHERE idGiftList = '"
+									+ result.getInt("idGiftList") + "'");
+					while (result3.next()) {
+						Gift gift = Gift.findById(result3.getInt("idGift"));
+						lst.getLstGift().add(gift);
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();

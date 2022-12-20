@@ -39,7 +39,7 @@ public class GiftList implements Serializable{
 	}
 	
 	public GiftList(String nameList, String limitDate, String occasion, EnumStatusList statusList, boolean isActive,
-			User owner, Gift gift) {
+			User owner) {
 		super();
 		this.nameList = nameList;
 		this.limitDate = limitDate;
@@ -47,7 +47,6 @@ public class GiftList implements Serializable{
 		this.statusList = statusList;
 		this.isActive = isActive;
 		this.owner = owner;
-		this.lstGift.add(gift);
 		this.lstParticipant = new ArrayList<>();
 	}
 

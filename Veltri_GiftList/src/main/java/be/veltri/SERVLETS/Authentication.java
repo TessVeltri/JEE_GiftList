@@ -40,35 +40,32 @@ public class Authentication extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		ArrayList<String> errors = new ArrayList<>();
+		HttpSession session=request.getSession();
 		
 		if (email == null || email.equals("") || password == null || password.equals("")) {
 			errors.add("Complete all fields");
 			User u = new User("","",email, password);
-			request.getSession().setAttribute("userConnect", u);
+			session.setAttribute("userConnect", u);
 			request.setAttribute("errorsConnect", errors);
-			request.getRequestDispatcher("/WEB-INF/JSP/Connection.jsp").forward(request,response);
+			request.getRequestDispatcher("/connection").forward(request,response);
 		} else {
 			User user = User.login(email, password);
 			if (user == null)
 				errors.add("Password or email incorrect");
 	
 			if (errors.size() == 0) {
-				HttpSession session=request.getSession();
 				if(!session.isNew()) {
 					session.invalidate();
 					session=request.getSession();
 				}
 				session.setAttribute("user", user);
-				request.getRequestDispatcher("/WEB-INF/JSP/Home.jsp").forward(request,response);
+				request.getRequestDispatcher("/home").forward(request,response);
 			} else {
 				User u = new User("","",email, password);
-				request.getSession().setAttribute("userConnect", u);
+				session.setAttribute("userConnect", u);
 				request.setAttribute("errorsConnect", errors);
-				request.getRequestDispatcher("/WEB-INF/JSP/Connection.jsp").forward(request,response);
+				request.getRequestDispatcher("/connection").forward(request,response);
 			}
 		}
-		
-		
 	}
-
 }
