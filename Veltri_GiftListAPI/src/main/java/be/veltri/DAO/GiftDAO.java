@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import be.veltri.ENUMS.EnumPriority;
 import be.veltri.ENUMS.EnumStatusGift;
 import be.veltri.JAVABEANS.Gift;
+import be.veltri.JAVABEANS.Reserve;
 import be.veltri.JAVABEANS.User;
 
 public class GiftDAO implements DAO<Gift>{
@@ -49,6 +50,19 @@ public class GiftDAO implements DAO<Gift>{
 						EnumPriority.valueOf(result.getString("priority")), result.getString("websiteLink"), 
 						EnumStatusGift.valueOf(result.getString("statusGift")), result.getBytes("image"), result.getString("nameImage"),
 						result.getString("extensionImage"));
+				try {
+					ResultSet result2 = this.conn
+							.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
+							.executeQuery("SELECT * FROM JEE_Reserve WHERE idGift = '"
+									+ result.getInt("idGift") + "'");
+					while (result2.next()) {
+						Reserve res = new Reserve(result2.getInt("amount"), User.findById(result2.getInt("idUser")));
+						gift.addLstReserve(res);
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+					return null;
+				}
 			return gift;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -58,8 +72,27 @@ public class GiftDAO implements DAO<Gift>{
 
 	@Override
 	public ArrayList<Gift> findAll() {
-		// TODO Auto-generated method stub
+//		ArrayList<Gift> lstGift = new ArrayList<>();
+//		try {
+//			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
+//					.executeQuery("SELECT * FROM Jee_Gift");
+//			while (result.next()) {
+//				Gift gift = new Gift();
+//				lstGift.add(gift);
+//			}
+//			result.close();
+//			return lstGift;
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			return null;
+//		}
 		return null;
+	}
+
+	@Override
+	public int findId(Gift obj) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

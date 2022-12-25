@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h1>Gift List</h1>
+	<nav>
+		<ul>
+			<li>Home</li>
+			<li>Add a new list</li>
+			<li>My lists</li>
+			<li>My gifts</li>
+			<li>My account</li>
+			<li>My notification</li>
+		</ul>
+	</nav>
+	<button>Log out</button>
+
+</body>
+</html>

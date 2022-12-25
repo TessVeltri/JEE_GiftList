@@ -82,9 +82,7 @@ public class UserDAO implements DAO<User> {
 				System.out.println(e);
 				return null;
 			}
-
 		}
-
 		return null;
 	}
 

@@ -11,18 +11,16 @@ public class Reserve implements Serializable{
     private static final long serialVersionUID = -3078588241404049583L;
     private int amount;
     private User user;
-    private Gift gift;
     
     private static ReserveDAO reserveDAO = new ReserveDAO();
 
 	// Constructeurs
     public Reserve() {}
 
-	public Reserve(int amount, User user, Gift gift) {
+	public Reserve(int amount, User user) {
 		super();
 		this.amount = amount;
 		this.user = user;
-		this.gift = gift;
 	}
 
 	// Getters et Setters
@@ -40,14 +38,6 @@ public class Reserve implements Serializable{
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-
-	public Gift getGift() {
-		return gift;
-	}
-
-	public void setGift(Gift gift) {
-		this.gift = gift;
 	}
 
 	// Méthodes

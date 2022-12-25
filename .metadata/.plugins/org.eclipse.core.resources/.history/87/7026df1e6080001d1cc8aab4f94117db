@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="be.veltri.JAVABEANS.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gift List Home</title>
+</head>
+<%
+	User user = (User) session.getAttribute("user");
+	ArrayList<GiftList> myLists = user.getMyLists();
+	ArrayList<GiftList> giftLists = user.getLstGiftList();
+%>
+<jsp:include page="Header.jsp"></jsp:include>
+<body>
+	<h2>Home</h2>
+	<ul>
+	<%
+		for (GiftList gl : myLists){
+			%><li><%= gl.getNameList()%></li> <%
+		}
+	%>
+	<%
+		for (GiftList gl : giftLists){
+			%><li><%= gl.getNameList()%></li> <%
+		}
+	%>
+	</ul>
+
+</body>
+</html>

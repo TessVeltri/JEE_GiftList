@@ -37,12 +37,23 @@ public class GetInfoList extends HttpServlet {
 		int orderId = Integer.parseInt(order);
 		if (from.equals("my")) {
 			GiftList gl = user.getMyLists().get(orderId);
-			request.setAttribute("giftList", gl);
-			request.getRequestDispatcher("/infoList").forward(request,response);
+			GiftList giftL = gl.find();
+			if (giftL != null) {
+				request.setAttribute("giftList", giftL);
+				request.getRequestDispatcher("/infoList").forward(request,response);
+			} else {
+				// une erreur est survenue, réessayer plus tard
+			}
 		} else {
 			GiftList gl = user.getLstGiftList().get(orderId);
-			request.setAttribute("giftList", gl);
-			request.getRequestDispatcher("/infoList").forward(request,response);
+			GiftList giftL = gl.find();
+			if (giftL != null) {
+				request.setAttribute("giftList", gl);
+				request.getRequestDispatcher("/infoList").forward(request,response);
+			} else {
+				// une erreur est survenue, réessayer plus tard
+			}
+			
 		}
 	}
 

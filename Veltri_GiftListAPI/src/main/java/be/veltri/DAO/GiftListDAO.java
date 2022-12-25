@@ -36,8 +36,52 @@ public class GiftListDAO implements DAO<GiftList> {
 
 	@Override
 	public GiftList find(GiftList obj) {
-		// TODO Auto-generated method stub
-		return null;
+		GiftList gl = null;
+		User owner = null;
+		String date = null;
+		try {
+			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
+					.executeQuery("SELECT * FROM JEE_GiftList WHERE nameList = '" + obj.getNameList()
+							+ "' AND occasion = '" + obj.getOccasion() + "' AND statusList = '"
+							+ obj.getStatusList().toString() + "' AND idOwner = '" + obj.getOwner().findId() + "'");
+			if (result.first()) {
+				owner = User.findById(result.getInt("idOwner"));
+				if (result.getDate("dateLimit") != null)
+					date = result.getDate("dateLimit").toLocalDate().toString();
+				gl = new GiftList(result.getString("nameList"), date, result.getString("occasion"),
+						EnumStatusList.valueOf(result.getString("statusList")), result.getBoolean("isActive"), owner);
+				try {
+					ResultSet result2 = this.conn
+							.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
+							.executeQuery("SELECT idUser FROM JEE_ParticipantList WHERE idGiftList = '"
+									+ result.getInt("idGiftList") + "'");
+					while (result2.next()) {
+						User user = User.findById(result2.getInt("idUser"));
+						gl.addLstParticipant(user);
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+					return null;
+				}
+				try {
+					ResultSet result3 = this.conn
+							.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
+							.executeQuery("SELECT idGift FROM JEE_Gift WHERE idGiftList = '"
+									+ result.getInt("idGiftList") + "'");
+					while (result3.next()) {
+						Gift gift = Gift.findById(result3.getInt("idGift"));
+						gl.addLstGift(gift);
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+					return null;
+				}
+			}
+			return gl;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override
@@ -52,35 +96,8 @@ public class GiftListDAO implements DAO<GiftList> {
 				owner = User.findById(result.getInt("idOwner"));
 				if (result.getDate("dateLimit") != null)
 					date = result.getDate("dateLimit").toLocalDate().toString();
-				GiftList lst = new GiftList(result.getString("nameList"), date,
-						result.getString("occasion"), EnumStatusList.valueOf(result.getString("statusList")),
-						result.getBoolean("isActive"), owner);
-				try {
-					ResultSet result2 = this.conn
-							.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
-							.executeQuery("SELECT * FROM JEE_ParticipantList WHERE idGiftList = '"
-									+ result.getInt("idGiftList") + "'");
-					while (result2.next()) {
-						User user = User.findById(result2.getInt("idUser"));
-						lst.getLstParticipant().add(user);
-					}
-				} catch (SQLException e) {
-					e.printStackTrace();
-					return null;
-				}
-				try {
-					ResultSet result3 = this.conn
-							.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
-							.executeQuery("SELECT * FROM JEE_Gift WHERE idGiftList = '"
-									+ result.getInt("idGiftList") + "'");
-					while (result3.next()) {
-						Gift gift = Gift.findById(result3.getInt("idGift"));
-						lst.getLstGift().add(gift);
-					}
-				} catch (SQLException e) {
-					e.printStackTrace();
-					return null;
-				}
+				GiftList lst = new GiftList(result.getString("nameList"), date, result.getString("occasion"),
+						EnumStatusList.valueOf(result.getString("statusList")), result.getBoolean("isActive"), owner);
 				lstGiftList.add(lst);
 			}
 			result.close();
@@ -95,6 +112,23 @@ public class GiftListDAO implements DAO<GiftList> {
 	public GiftList findById(int id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int findId(GiftList obj) {
+		int id = 0;
+		try {
+			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
+					.executeQuery("SELECT idGiftList FROM JEE_GiftList WHERE nameList = '" + obj.getNameList()
+							+ "' AND occasion = '" + obj.getOccasion() + "' AND statusList = '"
+							+ obj.getStatusList().toString() + "' AND idOwner = '" + obj.getOwner().findId() + "'");
+			if (result.first())
+				id = result.getInt("idGiftList");
+			return id;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return -1;
+		}
 	}
 
 }

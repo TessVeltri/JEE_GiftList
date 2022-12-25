@@ -42,15 +42,12 @@ public class ReserveDAO implements DAO<Reserve>{
 	public ArrayList<Reserve> findAll() {
 		ArrayList<Reserve> lstReserve = new ArrayList<>();
 		User user = null;
-		Gift gift = null;
 		try {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeQuery("SELECT * FROM JEE_Reserve");
 			while (result.next()) {
 				user = User.findById(result.getInt("idUser"));
-				gift = Gift.findById(result.getInt("idGift"));
-				Reserve reserve = new Reserve(result.getInt("amount"), user,
-						gift);
+				Reserve reserve = new Reserve(result.getInt("amount"), user);
 				lstReserve.add(reserve);
 			}
 			result.close();
@@ -65,6 +62,12 @@ public class ReserveDAO implements DAO<Reserve>{
 	public Reserve findById(int id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int findId(Reserve obj) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

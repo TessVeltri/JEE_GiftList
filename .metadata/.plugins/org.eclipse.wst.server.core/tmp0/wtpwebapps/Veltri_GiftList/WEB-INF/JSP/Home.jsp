@@ -22,14 +22,13 @@ body {
 .folder {
 	width: 150px;
 	height: 105px;
-	margin: 0 auto;
 	margin-right: 40px;
-	margin-top: 50px;
+	margin-top: 30px;
+	margin-bottom: 50px;
 	position: relative;
 	background-color: #bfc3c7;
 	border-radius: 0 6px 6px 6px;
 	box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.59);
-	margin-top: 50px;
 }
 
 .folder:before {
@@ -44,11 +43,14 @@ body {
 }
 </style>
 <body>
-	<h2>Home</h2>
+	<h1>Home</h1>
+	
 	<div align="center">
+		<h2><u>Active lists</u></h2>
 		<%
 		int order = 0;
 		for (GiftList gl : myLists) {
+			
 		%><button class="folder" onclick="location.href='/Veltri_GiftList/getInfoList?from=my&orderId=<%= order %>'">
 			<p style="color: red; margin: 5px;">My list</p><%=gl.getNameList()%>
 		  </button>
@@ -65,5 +67,10 @@ body {
 		}
 		%>
 	</div>
+	<div align="center">
+		<h2><u>Inactive or close lists</u></h2>
+	</div>
+	
 </body>
+<jsp:include page="Footer.jsp"></jsp:include>
 </html>

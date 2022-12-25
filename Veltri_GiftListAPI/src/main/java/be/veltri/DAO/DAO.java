@@ -15,4 +15,6 @@ public interface DAO <T> {
 	public T findById (int id);
 	
 	public ArrayList<T> findAll ();
+	
+	public int findId (T obj);
 }

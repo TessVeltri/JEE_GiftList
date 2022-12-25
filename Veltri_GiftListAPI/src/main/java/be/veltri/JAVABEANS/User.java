@@ -113,22 +113,70 @@ public class User implements Serializable{
 		this.lstReserve = lstReserve;
 	}
 	
+	public void addMyList (GiftList gl) {
+		if (!this.getMyLists().contains(gl))
+			this.myLists.add(gl);
+	}
+	
+	public void deleteMyList (GiftList gl) {
+		if (this.getMyLists().contains(gl))
+			this.myLists.remove(gl);
+	}
+	
+	public void addLstGiftList (GiftList gl) {
+		if (!this.getLstGiftList().contains(gl))
+			this.lstGiftList.add(gl);
+	}
+	
+	public void deleteLstGiftList (GiftList gl) {
+		if (this.getLstGiftList().contains(gl))
+			this.lstGiftList.remove(gl);
+	}
+	
+	public void addLstNotification (Notification notif) {
+		if (!this.getLstNotification().contains(notif))
+			this.lstNotification.add(notif);
+	}
+	
+	public void deleteLstNotification (Notification notif) {
+		if (this.getLstNotification().contains(notif))
+			this.lstNotification.remove(notif);
+	}
+	
+	public void addLstReserve (Reserve res) {
+		if (!this.getLstReserve().contains(res))
+			this.lstReserve.add(res);
+	}
+	
+	public void deleteLstReserve (Reserve res) {
+		if (this.getLstReserve().contains(res))
+			this.lstReserve.remove(res);
+	}
+	
 	// Méthodes
     public static User login (String email, String password) {
     	User find = new User ("", "", email, password);
-    	return userDAO.find(find);
+    	return userDAO.login(find);
     }
 
     public static User findById(int id) {
     	return userDAO.findById(id);
     }
     
-    public static ArrayList<User> getAll(){
+    public static ArrayList<User> findAll(){
     	return userDAO.findAll();
     }
     
     public boolean create() {
     	return userDAO.create(this);
+    }
+    
+    public User find () {
+    	return userDAO.find(this);
+    }
+    
+    public int findId () {
+    	return userDAO.findId(this);
     }
 
 

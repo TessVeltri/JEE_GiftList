@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="be.veltri.JAVABEANS.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gift List Home</title>
+</head>
+<%
+User user = (User) session.getAttribute("user");
+ArrayList<GiftList> myLists = user.getMyLists();
+ArrayList<GiftList> giftLists = user.getLstGiftList();
+%>
+<jsp:include page="Header.jsp"></jsp:include>
+<style>
+.folder {
+	width: 150px;
+	height: 105px;
+	margin: 0 auto;
+	margin-right: 20px;
+	margin-top: 50px;
+	position: relative;
+	background-color: #708090;
+	border-radius: 0 6px 6px 6px;
+	box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.59);
+}
+.folder:before {
+    content: '';
+    width: 50%;
+    height: 12px;
+    border-radius: 0 20px 0 0;
+    background-color: #708090;
+    position: absolute;
+    top: -12px;
+    left: 0px;
+}
+</style>
+<body>
+	<h2>Home</h2>
+	<div align="center">
+		<%
+		for (int i=0 ; i<5 ; i++){
+		for (GiftList gl : myLists) {
+		%><button class="folder"><%=gl.getNameList()%></button>
+		<%
+		}}
+		%>
+		<%
+		for (GiftList gl : giftLists) {
+		%><button class="folder"><%=gl.getNameList()%></button>
+		<%
+		}
+		%>
+	</div>
+</body>
+</html>

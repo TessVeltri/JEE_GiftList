@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<style>
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 96%;
+	height: 60px;
+}
+</style>
+<body>
+	<div align="center" class="footer">
+		<h4>
+			<em>By Veltri Tess</em>
+		</h4>
+	</div>
+</body>
+
+</html>

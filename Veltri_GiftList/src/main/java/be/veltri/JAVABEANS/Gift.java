@@ -135,6 +135,16 @@ public class Gift implements Serializable{
 		this.lstReserve = lstReserve;
 	}
 	
+	public void addLstReserve (Reserve res) {
+		if (!this.getLstReserve().contains(res)) 
+			this.lstReserve.add(res);
+	}
+	
+	public void deleteLstReserve (Reserve res) {
+		if (this.getLstReserve().contains(res)) 
+			this.lstReserve.remove(res);
+	}
+	
 	// Méthodes
 	
     

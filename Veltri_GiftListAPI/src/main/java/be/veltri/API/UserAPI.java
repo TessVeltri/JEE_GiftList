@@ -33,7 +33,7 @@ public class UserAPI extends Application {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/all")
 	public Response getAll() {
-		ArrayList<User> allUser = User.getAll();
+		ArrayList<User> allUser = User.findAll();
 		if (allUser == null)
 			return Response.status(Status.BAD_REQUEST).build();
 		return Response.status(Status.OK).entity(allUser).build();

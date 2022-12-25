@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import be.veltri.DAO.GiftListDAO;
+import be.veltri.DAO.UserDAO;
 import be.veltri.ENUMS.EnumStatusList;
 
 public class GiftList implements Serializable{
@@ -18,6 +20,8 @@ public class GiftList implements Serializable{
     private ArrayList<Gift> lstGift = new ArrayList<>();
     private User owner;
     private ArrayList<User> lstParticipant;
+    
+    private static GiftListDAO giftListDAO = new GiftListDAO();
 
     // Constructeurs
 	public GiftList() {}
@@ -111,9 +115,31 @@ public class GiftList implements Serializable{
 		this.lstParticipant = lstParticipant;
 	}
 	
+	public void addLstGift (Gift gift) {
+		if (!this.getLstGift().contains(gift))
+			this.lstGift.add(gift);
+	}
+	
+	public void deleteLstGift (Gift gift) {
+		if (this.getLstGift().contains(gift))
+			this.lstGift.remove(gift);
+	}
+	
+	public void addLstParticipant (User participant) {
+		if (!this.getLstParticipant().contains(participant))
+			this.lstParticipant.add(participant);
+	}
+	
+	public void deleteLstParticipant (User participant) {
+		if (this.getLstParticipant().contains(participant))
+			this.lstParticipant.remove(participant);
+	}
+	
 	// Méthodes
 	
-
+	public GiftList find () {
+		return giftListDAO.find(this);
+	}
     
 
 

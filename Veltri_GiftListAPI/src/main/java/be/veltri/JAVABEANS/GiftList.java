@@ -115,12 +115,34 @@ public class GiftList implements Serializable{
 		this.lstParticipant = lstParticipant;
 	}
 	
-	// Méthodes
+	public void addLstGift (Gift gift) {
+		if (!this.getLstGift().contains(gift))
+			this.lstGift.add(gift);
+	}
 	
+	public void deleteLstGift (Gift gift) {
+		if (this.getLstGift().contains(gift))
+			this.lstGift.remove(gift);
+	}
+	
+	public void addLstParticipant (User participant) {
+		if (!this.getLstParticipant().contains(participant))
+			this.lstParticipant.add(participant);
+	}
+	
+	public void deleteLstParticipant (User participant) {
+		if (this.getLstParticipant().contains(participant))
+			this.lstParticipant.remove(participant);
+	}
+	
+	// Méthodes
 	public static ArrayList<GiftList> getAll(){
 		return giftlistDAO.findAll();
 	}
     
+	public GiftList find () {
+		return giftlistDAO.find(this);
+	}
 
 
 }
