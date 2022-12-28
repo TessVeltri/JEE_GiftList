@@ -51,7 +51,6 @@ if (gl.isActive()) {
 	checked = "";
 	disabled = "";
 }
-
 %>
 <body>
 	<h1>Add List</h1>
@@ -63,7 +62,7 @@ if (gl.isActive()) {
 		<div>
 			<div class="form child">
 				<b>Date : </b><input type="date" name="limitDate" id="limitDate"
-					value="<%=gl.getLimitDate()%>" <%=disabled%>/>
+					value="<%=gl.getLimitDate()%>" <%=disabled%> />
 			</div>
 			<div class="form child">
 				<b>Active/Inactive mode : </b><input type="checkbox" name="isActive"
@@ -97,21 +96,24 @@ if (gl.isActive()) {
 				<%
 				for (Gift g : lstGifts) {
 
-					String b64 = Base64.getEncoder().encodeToString(g.getImage());
+					String b64 = "";
 
-					String image = "data:image/" + g.getExtensionImage() + ";base64,";
-					image += b64;
-				
+					String image = "";
+
+					if (g.getImage() != null && g.getImage().length != 0) {
+						b64 = Base64.getEncoder().encodeToString(g.getImage());
+						image = "data:image/" + g.getExtensionImage() + ";base64,";
+						image += b64;
+					}
 				%>
-				
+
 				<tr>
 					<td>
-						<% if (g.getImage().length != 0){
-							%>
-							<img src="<%=image%>" width="50px"
-								height="50px"></img>
-							<%							
-						}%>
+						<%
+						if (g.getImage() != null && g.getImage().length != 0) {
+						%> <img src="<%=image%>" width="50px" height="50px"></img> <%
+ }
+ %>
 					</td>
 					<td><%=g.getName()%></td>
 					<td><%=g.getDescription()%></td>
@@ -137,15 +139,17 @@ if (gl.isActive()) {
 				<img width="30px" height="30px" src="/Veltri_GiftList/IMG/plus.png"></img>
 			</button>
 		</div>
-		<% if (lstGifts.size()>0){
-				disabledBtn = "";
-				hideTxt = "display:none;";
-			}
+		<%
+		if (lstGifts.size() > 0) {
+			disabledBtn = "";
+			hideTxt = "display:none;";
+		}
 		%>
-		
+
 		<div align="right">
-			<button type="submit" class="btnSubmit" <%=disabledBtn %>>Send</button>
-			<p id="infoTxt" style="font-size:12px;<%=hideTxt %>" >To create a list, you must add at least one gift.</p>
+			<button type="submit" class="btnSubmit" <%=disabledBtn%>>Send</button>
+			<p id="infoTxt" style="font-size:12px;<%=hideTxt%>">To create a
+				list, you must add at least one gift.</p>
 		</div>
 
 	</form>

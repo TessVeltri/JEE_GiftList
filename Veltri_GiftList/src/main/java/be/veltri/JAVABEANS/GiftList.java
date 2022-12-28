@@ -3,6 +3,7 @@ package be.veltri.JAVABEANS;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import be.veltri.DAO.GiftListDAO;
 import be.veltri.DAO.UserDAO;
@@ -119,31 +120,72 @@ public class GiftList implements Serializable {
 	}
 
 	public void addLstGift(Gift gift) {
-		if (!this.getLstGift().contains(gift))
+		int cpt = 0;
+		for (Gift g : this.getLstGift()) {
+			if (g.equals(gift))
+				cpt++;
+		}
+		if (cpt==0)
 			this.lstGift.add(gift);
 	}
 
 	public void deleteLstGift(Gift gift) {
-		if (this.getLstGift().contains(gift))
+		int cpt = 0;
+		for (Gift g : this.getLstGift()) {
+			if (g.equals(gift))
+				cpt++;
+		}
+		if (cpt!=0)
 			this.lstGift.remove(gift);
 	}
 
 	public void addLstParticipant(User participant) {
-		if (!this.getLstParticipant().contains(participant))
+		int cpt = 0;
+		for (User u : this.getLstParticipant()) {
+			if (u.equals(participant))
+				cpt++;
+		}
+		if (cpt==0)
 			this.lstParticipant.add(participant);
 	}
 
 	public void deleteLstParticipant(User participant) {
-		if (this.getLstParticipant().contains(participant))
+		int cpt = 0;
+		for (User u : this.getLstParticipant()) {
+			if (u.equals(participant))
+				cpt++;
+		}
+		if (cpt!=0)
 			this.lstParticipant.remove(participant);
 	}
 
 	// Méthodes
+	@Override
+	public int hashCode() {
+		return Objects.hash(isActive, limitDate, lstGift, lstParticipant, nameList, occasion, owner, statusList);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		GiftList other = (GiftList) obj;
+		return isActive == other.isActive && Objects.equals(limitDate, other.limitDate)
+				&& Objects.equals(lstGift, other.lstGift) && Objects.equals(lstParticipant, other.lstParticipant)
+				&& Objects.equals(nameList, other.nameList) && Objects.equals(occasion, other.occasion)
+				&& Objects.equals(owner, other.owner) && statusList == other.statusList;
+	}
 
 	public GiftList find() {
 		return giftListDAO.find(this);
 	}
 	
+	
+
 	public boolean create () {
 		return giftListDAO.create(this);
 	}

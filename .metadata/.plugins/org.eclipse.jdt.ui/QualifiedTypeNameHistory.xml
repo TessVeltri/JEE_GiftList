@@ -34,7 +34,6 @@
     <fullyQualifiedTypeName name="be.veltri.ENUMS.EnumStatusList"/>
     <fullyQualifiedTypeName name="be.veltri.ENUMS.EnumStatusGift"/>
     <fullyQualifiedTypeName name="javax.servlet.http.Part"/>
-    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.User"/>
     <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="be.veltri.JAVABEANS.Gift"/>
@@ -48,4 +47,10 @@
     <fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="oracle.sql.DATE"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.User"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonBackReference"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonManagedReference"/>
 </qualifiedTypeNameHistroy>

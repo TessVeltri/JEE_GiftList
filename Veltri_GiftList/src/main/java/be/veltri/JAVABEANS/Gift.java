@@ -2,6 +2,8 @@ package be.veltri.JAVABEANS;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 
 import be.veltri.DAO.GiftDAO;
 import be.veltri.DAO.GiftListDAO;
@@ -152,17 +154,54 @@ public class Gift implements Serializable{
 	}
 	
 	public void addLstReserve (Reserve res) {
-		if (!this.getLstReserve().contains(res)) 
-			this.lstReserve.add(res);
+		int cpt = 0;
+		for (Reserve r : this.getLstReserve()) {
+			if (r.equals(res))
+				cpt++;
+		}
+		if (cpt==0)
+			this.getLstReserve().add(res);
 	}
 	
 	public void deleteLstReserve (Reserve res) {
-		if (this.getLstReserve().contains(res)) 
+		int cpt = 0;
+		for (Reserve r : this.getLstReserve()) {
+			if (r.equals(res))
+				cpt++;
+		}
+		if (cpt!=0)
 			this.lstReserve.remove(res);
 	}
 	
 	// Méthodes
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(image);
+		result = prime * result + Objects.hash(averagePrice, description, extensionImage, giftList, lstReserve, name,
+				nameImage, priority, statusGift, websiteLink);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Gift other = (Gift) obj;
+		return averagePrice == other.averagePrice && Objects.equals(description, other.description)
+				&& Objects.equals(extensionImage, other.extensionImage) && Objects.equals(giftList, other.giftList)
+				&& Arrays.equals(image, other.image) && Objects.equals(lstReserve, other.lstReserve)
+				&& Objects.equals(name, other.name) && Objects.equals(nameImage, other.nameImage)
+				&& priority == other.priority && statusGift == other.statusGift
+				&& Objects.equals(websiteLink, other.websiteLink);
+	}
+
 	public boolean create () {
 		return giftDAO.create(this);
 	}

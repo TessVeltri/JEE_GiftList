@@ -2,6 +2,7 @@ package be.veltri.JAVABEANS;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import be.veltri.DAO.UserDAO;
 
@@ -114,53 +115,114 @@ public class User implements Serializable{
 	}
 	
 	public void addMyList (GiftList gl) {
-		if (!this.getMyLists().contains(gl))
+		int cpt = 0;
+		for (GiftList g : this.getMyLists()) {
+			if (g.equals(gl))
+				cpt++;
+		}
+		if (cpt==0)
 			this.myLists.add(gl);
 	}
 	
 	public void deleteMyList (GiftList gl) {
-		if (this.getMyLists().contains(gl))
+		int cpt = 0;
+		for (GiftList g : this.getMyLists()) {
+			if (g.equals(gl))
+				cpt++;
+		}
+		if (cpt!=0)
 			this.myLists.remove(gl);
 	}
 	
 	public void addLstGiftList (GiftList gl) {
-		if (!this.getLstGiftList().contains(gl))
+		int cpt = 0;
+		for (GiftList g : this.getLstGiftList()) {
+			if (g.equals(gl))
+				cpt++;
+		}
+		if (cpt==0)
 			this.lstGiftList.add(gl);
 	}
 	
 	public void deleteLstGiftList (GiftList gl) {
-		if (this.getLstGiftList().contains(gl))
+		int cpt = 0;
+		for (GiftList g : this.getLstGiftList()) {
+			if (g.equals(gl))
+				cpt++;
+		}
+		if (cpt!=0)
 			this.lstGiftList.remove(gl);
 	}
 	
 	public void addLstNotification (Notification notif) {
-		if (!this.getLstNotification().contains(notif))
+		int cpt = 0;
+		for (Notification n : this.getLstNotification()) {
+			if (n.equals(notif))
+				cpt++;
+		}
+		if (cpt==0)
 			this.lstNotification.add(notif);
 	}
 	
 	public void deleteLstNotification (Notification notif) {
-		if (this.getLstNotification().contains(notif))
+		int cpt = 0;
+		for (Notification n : this.getLstNotification()) {
+			if (n.equals(notif))
+				cpt++;
+		}
+		if (cpt!=0)
 			this.lstNotification.remove(notif);
 	}
 	
 	public void addLstReserve (Reserve res) {
-		if (!this.getLstReserve().contains(res))
+		int cpt = 0;
+		for (Reserve r : this.getLstReserve()) {
+			if (r.equals(res))
+				cpt++;
+		}
+		if (cpt==0)
 			this.lstReserve.add(res);
 	}
 	
 	public void deleteLstReserve (Reserve res) {
-		if (this.getLstReserve().contains(res))
+		int cpt = 0;
+		for (Reserve r : this.getLstReserve()) {
+			if (r.equals(res))
+				cpt++;
+		}
+		if (cpt!=0)
 			this.lstReserve.remove(res);
 	}
 	
 	// Méthodes
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(email, firstname, lstGiftList, lstNotification, lstReserve, myLists, name, password);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(email, other.email) && Objects.equals(firstname, other.firstname)
+				&& Objects.equals(lstGiftList, other.lstGiftList)
+				&& Objects.equals(lstNotification, other.lstNotification)
+				&& Objects.equals(lstReserve, other.lstReserve) && Objects.equals(myLists, other.myLists)
+				&& Objects.equals(name, other.name) && Objects.equals(password, other.password);
+	}
 
     public static User login (String email, String password) {
     	User find = new User ("", "", email, password);
     	return userDAO.find(find);
     }
-    
-    public static ArrayList<User> getAll() {
+
+	public static ArrayList<User> getAll() {
     	return userDAO.findAll();
     }
     

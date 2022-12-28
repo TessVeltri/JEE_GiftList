@@ -28,13 +28,20 @@ public class AddGift extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		GiftList addList = (GiftList) request.getSession().getAttribute("addList");
 		String nameList = request.getParameter("nameList");
 		String dateLimit = request.getParameter("limitDate");
 		String isActive = request.getParameter("isActive");
 		String occasion = request.getParameter("occasion");
+		if (addList == null) {
+			 addList = new GiftList (nameList, dateLimit, occasion, EnumStatusList.Active, Boolean.parseBoolean(isActive), null);
+		} else {
+			addList.setNameList(nameList);
+			addList.setLimitDate(dateLimit);
+			addList.setActive(Boolean.parseBoolean(isActive));
+			addList.setOccasion(occasion);
+		}
 		
-		
-		GiftList addList = new GiftList (nameList, dateLimit, occasion, EnumStatusList.Active, Boolean.parseBoolean(isActive), null);
 		request.getSession().setAttribute("addList", addList);
 		request.getRequestDispatcher("/WEB-INF/JSP/AddGift.jsp").forward(request,response);
 

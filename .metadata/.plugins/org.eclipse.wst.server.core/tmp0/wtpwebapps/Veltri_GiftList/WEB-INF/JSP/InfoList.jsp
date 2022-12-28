@@ -46,7 +46,8 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 		</div>
 		<div id="modifyDate" style="display: none;">
 			<div class="child">Date :</div>
-			<input type="date" name="limitDate" id="limitDate" value=<%=gl.getLimitDate()%> class="child"></input>
+			<input type="date" name="limitDate" id="limitDate"
+				value=<%=gl.getLimitDate()%> class="child"></input>
 			<button class="btn child" onclick="btnClick()">
 				<img width="25px" height="25px" src="/Veltri_GiftList/IMG/valid.png"></img>
 			</button>
@@ -73,9 +74,24 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 			</tr>
 			<%
 			for (Gift g : gl.getLstGift()) {
+				String b64 = "";
+
+				String image = "";
+
+				if (g.getImage() != null && g.getImage().length != 0) {
+					b64 = Base64.getEncoder().encodeToString(g.getImage());
+					image = "data:image/" + g.getExtensionImage() + ";base64,";
+					image += b64;
+				}
 			%>
 			<tr>
-				<td><img alt="" src=""></img></td>
+				<td>
+					<%
+					if (g.getImage() != null && g.getImage().length != 0) {
+					%> <img src="<%=image%>" width="80px" height="50px"></img> <%
+ }
+ %>
+				</td>
 				<td><%=g.getName()%></td>
 				<td><%=g.getDescription()%></td>
 				<td><%=g.getAveragePrice()%></td>
@@ -103,27 +119,28 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 			%>
 		</table>
 	</div>
-		<h3 align="center">
-			<em><u>All participants</u></em>
-		</h3>
+	<h3 align="center">
+		<em><u>All participants</u></em>
+	</h3>
 	<div align="center">
-		
-			<h4>Names</h4>
-			<%
-			for (User u : gl.getLstParticipant()) {
-			%>
-			<div style="display: block;"> 
-				<%=u.getName()%> <%=u.getFirstname()%>
-				<button class="btn child" onclick="">
-						<img width="25px" height="25px"
-							src="/Veltri_GiftList/IMG/delete.png"></img>
-				</button>
-			</div>
-				
-			
-			<%
-			}
-			%>
+
+		<h4>Names</h4>
+		<%
+		for (User u : gl.getLstParticipant()) {
+		%>
+		<div style="display: block;">
+			<%=u.getName()%>
+			<%=u.getFirstname()%>
+			<button class="btn child" onclick="">
+				<img width="25px" height="25px"
+					src="/Veltri_GiftList/IMG/delete.png"></img>
+			</button>
+		</div>
+
+
+		<%
+		}
+		%>
 	</div>
 
 
