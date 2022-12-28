@@ -8,26 +8,27 @@ import be.veltri.DAO.GiftListDAO;
 import be.veltri.DAO.UserDAO;
 import be.veltri.ENUMS.EnumStatusList;
 
-public class GiftList implements Serializable{
+public class GiftList implements Serializable {
 
 	// Attributs
-    private static final long serialVersionUID = 8295878032338476601L;
-    private String nameList;
-    private String limitDate;
-    private String occasion;
-    private EnumStatusList statusList;
-    private boolean isActive;
-    private ArrayList<Gift> lstGift = new ArrayList<>();
-    private User owner;
-    private ArrayList<User> lstParticipant;
-    
-    private static GiftListDAO giftListDAO = new GiftListDAO();
+	private static final long serialVersionUID = 8295878032338476601L;
+	private String nameList;
+	private String limitDate;
+	private String occasion;
+	private EnumStatusList statusList;
+	private boolean isActive;
+	private ArrayList<Gift> lstGift = new ArrayList<>();
+	private User owner;
+	private ArrayList<User> lstParticipant;
 
-    // Constructeurs
-	public GiftList() {}
+	private static GiftListDAO giftListDAO = new GiftListDAO();
+
+	// Constructeurs
+	public GiftList() {
+	}
 
 	public GiftList(String nameList, String limitDate, String occasion, EnumStatusList statusList, boolean isActive,
-			ArrayList<Gift> lstGift, User owner) {
+			ArrayList<Gift> lstGift, ArrayList<User> lstParticipant, User owner) {
 		super();
 		this.nameList = nameList;
 		this.limitDate = limitDate;
@@ -36,18 +37,20 @@ public class GiftList implements Serializable{
 		this.isActive = isActive;
 		this.lstGift = lstGift;
 		this.owner = owner;
-		this.lstParticipant = new ArrayList<>();
+		this.lstParticipant = lstParticipant;
 	}
-	
+
 	public GiftList(String nameList, String limitDate, String occasion, EnumStatusList statusList, boolean isActive,
-			Gift gift) {
+			User owner) {
 		super();
 		this.nameList = nameList;
 		this.limitDate = limitDate;
 		this.occasion = occasion;
 		this.statusList = statusList;
 		this.isActive = isActive;
-		this.lstGift.add(gift);
+		this.owner = owner;
+		this.lstGift = new ArrayList<>();
+		this.lstParticipant = new ArrayList<>();
 	}
 
 	// Getters et Setters
@@ -114,33 +117,40 @@ public class GiftList implements Serializable{
 	public void setLstParticipant(ArrayList<User> lstParticipant) {
 		this.lstParticipant = lstParticipant;
 	}
-	
-	public void addLstGift (Gift gift) {
+
+	public void addLstGift(Gift gift) {
 		if (!this.getLstGift().contains(gift))
 			this.lstGift.add(gift);
 	}
-	
-	public void deleteLstGift (Gift gift) {
+
+	public void deleteLstGift(Gift gift) {
 		if (this.getLstGift().contains(gift))
 			this.lstGift.remove(gift);
 	}
-	
-	public void addLstParticipant (User participant) {
+
+	public void addLstParticipant(User participant) {
 		if (!this.getLstParticipant().contains(participant))
 			this.lstParticipant.add(participant);
 	}
-	
-	public void deleteLstParticipant (User participant) {
+
+	public void deleteLstParticipant(User participant) {
 		if (this.getLstParticipant().contains(participant))
 			this.lstParticipant.remove(participant);
 	}
-	
+
 	// Méthodes
-	
-	public GiftList find () {
+
+	public GiftList find() {
 		return giftListDAO.find(this);
 	}
-    
-
+	
+	public boolean create () {
+		return giftListDAO.create(this);
+	}
+	
+	public int findId() {
+		return giftListDAO.findId(this);
+	}
+	
 
 }

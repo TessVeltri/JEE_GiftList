@@ -1,0 +1,59 @@
+<%@page import="be.veltri.ENUMS.EnumPriority"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add a gift</title>
+</head>
+<style>
+.form {
+	margin-bottom: 10px;
+}
+
+.child {
+	display: inline-block;
+	vertical-align: middle;
+	width: 30%;
+}
+</style>
+<jsp:include page="Header.jsp"></jsp:include>
+<body>
+	<h1>Add a gift</h1>
+	<form action="" method="POST">
+		<div class="child">
+			<div class="form">
+				Name of the gift : <input type="text" name="nameGift" id="nameGift"
+					value="" />
+			</div>
+			<div>
+				Prix moyen : <input type="number" name="amount" id="amount" value="" />
+				€
+			</div>
+		</div>
+		<div class="child">
+			<div class="form">
+				Description of the gift :
+				<textarea name="descGift" id="descGift" rows="4" cols="50">
+			</textarea>
+			</div>
+			<div class="form">
+				Web link [optional]: <input type="text" name="weblink" id="weblink" value="" />
+			</div>
+		</div>
+		<div class="form">
+			Priority : 
+			<input type="radio" name="high" id="high"/> <%=EnumPriority.High %>
+			<input type="radio" name="medium" id="medium"/> <%=EnumPriority.Medium %>
+			<input type="radio" name="low" id="low"/> <%=EnumPriority.Low %>
+		</div>
+		<div class="form">
+		Insert an image [optional]:
+			<input type="file" name="image" id="image"/>
+		</div>
+	</form>
+
+</body>
+<jsp:include page="Footer.jsp"></jsp:include>
+</html>

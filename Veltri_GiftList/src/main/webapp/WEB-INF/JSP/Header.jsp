@@ -49,7 +49,7 @@ nav a:hover {
 </style>
 <body>
 	<div align="right">
-		<button onclick="location.href='/Veltri_GiftList/connection'">
+		<button onclick="location.href='/Veltri_GiftList/deconnection'">
 			<img width="30px" height="30px" src="/Veltri_GiftList/IMG/logOut.png"></img>
 		</button>
 	</div>

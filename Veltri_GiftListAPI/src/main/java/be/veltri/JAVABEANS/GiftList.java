@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import be.veltri.DAO.GiftListDAO;
 import be.veltri.ENUMS.EnumStatusList;
 
@@ -26,7 +28,7 @@ public class GiftList implements Serializable{
 	public GiftList() {}
 
 	public GiftList(String nameList, String limitDate, String occasion, EnumStatusList statusList, boolean isActive,
-			ArrayList<Gift> lstGift, User owner) {
+			ArrayList<Gift> lstGift, ArrayList<User> lstParticipant, User owner) {
 		super();
 		this.nameList = nameList;
 		this.limitDate = limitDate;
@@ -35,7 +37,7 @@ public class GiftList implements Serializable{
 		this.isActive = isActive;
 		this.lstGift = lstGift;
 		this.owner = owner;
-		this.lstParticipant = new ArrayList<>();
+		this.lstParticipant = lstParticipant;
 	}
 	
 	public GiftList(String nameList, String limitDate, String occasion, EnumStatusList statusList, boolean isActive,
@@ -48,6 +50,7 @@ public class GiftList implements Serializable{
 		this.isActive = isActive;
 		this.owner = owner;
 		this.lstParticipant = new ArrayList<>();
+		this.lstGift = new ArrayList<>();
 	}
 
 	// Getters et Setters
@@ -90,7 +93,8 @@ public class GiftList implements Serializable{
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
-
+	
+	@JsonManagedReference
 	public ArrayList<Gift> getLstGift() {
 		return lstGift;
 	}
@@ -142,6 +146,18 @@ public class GiftList implements Serializable{
     
 	public GiftList find () {
 		return giftlistDAO.find(this);
+	}
+	
+	public boolean create () {
+		return giftlistDAO.create(this);
+	}
+	
+	public int findId() {
+		return giftlistDAO.findId(this);
+	}
+	
+	public GiftList findById(int id) {
+		return giftlistDAO.findById(id);
 	}
 
 

@@ -46,7 +46,7 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 		</div>
 		<div id="modifyDate" style="display: none;">
 			<div class="child">Date :</div>
-			<input type="date" value=<%=gl.getLimitDate()%> class="child"></input>
+			<input type="date" name="limitDate" id="limitDate" value=<%=gl.getLimitDate()%> class="child"></input>
 			<button class="btn child" onclick="btnClick()">
 				<img width="25px" height="25px" src="/Veltri_GiftList/IMG/valid.png"></img>
 			</button>

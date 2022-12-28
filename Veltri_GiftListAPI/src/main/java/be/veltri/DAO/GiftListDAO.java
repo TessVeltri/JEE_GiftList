@@ -3,8 +3,11 @@ package be.veltri.DAO;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 import be.veltri.ENUMS.EnumStatusList;
 import be.veltri.JAVABEANS.Gift;
@@ -18,8 +21,36 @@ public class GiftListDAO implements DAO<GiftList> {
 
 	@Override
 	public boolean create(GiftList obj) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			Date myDate = new Date();
+			String statusActive = "N";
+			if (obj.getLimitDate() != null) {
+				String tmp = obj.getLimitDate();
+				// tmp.replace('-', '/');
+				try {
+					myDate = (new SimpleDateFormat("yyyy-MM-dd")).parse(tmp);
+
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				if (obj.getStatusList().toString() == "Active")
+					statusActive = "Y";
+
+			}
+
+			this.conn.createStatement().executeUpdate(
+					"INSERT INTO JEE_GiftList (nameList, dateLimit, isActive, occasion, statusList, idOwner) VALUES ('"
+							+ obj.getNameList() + "', '" + (new SimpleDateFormat("dd/MM/yyyy").format(myDate)) + "', '"
+							+ statusActive.toString() + "','" + obj.getOccasion() + "', '"
+							+ obj.getStatusList().toString() + "', '" + obj.getOwner().findId() + "')");
+			return true;
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
@@ -70,6 +101,7 @@ public class GiftListDAO implements DAO<GiftList> {
 									+ result.getInt("idGiftList") + "'");
 					while (result3.next()) {
 						Gift gift = Gift.findById(result3.getInt("idGift"));
+						gift.setGiftList(gl);
 						gl.addLstGift(gift);
 					}
 				} catch (SQLException e) {
@@ -110,8 +142,24 @@ public class GiftListDAO implements DAO<GiftList> {
 
 	@Override
 	public GiftList findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		GiftList gl = null;
+		User owner = null;
+		String date = null;
+		try {
+			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
+					.executeQuery("SELECT * FROM JEE_GiftList WHERE idGiftList = '" + id + "'");
+			if (result.first()) {
+				owner = User.findById(result.getInt("idOwner"));
+				if (result.getDate("dateLimit") != null)
+					date = result.getDate("dateLimit").toLocalDate().toString();
+				gl = new GiftList(result.getString("nameList"), date, result.getString("occasion"),
+						EnumStatusList.valueOf(result.getString("statusList")), result.getBoolean("isActive"), owner);
+			}
+			return gl;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override

@@ -57,6 +57,22 @@
 		<servlet-name>InfoList</servlet-name>
 		<servlet-class>be.veltri.SERVLETS.InfoList</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>VerifAddList</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.VerifAddList</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AddGift</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.AddGift</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>VerifAddGift</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.VerifAddGift</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Deconnection</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.Deconnection</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Connection</servlet-name>
@@ -101,6 +117,22 @@
 	<servlet-mapping>
 		<servlet-name>InfoList</servlet-name>
 		<url-pattern>/infoList</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VerifAddList</servlet-name>
+		<url-pattern>/verifAddList</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddGift</servlet-name>
+		<url-pattern>/addGift</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VerifAddGift</servlet-name>
+		<url-pattern>/verifAddGift</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Deconnection</servlet-name>
+		<url-pattern>/deconnection</url-pattern>
 	</servlet-mapping>
 
 </web-app>

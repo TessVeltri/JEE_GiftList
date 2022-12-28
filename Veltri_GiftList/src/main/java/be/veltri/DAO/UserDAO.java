@@ -101,4 +101,10 @@ public class UserDAO implements DAO<User> {
 		}
 	}
 
+	@Override
+	public int findId(User obj) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

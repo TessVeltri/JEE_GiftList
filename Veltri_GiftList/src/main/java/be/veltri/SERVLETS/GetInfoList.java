@@ -48,7 +48,7 @@ public class GetInfoList extends HttpServlet {
 			GiftList gl = user.getLstGiftList().get(orderId);
 			GiftList giftL = gl.find();
 			if (giftL != null) {
-				request.setAttribute("giftList", gl);
+				request.setAttribute("giftList", giftL);
 				request.getRequestDispatcher("/infoList").forward(request,response);
 			} else {
 				// une erreur est survenue, réessayer plus tard

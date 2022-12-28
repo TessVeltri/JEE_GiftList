@@ -6,7 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="String nameGift = request.getParameter(&quot;nameGift&quot;);"/>
 		<list key="findhistory">
+			<item value="String nameGift = request.getParameter(&quot;nameGift&quot;);"/>
+			<item value="size"/>
 			<item value="apiUrl"/>
 		</list>
 		<list key="replacehistory">

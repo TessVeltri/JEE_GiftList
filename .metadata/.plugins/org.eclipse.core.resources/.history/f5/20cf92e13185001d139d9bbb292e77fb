@@ -1,0 +1,102 @@
+<%@page import="be.veltri.ENUMS.EnumStatusList"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="be.veltri.JAVABEANS.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add a list</title>
+</head>
+<jsp:include page="Header.jsp"></jsp:include>
+<style>
+body {
+	margin-left: 50px;
+}
+
+.child {
+	display: inline-block;
+	vertical-align: middle;
+	width: 30%;
+}
+
+.form {
+	margin-bottom: 20px;
+}
+
+.btnSubmit {
+	margin-top: 30px;
+	font-size: 17px;
+}
+</style>
+<%
+	GiftList gl = (GiftList) request.getAttribute("addList");
+	if (gl == null){
+		User u = null;
+		gl = new GiftList ("","","",EnumStatusList.Active, true, u); 
+	}
+	ArrayList lstGifts = gl.getLstGift();
+	
+%>
+<body>
+	<h1>Add List</h1>
+	<form action="verifAddList" method="POST">
+		<div class="form">
+			<b>Name of the list : </b><input type="text" name="nameList" id="nameList"
+				value="" required/>
+		</div>
+		<div>
+			<div class="form child">
+				<b>Date : </b><input type="date" name="limitDate" id="limitDate" value=""
+					disabled/>
+			</div>
+			<div class="form child">
+				<b>Active/Inactive mode : </b><input type="checkbox" name="isActive"
+					id="isActive" onclick="checkClick()" checked required/>
+			</div>
+		</div>
+		<div>
+			<b>Occasion : </b><select name="occasion" id="occasion">
+				<option value="wedding">Wedding</option>
+				<option value="baptism">Baptism</option>
+				<option value="bacheloretteParty">Bachelorette Party</option>
+				<option value="bachelorParty">Bachelor Party</option>
+				<option value="babyShower">Baby Shower</option>
+				<option value="other">Other</option>
+			</select>
+		</div>
+		<div>
+			<h3><em>Gifts:</em></h3>
+			<button type="button"
+				onclick="location.href='/Veltri_GiftList/addGift'">
+				<img width="30px" height="30px" src="/Veltri_GiftList/IMG/plus.png"></img>
+			</button>
+		</div>
+		<div align="right">
+			<button type="submit" class="btnSubmit">Send</button>
+		</div>
+
+	</form>
+
+</body>
+<jsp:include page="Footer.jsp"></jsp:include>
+<script>
+	const checkBox = document.getElementById("isActive");
+	const date = document.getElementById("limitDate");
+	function checkClick() {
+		if (date.disabled == true) {
+			date.disabled = false;
+			date.required = true;
+			checkBox.required = false;
+		} else {
+			date.disabled = true;
+			date.value = "";
+			date.required = false;
+			checkBox.required = true;
+			
+		}
+
+	}
+</script>
+</html>

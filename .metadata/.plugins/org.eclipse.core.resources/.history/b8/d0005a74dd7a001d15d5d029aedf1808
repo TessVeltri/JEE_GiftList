@@ -1,9 +1,0 @@
-
-/**
- * 
- */
-public enum EnumPriority {
-    High,
-    Medium,
-    Low
-}

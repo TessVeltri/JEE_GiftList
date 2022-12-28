@@ -3,6 +3,9 @@ package be.veltri.JAVABEANS;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import be.veltri.DAO.GiftDAO;
 import be.veltri.ENUMS.EnumPriority;
 import be.veltri.ENUMS.EnumStatusGift;
@@ -20,6 +23,7 @@ public class Gift implements Serializable{
     private byte [ ] image;
     private String nameImage;
     private String extensionImage;
+    private GiftList giftList;
     private ArrayList<Reserve> lstReserve;
     
     private static GiftDAO giftDAO = new GiftDAO();
@@ -28,7 +32,7 @@ public class Gift implements Serializable{
     public Gift() {}
 
 	public Gift(String name, String description, int averagePrice, EnumPriority priority, String websiteLink,
-			EnumStatusGift statusGift, byte[] image, String nameImage, String extensionImage) {
+			EnumStatusGift statusGift, byte[] image, String nameImage, String extensionImage, GiftList giftList) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -39,11 +43,12 @@ public class Gift implements Serializable{
 		this.image = image;
 		this.nameImage = nameImage;
 		this.extensionImage = extensionImage;
+		this.giftList = giftList;
 		this.lstReserve = new ArrayList<>();
 	}
 	
 	public Gift(String name, String description, int averagePrice, EnumPriority priority, String websiteLink,
-			EnumStatusGift statusGift, byte[] image, String nameImage, String extensionImage, ArrayList<Reserve> lstReserve) {
+			EnumStatusGift statusGift, byte[] image, String nameImage, String extensionImage, GiftList giftList, ArrayList<Reserve> lstReserve) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -54,6 +59,7 @@ public class Gift implements Serializable{
 		this.image = image;
 		this.nameImage = nameImage;
 		this.extensionImage = extensionImage;
+		this.giftList = giftList;
 		this.lstReserve = lstReserve;
 	}
 
@@ -129,6 +135,15 @@ public class Gift implements Serializable{
 	public void setExtensionImage(String extensionImage) {
 		this.extensionImage = extensionImage;
 	}
+	
+	@JsonBackReference
+	public GiftList getGiftList() {
+		return giftList;
+	}
+
+	public void setGiftList(GiftList giftList) {
+		this.giftList = giftList;
+	}
 
 	public ArrayList<Reserve> getLstReserve() {
 		return lstReserve;
@@ -157,4 +172,7 @@ public class Gift implements Serializable{
 		return giftDAO.findById(id);
 	}
     
+	public boolean create () {
+		return giftDAO.create(this);
+	}
 }

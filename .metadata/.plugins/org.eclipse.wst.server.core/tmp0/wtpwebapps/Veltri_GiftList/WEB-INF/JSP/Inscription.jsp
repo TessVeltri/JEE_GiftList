@@ -49,27 +49,27 @@ table {
 				<tr>
 					<td>Name :</td>
 					<td><input type="text" name="name" id="name" value="<%= user.getName() %>"
-						size="20" /></td>
+						size="20" required/></td>
 				</tr>
 				<tr>
 					<td>Firstname :</td>
 					<td><input type="text" name="firstname" id="firstname"
-						value="<%= user.getFirstname() %>" size="20" /></td>
+						value="<%= user.getFirstname() %>" size="20" required/></td>
 				</tr>
 				<tr>
 					<td>Email :</td>
 					<td><input type="text" name="email" id="email" value="<%= user.getEmail() %>"
-						size="20" /></td>
+						size="20" required/></td>
 				</tr>
 				<tr>
 					<td>Password :</td>
 					<td><input type="password" name="password" id="password" value="<%= user.getPassword() %>"
-						size="20" /></td>
+						size="20" required/></td>
 				</tr>
 				<tr>
 					<td>Confirm password :</td>
 					<td><input type="password" name="confirmPassword"
-						id="confirmPassword" value="" size="20" /></td>
+						id="confirmPassword" value="" size="20" required/></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit"

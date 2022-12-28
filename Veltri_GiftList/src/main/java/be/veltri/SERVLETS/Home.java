@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import be.veltri.JAVABEANS.User;
+
 /**
  * Servlet implementation class Home
  */
@@ -25,6 +27,9 @@ public class Home extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/JSP/Home.jsp").forward(request,response);
+		User user = (User) request.getSession().getAttribute("user");
+		user = User.login(user.getEmail(), user.getPassword());
+		request.getSession().setAttribute("user", user);
 	}
 
 	/**

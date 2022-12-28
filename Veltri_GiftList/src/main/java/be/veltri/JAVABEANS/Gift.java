@@ -3,6 +3,8 @@ package be.veltri.JAVABEANS;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import be.veltri.DAO.GiftDAO;
+import be.veltri.DAO.GiftListDAO;
 import be.veltri.ENUMS.EnumPriority;
 import be.veltri.ENUMS.EnumStatusGift;
 
@@ -20,12 +22,15 @@ public class Gift implements Serializable{
     private String nameImage;
     private String extensionImage;
     private ArrayList<Reserve> lstReserve;
+    private GiftList giftList;
+    
+    private static GiftDAO giftDAO = new GiftDAO();
     
     // Constructeurs 
     public Gift() {}
 
 	public Gift(String name, String description, int averagePrice, EnumPriority priority, String websiteLink,
-			EnumStatusGift statusGift, byte[] image, String nameImage, String extensionImage) {
+			EnumStatusGift statusGift, byte[] image, String nameImage, String extensionImage, GiftList giftList) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -36,11 +41,13 @@ public class Gift implements Serializable{
 		this.image = image;
 		this.nameImage = nameImage;
 		this.extensionImage = extensionImage;
+		this.giftList = giftList;
 		this.lstReserve = new ArrayList<>();
 	}
 	
 	public Gift(String name, String description, int averagePrice, EnumPriority priority, String websiteLink,
-			EnumStatusGift statusGift, byte[] image, String nameImage, String extensionImage, ArrayList<Reserve> lstReserve) {
+			EnumStatusGift statusGift, byte[] image, String nameImage, String extensionImage, GiftList giftList, 
+			ArrayList<Reserve> lstReserve) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -51,6 +58,7 @@ public class Gift implements Serializable{
 		this.image = image;
 		this.nameImage = nameImage;
 		this.extensionImage = extensionImage;
+		this.giftList = giftList;
 		this.lstReserve = lstReserve;
 	}
 
@@ -127,6 +135,14 @@ public class Gift implements Serializable{
 		this.extensionImage = extensionImage;
 	}
 
+	public GiftList getGiftList() {
+		return giftList;
+	}
+
+	public void setGiftList(GiftList giftList) {
+		this.giftList = giftList;
+	}
+
 	public ArrayList<Reserve> getLstReserve() {
 		return lstReserve;
 	}
@@ -147,5 +163,8 @@ public class Gift implements Serializable{
 	
 	// Méthodes
 	
+	public boolean create () {
+		return giftDAO.create(this);
+	}
     
 }
