@@ -39,7 +39,6 @@
     <fullyQualifiedTypeName name="be.veltri.JAVABEANS.Gift"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="be.veltri.DAO.GiftDAO"/>
-    <fullyQualifiedTypeName name="be.veltri.ENUMS.EnumPriority"/>
     <fullyQualifiedTypeName name="java.util.Base64"/>
     <fullyQualifiedTypeName name="be.veltri.JAVABEANS.GiftList"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
@@ -53,4 +52,5 @@
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonBackReference"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonManagedReference"/>
+    <fullyQualifiedTypeName name="be.veltri.ENUMS.EnumPriority"/>
 </qualifiedTypeNameHistroy>

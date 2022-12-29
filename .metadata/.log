@@ -8342,3 +8342,996 @@ Binding(ALT+SHIFT+R,
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-28 21:50:07.849
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+!SESSION 2022-12-29 14:55:19.378 -----------------------------------------------
+eclipse.buildId=4.24.0.I20220607-0700
+java.version=18.0.2.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -showlocation -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -data C:\dev\java\Veltri_ProjetJEE -showlocation -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-12-29 14:55:39.490
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-12-29 14:55:39.490
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@57cc0333,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4e22dadb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-12-29 14:55:39.491
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5aa2758a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1a916120,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 14:56:20.741
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 14:56:20.762
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 14:56:24.992
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 14:56:25.003
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.oomph.setup.ui 1 0 2022-12-29 14:56:36.622
+!MESSAGE Setup tasks were performed during startup updating 394 preferences. See 'C:\dev\java\eclipse-2022.06\configuration\org.eclipse.oomph.setup\setup.log' for details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:00:38.121
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:00:38.131
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:09:05.853
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:09:05.866
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:12:50.704
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:12:50.715
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wst.server.core 4 0 2022-12-29 15:13:55.969
+!MESSAGE Server Tomcat v9.0 Server at localhost was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:13:56.186
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:13:56.197
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:17:08.482
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:17:08.491
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:18:22.572
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:18:22.588
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:19:43.840
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:19:43.849
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:28:10.530
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:28:10.542
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wst.server.core 4 0 2022-12-29 15:30:40.599
+!MESSAGE Server Tomcat v9.0 Server at localhost was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:33:43.016
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:33:43.027
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2022-12-29 15:34:19.595
+!MESSAGE Error while getting URI 'platform:/plugin/org.eclipse.persistence.moxy/org/eclipse/persistence/jaxb/eclipselink_oxm_2_5.xsd' from plugin 'org.eclipse.jpt.common.eclipselink.core' : /org/eclipse/persistence/jaxb/eclipselink_oxm_2_5.xsd
+!STACK 0
+java.io.FileNotFoundException: /org/eclipse/persistence/jaxb/eclipselink_oxm_2_5.xsd
+	at org.eclipse.osgi.storage.url.bundleentry.Handler.findBundleEntry(Handler.java:55)
+	at org.eclipse.osgi.storage.url.BundleResourceHandler.openConnection(BundleResourceHandler.java:182)
+	at java.base/java.net.URL.openConnection(URL.java:1094)
+	at org.eclipse.core.internal.boot.PlatformURLConnection.connect(PlatformURLConnection.java:115)
+	at org.eclipse.core.internal.boot.PlatformURLConnection.getURLAsLocal(PlatformURLConnection.java:240)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.toFileURL(PlatformURLConverter.java:37)
+	at org.eclipse.core.runtime.FileLocator.toFileURL(FileLocator.java:263)
+	at org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLCatalogs.createURI(XMLCatalogs.java:139)
+	at org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLCatalogs.lambda$3(XMLCatalogs.java:87)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLCatalogs.getWTPExtensionCatalog(XMLCatalogs.java:65)
+	at org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLCatalogs.getAllCatalogs(XMLCatalogs.java:52)
+	at org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceConstants.storePreferencesToLemminxOptions(XMLPreferenceConstants.java:90)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.mergeCustomInitializationOptions(XMLLanguageServer.java:169)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:164)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$7(LanguageServerWrapper.java:364)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-12-29 15:34:31.622
+!MESSAGE TimeoutException
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.operations.declaration.OpenDeclarationHyperlinkDetector.detectHyperlinks(OpenDeclarationHyperlinkDetector.java:94)
+	at org.eclipse.ui.texteditor.HyperlinkDetectorRegistry$HyperlinkDetectorDelegate.detectHyperlinks(HyperlinkDetectorRegistry.java:81)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:289)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:262)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.mouseMove(HyperlinkManager.java:457)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:216)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4251)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4068)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3645)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-12-29 15:34:33.641
+!MESSAGE TimeoutException
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.operations.documentLink.DocumentLinkDetector.detectHyperlinks(DocumentLinkDetector.java:119)
+	at org.eclipse.ui.texteditor.HyperlinkDetectorRegistry$HyperlinkDetectorDelegate.detectHyperlinks(HyperlinkDetectorRegistry.java:81)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:289)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.findHyperlinks(HyperlinkManager.java:262)
+	at org.eclipse.jface.text.hyperlink.HyperlinkManager.mouseMove(HyperlinkManager.java:457)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:216)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4251)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4068)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3645)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-12-29 15:34:40.378
+!MESSAGE org.eclipse.lsp4j.jsonrpc.ResponseErrorException: The request (id: 5, method: 'textDocument/documentLink') has been cancelled
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: The request (id: 5, method: 'textDocument/documentLink') has been cancelled
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.operations.documentLink.DocumentLinkDetector.lambda$3(DocumentLinkDetector.java:89)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616)
+	at org.eclipse.lsp4e.operations.documentLink.DocumentLinkDetector.lambda$1(DocumentLinkDetector.java:113)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: The request (id: 5, method: 'textDocument/documentLink') has been cancelled
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:209)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:193)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:270)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:35:17.341
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:35:17.351
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:35:31.178
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:35:31.190
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:37:32.648
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:37:32.658
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:42:42.426
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:42:42.440
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:51:58.986
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:51:59.017
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:57:03.303
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:57:03.311
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wst.server.core 4 0 2022-12-29 15:58:24.602
+!MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:58:34.276
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 15:58:34.286
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2022-12-29 15:58:38.366
+!MESSAGE Port 8085 required by Tomcat v9.0 Server at localhost is already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2022-12-29 15:59:03.399
+!MESSAGE Port 8085 required by Tomcat v9.0 Server at localhost is already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2022-12-29 15:59:30.339
+!MESSAGE Several ports (8006, 8085) required by Tomcat v9.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2022-12-29 16:02:31.172
+!MESSAGE Several ports (8006, 8085) required by Tomcat v9.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.368
+!MESSAGE Publishing failed
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2022-12-29 16:02:48.368
+!MESSAGE Publishing failed with multiple errors
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.368
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jackson-annotations-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.368
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jackson-core-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.368
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jackson-databind-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.368
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jackson-module-jaxb-annotations-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.369
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jakarta.annotation-api-1.3.4.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.369
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jakarta.inject-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.369
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jakarta.ws.rs-api-2.1.5.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.369
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jersey-client-1.19.4.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.369
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jersey-common-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.369
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jersey-core-1.19.4.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.369
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jersey-entity-filtering-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.369
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jersey-media-json-jackson-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\json-20210307.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jsr311-api-1.1.1.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\ojdbc6.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\osgi-resource-locator-1.0.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Publishing failed with multiple errors
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\aopalliance-repackaged-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\hk2-api-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\hk2-locator-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\hk2-utils-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jackson-annotations-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jackson-core-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jackson-databind-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jackson-module-jaxb-annotations-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jakarta.annotation-api-1.3.4.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jakarta.inject-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jakarta.ws.rs-api-2.1.5.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\javassist-3.22.0-CR2.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.370
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\javax.activation-api-1.2.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jaxb-api-2.3.1.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-client-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-common-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-container-servlet-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-container-servlet-core-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-entity-filtering-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-hk2-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-media-jaxb-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-media-json-jackson-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-server-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\json-20210307.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\ojdbc6.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\osgi-resource-locator-1.0.1.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:02:48.371
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\validation-api-2.0.1.Final.jar. May be locked by another process.
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2022-12-29 16:03:03.329
+!MESSAGE Several ports (8006, 8085) required by Tomcat v9.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.403
+!MESSAGE Publishing failed
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2022-12-29 16:03:17.403
+!MESSAGE Publishing failed with multiple errors
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.403
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jackson-annotations-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jackson-core-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jackson-databind-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jackson-module-jaxb-annotations-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jakarta.annotation-api-1.3.4.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jakarta.inject-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jakarta.ws.rs-api-2.1.5.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jersey-client-1.19.4.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jersey-common-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jersey-core-1.19.4.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jersey-entity-filtering-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jersey-media-json-jackson-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\json-20210307.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\jsr311-api-1.1.1.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.404
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\ojdbc6.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftList\WEB-INF\lib\osgi-resource-locator-1.0.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Publishing failed with multiple errors
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\aopalliance-repackaged-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\hk2-api-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\hk2-locator-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\hk2-utils-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jackson-annotations-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jackson-core-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jackson-databind-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jackson-module-jaxb-annotations-2.9.8.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jakarta.annotation-api-1.3.4.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jakarta.inject-2.5.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jakarta.ws.rs-api-2.1.5.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\javassist-3.22.0-CR2.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\javax.activation-api-1.2.0.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jaxb-api-2.3.1.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-client-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-common-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-container-servlet-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.405
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-container-servlet-core-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.407
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-entity-filtering-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.407
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-hk2-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.407
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-media-jaxb-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.407
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-media-json-jackson-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.407
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\jersey-server-2.28.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.407
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\json-20210307.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.407
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\ojdbc6.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.407
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\osgi-resource-locator-1.0.1.jar. May be locked by another process.
+!SUBENTRY 2 org.eclipse.wst.server.core 4 0 2022-12-29 16:03:17.407
+!MESSAGE Could not delete C:\dev\java\Veltri_ProjetJEE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Veltri_GiftListAPI\WEB-INF\lib\validation-api-2.0.1.Final.jar. May be locked by another process.
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2022-12-29 16:03:44.717
+!MESSAGE Several ports (8006, 8085) required by Tomcat v9.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2022-12-29 16:04:14.770
+!MESSAGE Connection to https://www.caucho.com/eclipse/site.xml failed on Remote host terminated the handshake. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+	at java.base/sun.security.ssl.SSLSocketImpl.handleEOF(SSLSocketImpl.java:1714)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1513)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1420)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:273)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:241)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:148)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:396)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:158)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:168)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:136)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:175)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:133)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:75)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1009)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1001)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:997)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.EOFException: SSL peer shut down incorrectly
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1505)
+	... 30 more
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2022-12-29 16:04:15.492
+!MESSAGE Connection to https://www.caucho.com/eclipse/p2.index failed on Remote host terminated the handshake. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+	at java.base/sun.security.ssl.SSLSocketImpl.handleEOF(SSLSocketImpl.java:1714)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1513)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1420)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:273)
+	at org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:241)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:148)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:396)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:158)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:168)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:136)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:175)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:133)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:75)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1009)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1001)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:997)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.EOFException: SSL peer shut down incorrectly
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1505)
+	... 30 more
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2022-12-29 16:04:33.039
+!MESSAGE Several ports (8006, 8085) required by Tomcat v9.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-12-29 16:05:23.092
+!MESSAGE org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: Le canal de communication est sur le point d’être fermé
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: Le canal de communication est sur le point d’être fermé
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$12(LanguageServerWrapper.java:456)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: Le canal de communication est sur le point d’être fermé
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:270)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.request(RemoteEndpoint.java:161)
+	at org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:91)
+	at jdk.proxy13/jdk.proxy13.$Proxy52.shutdown(Unknown Source)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$12(LanguageServerWrapper.java:454)
+	... 7 more
+Caused by: java.io.IOException: Le canal de communication est sur le point d’être fermé
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 12 more
+!SESSION 2022-12-29 16:08:55.340 -----------------------------------------------
+eclipse.buildId=4.24.0.I20220607-0700
+java.version=18.0.2.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -showlocation -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -data C:\dev\java\Veltri_ProjetJEE -showlocation -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-12-29 16:09:12.054
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2022-12-29 16:09:29.238
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-12-29 16:09:29.238
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6768dc74,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@31dbca5d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-12-29 16:09:29.238
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@40c92dfa,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16b713dd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.oomph.setup.ui 1 0 2022-12-29 16:10:27.410
+!MESSAGE Setup tasks were performed during startup updating 394 preferences. See 'C:\dev\java\eclipse-2022.06\configuration\org.eclipse.oomph.setup\setup.log' for details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:10:31.598
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:10:31.638
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:10:45.167
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:10:45.196
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wst.server.core 4 0 2022-12-29 16:11:32.294
+!MESSAGE Server Tomcat v9.0 Server at localhost was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2022-12-29 16:12:59.237
+!MESSAGE Server Tomcat v9.0 Server at localhost was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:25:39.099
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:25:39.103
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:26:12.377
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:26:12.385
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:26:35.138
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:26:35.143
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:30:23.497
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:30:23.500
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:31:11.767
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:31:11.771
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:31:16.625
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:31:16.629
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:31:34.151
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:31:34.160
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:32:13.682
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:32:13.686
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:32:24.733
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:32:24.735
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:32:26.788
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:32:26.792
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:33:26.819
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:33:26.824
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:34:24.648
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:34:24.661
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:34:51.801
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:34:51.804
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:34:58.410
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:34:58.414
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:35:12.686
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:35:12.688
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:35:53.165
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:35:53.168
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:36:37.325
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:36:37.329
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:37:07.184
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:37:07.187
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:37:11.336
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:37:11.339
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:40:17.193
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:40:17.196
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:40:48.680
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:40:48.683
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:41:07.170
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:41:07.175
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:41:30.259
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:41:30.262
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:42:07.987
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:42:07.990
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:42:49.315
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:42:49.318
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:44:17.878
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:44:17.882
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:44:29.758
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:44:29.760
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:44:34.806
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:44:34.808
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:45:10.171
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:45:10.173
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:45:30.283
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:45:30.284
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:45:33.091
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:45:33.094
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:46:31.670
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:46:31.674
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2022-12-29 16:47:20.223
+!MESSAGE Error while getting URI 'platform:/plugin/org.eclipse.persistence.moxy/org/eclipse/persistence/jaxb/eclipselink_oxm_2_5.xsd' from plugin 'org.eclipse.jpt.common.eclipselink.core' : /org/eclipse/persistence/jaxb/eclipselink_oxm_2_5.xsd
+!STACK 0
+java.io.FileNotFoundException: /org/eclipse/persistence/jaxb/eclipselink_oxm_2_5.xsd
+	at org.eclipse.osgi.storage.url.bundleentry.Handler.findBundleEntry(Handler.java:55)
+	at org.eclipse.osgi.storage.url.BundleResourceHandler.openConnection(BundleResourceHandler.java:182)
+	at java.base/java.net.URL.openConnection(URL.java:1094)
+	at org.eclipse.core.internal.boot.PlatformURLConnection.connect(PlatformURLConnection.java:115)
+	at org.eclipse.core.internal.boot.PlatformURLConnection.getURLAsLocal(PlatformURLConnection.java:240)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.toFileURL(PlatformURLConverter.java:37)
+	at org.eclipse.core.runtime.FileLocator.toFileURL(FileLocator.java:263)
+	at org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLCatalogs.createURI(XMLCatalogs.java:139)
+	at org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLCatalogs.lambda$3(XMLCatalogs.java:87)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLCatalogs.getWTPExtensionCatalog(XMLCatalogs.java:65)
+	at org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLCatalogs.getAllCatalogs(XMLCatalogs.java:52)
+	at org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceConstants.storePreferencesToLemminxOptions(XMLPreferenceConstants.java:90)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.mergeCustomInitializationOptions(XMLLanguageServer.java:169)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:164)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$7(LanguageServerWrapper.java:364)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:48:07.464
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:48:07.467
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:49:01.439
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:49:01.442
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:51:22.608
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:51:22.611
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:52:48.700
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:52:48.703
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:55:52.173
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:55:52.176
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:56:02.654
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:56:02.656
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:58:40.707
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:58:40.712
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:59:43.802
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-29 16:59:43.804
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
