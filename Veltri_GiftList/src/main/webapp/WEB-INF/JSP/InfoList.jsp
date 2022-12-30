@@ -100,16 +100,17 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 				<td><%=g.getStatusGift().toString()%></td>
 				<td>
 					<%
+					
 					for (Reserve r : g.getLstReserve()) {
 					%> <%=r.getAmount()%> €/<%=r.getUser().getFirstname()%> <%=r.getUser().getName()%>
 					<%
 					}
 					%>
 				</td>
-				<td><button class="btn child" onclick="">
+				<td><button type="button" class="btn child" onclick="location.href='/Veltri_GiftList/modifyGift?idGift=<%= g.getIdGift() %>&where=server'">
 						<img width="25px" height="25px" src="/Veltri_GiftList/IMG/pen.png"></img>
 					</button></td>
-				<td><button class="btn child" onclick="">
+				<td><button type="button" class="btn child" onclick="">
 						<img width="25px" height="25px"
 							src="/Veltri_GiftList/IMG/delete.png"></img>
 					</button></td>

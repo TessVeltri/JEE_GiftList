@@ -14,6 +14,8 @@ public interface DAO<T> {
 	
 	public int findId(T obj);
 	
+	public T findById(int id);
+	
 	public ArrayList<T> findAll ();
 	
 	default  String getApiUrl() {

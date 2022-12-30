@@ -68,4 +68,10 @@ public class ReserveDAO implements DAO<Reserve>{
 		return 0;
 	}
 
+	@Override
+	public Reserve findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

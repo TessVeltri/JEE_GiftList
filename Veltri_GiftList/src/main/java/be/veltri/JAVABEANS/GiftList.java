@@ -13,6 +13,7 @@ public class GiftList implements Serializable {
 
 	// Attributs
 	private static final long serialVersionUID = 8295878032338476601L;
+	private int idGiftList;
 	private String nameList;
 	private String limitDate;
 	private String occasion;
@@ -31,6 +32,7 @@ public class GiftList implements Serializable {
 	public GiftList(String nameList, String limitDate, String occasion, EnumStatusList statusList, boolean isActive,
 			ArrayList<Gift> lstGift, ArrayList<User> lstParticipant, User owner) {
 		super();
+		this.idGiftList = 0;
 		this.nameList = nameList;
 		this.limitDate = limitDate;
 		this.occasion = occasion;
@@ -44,6 +46,7 @@ public class GiftList implements Serializable {
 	public GiftList(String nameList, String limitDate, String occasion, EnumStatusList statusList, boolean isActive,
 			User owner) {
 		super();
+		this.idGiftList = 0;
 		this.nameList = nameList;
 		this.limitDate = limitDate;
 		this.occasion = occasion;
@@ -55,6 +58,14 @@ public class GiftList implements Serializable {
 	}
 
 	// Getters et Setters
+	public int getIdGiftList() {
+		return idGiftList;
+	}
+
+	public void setIdGiftList(int idGiftList) {
+		this.idGiftList = idGiftList;
+	}
+	
 	public String getNameList() {
 		return nameList;
 	}

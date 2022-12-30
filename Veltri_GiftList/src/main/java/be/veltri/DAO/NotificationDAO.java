@@ -68,4 +68,10 @@ public class NotificationDAO implements DAO<Notification> {
 		return 0;
 	}
 
+	@Override
+	public Notification findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

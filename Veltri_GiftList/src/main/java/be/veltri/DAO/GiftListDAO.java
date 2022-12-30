@@ -122,4 +122,10 @@ public class GiftListDAO implements DAO<GiftList>{
 		return -1;
 	}
 
+	@Override
+	public GiftList findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

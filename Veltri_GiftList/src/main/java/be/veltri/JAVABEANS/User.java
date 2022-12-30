@@ -10,6 +10,7 @@ public class User implements Serializable{
 
 	// Attributs
     private static final long serialVersionUID = 6393298679126542829L;
+    private int idUser;
     private String name;
     private String firstname;
     private String email;
@@ -27,6 +28,7 @@ public class User implements Serializable{
 	public User(String name, String firstname, String email, String password, ArrayList<GiftList> myLists,
 			ArrayList<GiftList> lstGiftList, ArrayList<Notification> lstNotification, ArrayList<Reserve> lstReserve) {
 		super();
+		this.idUser = 0;
 		this.name = name;
 		this.firstname = firstname;
 		this.email = email;
@@ -39,6 +41,7 @@ public class User implements Serializable{
 	
 	public User(String name, String firstname, String email, String password) {
 		super();
+		this.idUser = 0;
 		this.name = name;
 		this.firstname = firstname;
 		this.email = email;
@@ -50,10 +53,18 @@ public class User implements Serializable{
 	}
 
 	// Getters et Setters
+	public int getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
+	}
+	
 	public String getName() {
 		return name;
 	}
-
+	
 	public void setName(String name) {
 		this.name = name;
 	}

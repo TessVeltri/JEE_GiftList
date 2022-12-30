@@ -6,6 +6,7 @@ public class Notification implements Serializable{
 
 	// Attributs
     private static final long serialVersionUID = -8955457559899937470L;
+    private int idNotif;
     private String comment;
     private boolean isRead;
     private User user;
@@ -15,12 +16,21 @@ public class Notification implements Serializable{
 
 	public Notification(String comment, boolean isRead, User user) {
 		super();
+		this.idNotif = 0;
 		this.comment = comment;
 		this.isRead = isRead;
 		this.user = user;
 	}
 
 	// Getters et Setters
+	public int getIdNotif() {
+		return idNotif;
+	}
+
+	public void setIdNotif(int idNotif) {
+		this.idNotif = idNotif;
+	}
+	
 	public String getComment() {
 		return comment;
 	}

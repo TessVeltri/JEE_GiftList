@@ -39,6 +39,13 @@ public class ModifyGift extends HttpServlet {
 			request.setAttribute("idGift", idGift);
 		} else {
 			// vient de la DB
+			Gift g = new Gift();
+			g.setIdGift(index);
+			Gift gift = g.findById();
+			
+			request.setAttribute("modifyGift", gift);
+			request.setAttribute("where", where);
+			request.setAttribute("idGift", idGift);
 		}
 		
 		

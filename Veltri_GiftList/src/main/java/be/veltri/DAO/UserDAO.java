@@ -107,4 +107,10 @@ public class UserDAO implements DAO<User> {
 		return 0;
 	}
 
+	@Override
+	public User findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

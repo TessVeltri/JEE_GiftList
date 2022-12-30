@@ -1,6 +1,7 @@
 package be.veltri.SERVLETS;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.servlet.ServletException;
@@ -15,6 +16,7 @@ import be.veltri.ENUMS.EnumPriority;
 import be.veltri.ENUMS.EnumStatusGift;
 import be.veltri.JAVABEANS.Gift;
 import be.veltri.JAVABEANS.GiftList;
+import be.veltri.JAVABEANS.User;
 
 /**
  * Servlet implementation class VerifModifyGift
@@ -47,8 +49,7 @@ public class VerifModifyGift extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
+		ArrayList<String> errors = new ArrayList<>();
 		String nameGift = null;
 		Part nameGiftPart = request.getPart("nameGift");
 		try (Scanner scanner = new Scanner(nameGiftPart.getInputStream())) {
@@ -111,8 +112,10 @@ public class VerifModifyGift extends HttpServlet {
 
 		}
 
+		int index = Integer.parseInt(idGift);
+
 		if (where.equals("local")) {
-			int index = Integer.parseInt(idGift);
+
 			GiftList gl = (GiftList) request.getSession().getAttribute("addList");
 			Gift gift = gl.getLstGift().get(index);
 
@@ -126,13 +129,54 @@ public class VerifModifyGift extends HttpServlet {
 				gift.setImage(image);
 				gift.setNameImage(imgName);
 				gift.setExtensionImage(imgExt);
-
 			}
 
 			request.getSession().setAttribute("addList", gl);
-			request.getRequestDispatcher("/addList").forward(request,response);
+			request.getRequestDispatcher("/addList").forward(request, response);
 		} else {
-			// todo partie update db
+			Gift gift = new Gift();
+			gift.setIdGift(index);
+
+			gift = gift.findById();
+			if (gift.getLstReserve().size() > 0) {
+				errors.add("This gift has already been reserved.");
+				// redirect
+			} else {
+				gift.setName(nameGift);
+				gift.setAveragePrice(Integer.parseInt(price));
+				gift.setDescription(desc);
+				gift.setPriority(EnumPriority.valueOf(priority));
+				gift.setWebsiteLink(weblink);
+				if (imgName != null && imgName != "") {
+					gift.setImage(image);
+					gift.setNameImage(imgName);
+					gift.setExtensionImage(imgExt);
+				}
+
+				boolean update = gift.update();
+				if (update) {
+					// revoie sur la page d'infoList
+					User user = (User) request.getSession().getAttribute("user");
+					int indexList = 0;
+					int finalIndexList = 0;
+
+					// va chercher le orderId
+					for (GiftList gl : user.getMyLists()) {
+						for (Gift g : gl.getLstGift()) {
+							if (g.getIdGift() == index && finalIndexList == 0) {
+								finalIndexList = indexList;
+							}
+						}
+						indexList++;
+					}
+					request.setAttribute("giftList", user.getMyLists().get(finalIndexList));
+					request.getRequestDispatcher("/getInfoList?from=my&orderId=" + finalIndexList).forward(request,
+							response);
+				} else {
+					doGet(request, response);
+				}
+			}
+
 		}
 
 	}

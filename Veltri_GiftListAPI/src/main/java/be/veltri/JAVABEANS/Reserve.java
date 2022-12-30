@@ -9,6 +9,7 @@ public class Reserve implements Serializable{
 
 	// Attributs
     private static final long serialVersionUID = -3078588241404049583L;
+    private int idReserve;
     private int amount;
     private User user;
     
@@ -19,11 +20,20 @@ public class Reserve implements Serializable{
 
 	public Reserve(int amount, User user) {
 		super();
+		this.idReserve = 0;
 		this.amount = amount;
 		this.user = user;
 	}
 
 	// Getters et Setters
+	public int getIdReserve() {
+		return idReserve;
+	}
+
+	public void setIdReserve(int idReserve) {
+		this.idReserve = idReserve;
+	}
+	
 	public int getAmount() {
 		return amount;
 	}

@@ -22,10 +22,10 @@ public class GiftDAO implements DAO<Gift> {
 	@Override
 	public boolean create(Gift obj) {
 		try {
-			
+
 			String sql = "INSERT INTO JEE_Gift (idGiftList, nameGift, description, averagePrice, priority, statusGift, websiteLink, image, nameImage, extensionImage) "
 					+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
-			
+
 			PreparedStatement ps = this.conn.prepareStatement(sql);
 			ps.setLong(1, obj.getGiftList().findId());
 			ps.setString(2, obj.getName());
@@ -34,15 +34,15 @@ public class GiftDAO implements DAO<Gift> {
 			ps.setString(5, obj.getPriority().toString());
 			ps.setString(6, obj.getStatusGift().toString());
 			ps.setString(7, obj.getWebsiteLink());
-			
+
 			InputStream targetStream = new ByteArrayInputStream(obj.getImage());
-			ps.setBinaryStream(8, targetStream );
-			
+			ps.setBinaryStream(8, targetStream);
+
 			ps.setString(9, obj.getNameImage());
 			ps.setString(10, obj.getExtensionImage());
-			
+
 			ps.executeUpdate();
-			
+
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -58,8 +58,35 @@ public class GiftDAO implements DAO<Gift> {
 
 	@Override
 	public boolean update(Gift obj) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			String sql = "UPDATE JEE_Gift " + "    SET IMAGE        = ?," + "      DESCRIPTION    = ?,"
+					+ "      AVERAGEPRICE   = ?," + "      " + "      NAMEGIFT       = ?," + "      STATUSGIFT     = ?,"
+					+ "      EXTENSIONIMAGE = ?," + "      PRIORITY       = ?," + "      WEBSITELINK    = ?,"
+					+ "      NAMEIMAGE      = ? " + " WHERE idGift = '" + obj.getIdGift() + "'";
+
+			PreparedStatement ps = this.conn.prepareStatement(sql);
+
+			InputStream targetStream = new ByteArrayInputStream(obj.getImage());
+			ps.setBinaryStream(1, targetStream);
+			ps.setString(2, obj.getDescription());
+			ps.setLong(3, obj.getAveragePrice());
+			ps.setString(4, obj.getName());
+			ps.setString(5, obj.getStatusGift().toString());
+			ps.setString(6, obj.getExtensionImage());
+			ps.setString(7, obj.getPriority().toString());
+			ps.setString(8, obj.getWebsiteLink());
+			ps.setString(9, obj.getNameImage());
+
+			int result = ps.executeUpdate();
+
+			if (result == 1)
+				return true;
+			else
+				return false;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
@@ -82,6 +109,7 @@ public class GiftDAO implements DAO<Gift> {
 						result.getString("websiteLink"), EnumStatusGift.valueOf(result.getString("statusGift")),
 						result.getBytes("image"), result.getString("nameImage"), result.getString("extensionImage"),
 						gl);
+			gift.setIdGift(result.getInt("idGift"));
 			try {
 				ResultSet result2 = this.conn
 						.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
