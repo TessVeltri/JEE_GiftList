@@ -6,7 +6,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import be.veltri.ENUMS.EnumPriority;
 import be.veltri.ENUMS.EnumStatusGift;
@@ -52,17 +55,24 @@ public class GiftDAO implements DAO<Gift> {
 
 	@Override
 	public boolean delete(Gift obj) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+
+			this.conn.createStatement().executeUpdate("DELETE FROM JEE_Gift WHERE idGift = '" + obj.getIdGift() + "'");
+			return true;
+			
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
 	public boolean update(Gift obj) {
 		try {
-			String sql = "UPDATE JEE_Gift " + "    SET IMAGE        = ?," + "      DESCRIPTION    = ?,"
-					+ "      AVERAGEPRICE   = ?," + "      " + "      NAMEGIFT       = ?," + "      STATUSGIFT     = ?,"
-					+ "      EXTENSIONIMAGE = ?," + "      PRIORITY       = ?," + "      WEBSITELINK    = ?,"
-					+ "      NAMEIMAGE      = ? " + " WHERE idGift = '" + obj.getIdGift() + "'";
+			String sql = "UPDATE JEE_Gift SET image = ?, description = ?, "
+					+ "averagePrice = ?, nameGift = ?, statusGift = ?, extensionImage = ?, priority = ?, websiteLink = ?, "
+					+ "nameImage = ? WHERE idGift = '" + obj.getIdGift() + "'";
 
 			PreparedStatement ps = this.conn.prepareStatement(sql);
 

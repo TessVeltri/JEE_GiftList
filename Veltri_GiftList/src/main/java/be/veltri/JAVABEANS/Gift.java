@@ -217,6 +217,10 @@ public class Gift implements Serializable{
 		return giftDAO.create(this);
 	}
 	
+	public boolean delete () {
+		return giftDAO.delete(this);
+	}
+	
 	public boolean update () {
 		return giftDAO.update(this);
 	}

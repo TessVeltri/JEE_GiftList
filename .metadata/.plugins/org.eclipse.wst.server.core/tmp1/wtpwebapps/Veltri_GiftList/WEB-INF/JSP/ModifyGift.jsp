@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="be.veltri.JAVABEANS.*" import="be.veltri.ENUMS.*"%>
+<%@ page import="be.veltri.JAVABEANS.*" import="be.veltri.ENUMS.*" import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,6 +32,7 @@ p {
 </style>
 <jsp:include page="Header.jsp"></jsp:include>
 <%
+ArrayList<String> errors = (ArrayList<String>)request.getAttribute("errorsModifyGift");
 Gift gift = (Gift) request.getAttribute("modifyGift");
 String where = (String) request.getAttribute("where");
 String idGift = (String) request.getAttribute("idGift");
@@ -95,6 +96,17 @@ else if (gift.getPriority().toString().equals("Low"))
 		</p>
 		<button type="submit" name="addGiftBtn" id="addGiftBtn"
 			style="margin-top: 30px;">UPDATE</button>
+			<ul>
+			<%
+				if (errors != null){
+					for (String err : errors){
+						%>
+							<li style="color:red;"><%=err%> </li>
+						<%
+					}
+				}
+				
+			%></ul>
 	</form>
 </body>
 <jsp:include page="Footer.jsp"></jsp:include>

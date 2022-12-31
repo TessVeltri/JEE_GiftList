@@ -69,7 +69,15 @@ public class GiftDAO implements DAO<Gift> {
 
 	@Override
 	public boolean delete(Gift obj) {
-		// TODO Auto-generated method stub
+		ClientResponse res= resource
+				.path("gift")
+				.path("delete")
+				.queryParam("idGift",String.valueOf(obj.getIdGift()))
+				.delete(ClientResponse.class);
+		int StatusCode=res.getStatus();
+		if(StatusCode == 204) {
+			return true;
+		}
 		return false;
 	}
 

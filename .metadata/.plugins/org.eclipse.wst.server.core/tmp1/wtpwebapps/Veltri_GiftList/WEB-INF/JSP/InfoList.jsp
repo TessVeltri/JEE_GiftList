@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="be.veltri.JAVABEANS.*" import="java.util.Base64"%>
+<%@ page import="be.veltri.JAVABEANS.*" import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +11,7 @@
 <jsp:include page="Header.jsp"></jsp:include>
 </head>
 <%
+ArrayList<String> errors = (ArrayList<String>)request.getAttribute("errorsDeleteGift");
 GiftList gl = (GiftList) request.getAttribute("giftList");
 %>
 <body>
@@ -58,6 +59,19 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 	%>
 
 	<div>
+		<div align="right">
+			<ul>
+			<%
+				if (errors != null){
+					for (String err : errors){
+						%>
+							<li style="color:red;"><%=err%> </li>
+						<%
+					}
+				}
+				
+			%></ul>
+		</div>
 		<h3 align="center">
 			<em><u>All gifts</u></em>
 		</h3>
@@ -110,7 +124,7 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 				<td><button type="button" class="btn child" onclick="location.href='/Veltri_GiftList/modifyGift?idGift=<%= g.getIdGift() %>&where=server'">
 						<img width="25px" height="25px" src="/Veltri_GiftList/IMG/pen.png"></img>
 					</button></td>
-				<td><button type="button" class="btn child" onclick="">
+				<td><button type="button" class="btn child" onclick="location.href='/Veltri_GiftList/infoList?idGift=<%= g.getIdGift() %>'">
 						<img width="25px" height="25px"
 							src="/Veltri_GiftList/IMG/delete.png"></img>
 					</button></td>

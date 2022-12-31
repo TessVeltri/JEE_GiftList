@@ -139,7 +139,12 @@ public class VerifModifyGift extends HttpServlet {
 
 			gift = gift.findById();
 			if (gift.getLstReserve().size() > 0) {
-				errors.add("This gift has already been reserved.");
+				errors.add("This gift has already been reserved. You can't modify it.");
+				request.setAttribute("errorsModifyGift", errors);
+				request.setAttribute("modifyGift", gift);
+				request.setAttribute("where", where);
+				request.setAttribute("idGift", idGift);
+				request.getRequestDispatcher("/WEB-INF/JSP/ModifyGift.jsp").forward(request,response);
 				// redirect
 			} else {
 				gift.setName(nameGift);
@@ -172,13 +177,8 @@ public class VerifModifyGift extends HttpServlet {
 					request.setAttribute("giftList", user.getMyLists().get(finalIndexList));
 					request.getRequestDispatcher("/getInfoList?from=my&orderId=" + finalIndexList).forward(request,
 							response);
-				} else {
-					doGet(request, response);
 				}
 			}
-
 		}
-
 	}
-
 }

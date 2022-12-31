@@ -3,6 +3,7 @@ package be.veltri.API;
 import java.util.Base64;
 
 import javax.websocket.server.PathParam;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -87,5 +88,19 @@ public class GiftAPI extends Application {
 			return Response.status(Status.SERVICE_UNAVAILABLE).build();
 		else
 			return Response.status(Status.OK).entity(gift).build();
+	}
+	
+	@DELETE
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/delete")
+	public Response delete(@QueryParam("idGift") int idGift) {
+		if (idGift == 0)
+			return Response.status(Status.BAD_REQUEST).build();
+		Gift gift = Gift.findById(idGift);
+		boolean delete = gift.delete();
+		if (!delete)
+			return Response.status(Status.SERVICE_UNAVAILABLE).build();
+		else
+			return Response.status(Status.NO_CONTENT).entity(gift).build();
 	}
 }

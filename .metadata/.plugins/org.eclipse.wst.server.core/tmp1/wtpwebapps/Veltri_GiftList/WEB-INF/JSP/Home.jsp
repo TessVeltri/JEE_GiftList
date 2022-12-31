@@ -61,7 +61,7 @@ body {
 		<%
 		int order2 = 0;
 		for (GiftList gl : giftLists) {
-		%><button class="folder" onclick="location.href='/Veltri_GiftList/infoList?from=other&orderId=<%= order %>'"><%=gl.getNameList()%></button>
+		%><button class="folder" onclick="location.href='/Veltri_GiftList/getinfoList?from=other&orderId=<%= order %>'"><%=gl.getNameList()%></button>
 		<%
 		order2++;
 		}
