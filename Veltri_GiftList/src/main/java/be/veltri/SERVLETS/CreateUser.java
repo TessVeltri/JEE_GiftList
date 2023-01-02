@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import be.veltri.JAVABEANS.GiftList;
 import be.veltri.JAVABEANS.User;
 
 /**
@@ -47,13 +48,23 @@ public class CreateUser extends HttpServlet {
 		String password = request.getParameter("password");
 		String confirmPassword = request.getParameter("confirmPassword");
 
+		String idGiftList = request.getParameter("idGiftList");
+
+//		String nameTmp = name.substring(0, 1).toUpperCase();
+//		String nameEnd = name.substring(1);
+//		name = nameTmp + nameEnd;
+//		
+//		String firstnameTmp = firstname.substring(0, 1).toUpperCase();
+//		String firstnameEnd = firstname.substring(1);
+//		firstname = firstnameTmp + firstnameEnd;
+
 		ArrayList<String> errors = new ArrayList<>();
-		
+
 		if (name == null || firstname == null || email == null || password == null || confirmPassword == null
 				|| name.equals("") || firstname.equals("") || email.equals("") || password.equals("")
 				|| confirmPassword.equals("")) {
 			errors.add("Complete all fields");
-		} 
+		}
 		if (!password.equals(confirmPassword)) {
 			errors.add("Your confirm password is incorrect");
 		}
@@ -71,15 +82,31 @@ public class CreateUser extends HttpServlet {
 		request.setAttribute("errorsInsert", errors);
 		if (errors.size() == 0) {
 			boolean insert = insertUser.create();
-			if (insert)
-				request.getRequestDispatcher("/WEB-INF/JSP/Home.jsp").forward(request,response);
-			 else 
+			if (insert) {
+
+				if (idGiftList != null && idGiftList != "") {
+					GiftList gl = new GiftList();
+					gl.setIdGiftList(Integer.parseInt(idGiftList));
+					gl = gl.findById();
+					insertUser = insertUser.find();
+					
+					boolean inserted = insertUser.addParticipation(gl);
+					if(!inserted) {
+						System.out.println("erreur");
+					}
+					else
+						request.getSession().setAttribute("user", insertUser);
+				}
+				request.getRequestDispatcher("/WEB-INF/JSP/Home.jsp").forward(request, response);
+			}
+
+			else
 				System.out.println("Erreur");
-			
+
 		} else {
-			request.getRequestDispatcher("/WEB-INF/JSP/Inscription.jsp").forward(request,response);
+			request.getRequestDispatcher("/WEB-INF/JSP/Inscription.jsp").forward(request, response);
 		}
-		
+
 	}
 
 }

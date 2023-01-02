@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.UriBuilder;
+
+import be.veltri.JAVABEANS.Gift;
+import be.veltri.JAVABEANS.GiftList;
 import be.veltri.JAVABEANS.User;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -43,12 +46,9 @@ public class UserDAO implements DAO<User> {
 		parameters.add("firstname", obj.getFirstname());
 		parameters.add("email", obj.getEmail());
 		parameters.add("password", obj.getPassword());
-		ClientResponse res= resource
-				.path("user")
-				.path("create")
-				.post(ClientResponse.class,parameters);
-		int StatusCode=res.getStatus();
-		if(StatusCode == 201) {
+		ClientResponse res = resource.path("user").path("create").post(ClientResponse.class, parameters);
+		int StatusCode = res.getStatus();
+		if (StatusCode == 201) {
 			return true;
 		}
 		return false;
@@ -66,12 +66,33 @@ public class UserDAO implements DAO<User> {
 		return false;
 	}
 
+	public User login(User obj) {
+		MultivaluedMap<String, String> paramsPost = new MultivaluedMapImpl();
+		paramsPost.add("email", obj.getEmail());
+		paramsPost.add("password", obj.getPassword());
+		ClientResponse responseJSON = resource.path("user").path("login").accept(MediaType.APPLICATION_JSON)
+				.post(ClientResponse.class, paramsPost);
+		int status = responseJSON.getStatus();
+		if (status == 200) {
+			String response = responseJSON.getEntity(String.class);
+			try {
+				return (User) mapper.readValue(response, User.class);
+			} catch (Exception e) {
+				System.out.println(e);
+				return null;
+			}
+		}
+		return null;
+	}
+	
 	@Override
 	public User find(User obj) {
 		MultivaluedMap<String, String> paramsPost = new MultivaluedMapImpl();
 		paramsPost.add("email", obj.getEmail());
 		paramsPost.add("password", obj.getPassword());
-		ClientResponse responseJSON = resource.path("user").path("login").accept(MediaType.APPLICATION_JSON)
+		paramsPost.add("name", obj.getName());
+		paramsPost.add("firstname", obj.getFirstname());
+		ClientResponse responseJSON = resource.path("user").path("find").accept(MediaType.APPLICATION_JSON)
 				.post(ClientResponse.class, paramsPost);
 		int status = responseJSON.getStatus();
 		if (status == 200) {
@@ -109,8 +130,42 @@ public class UserDAO implements DAO<User> {
 
 	@Override
 	public User findById(int id) {
-		// TODO Auto-generated method stub
+		ClientResponse responseJSON = resource.path("user").path("findById").queryParam("idUser", String.valueOf(id))
+				.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
+		int status = responseJSON.getStatus();
+		if (status == 200) {
+			String response = responseJSON.getEntity(String.class);
+			try {
+				return (User) mapper.readValue(response, User.class);
+			} catch (Exception e) {
+				System.out.println(e);
+				return null;
+			}
+		}
 		return null;
+	}
+
+	public boolean deleteParticipation(User user, GiftList gl) {
+		ClientResponse res = resource.path("user").path("deleteParticipation")
+				.queryParam("idGiftList", String.valueOf(gl.getIdGiftList()))
+				.queryParam("idUser", String.valueOf(user.getIdUser())).delete(ClientResponse.class);
+		int StatusCode = res.getStatus();
+		if (StatusCode == 204) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean addParticipation(User user, GiftList gl) {
+		MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
+		parameters.add("idUser", String.valueOf(user.getIdUser()));
+		parameters.add("idGiftList", String.valueOf(gl.getIdGiftList()));
+		ClientResponse res = resource.path("user").path("addParticipation").post(ClientResponse.class, parameters);
+		int StatusCode = res.getStatus();
+		if (StatusCode == 200) {
+			return true;
+		}
+		return false;
 	}
 
 }

@@ -39,12 +39,13 @@ public class NotificationDAO implements DAO<Notification> {
 	@Override
 	public ArrayList<Notification> findAll() {
 		ArrayList<Notification> lstNotif = new ArrayList<>();
-		User user = null;
+		User user = new User();
 		try {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeQuery("SELECT * FROM JEE_Notification");
 			while (result.next()) {
-				user = User.findById(result.getInt("idUser"));
+				user.setIdUser(result.getInt("idUser"));
+				user = user.findById();
 				Notification notif = new Notification(result.getString("commentNotif"), result.getBoolean("isRead"),
 						user);
 				lstNotif.add(notif);

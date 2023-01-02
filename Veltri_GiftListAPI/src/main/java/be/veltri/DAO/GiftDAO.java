@@ -56,12 +56,9 @@ public class GiftDAO implements DAO<Gift> {
 	@Override
 	public boolean delete(Gift obj) {
 		try {
-
 			this.conn.createStatement().executeUpdate("DELETE FROM JEE_Gift WHERE idGift = '" + obj.getIdGift() + "'");
 			return true;
-			
 		} catch (SQLException e) {
-
 			e.printStackTrace();
 			return false;
 		}
@@ -108,12 +105,12 @@ public class GiftDAO implements DAO<Gift> {
 	@Override
 	public Gift findById(int id) {
 		Gift gift = null;
-		GiftList gl = null;
+		GiftList gl = new GiftList();
+		User user = new User();
 		try {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeQuery("SELECT * FROM JEE_Gift WHERE idGift = '" + id + "'");
 			if (result.first())
-
 				gift = new Gift(result.getString("nameGift"), result.getString("description"),
 						result.getInt("averagePrice"), EnumPriority.valueOf(result.getString("priority")),
 						result.getString("websiteLink"), EnumStatusGift.valueOf(result.getString("statusGift")),
@@ -125,7 +122,9 @@ public class GiftDAO implements DAO<Gift> {
 						.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 						.executeQuery("SELECT * FROM JEE_Reserve WHERE idGift = '" + result.getInt("idGift") + "'");
 				while (result2.next()) {
-					Reserve res = new Reserve(result2.getInt("amount"), User.findById(result2.getInt("idUser")));
+					user.setIdUser(result2.getInt("idUser"));
+					user = user.findById();
+					Reserve res = new Reserve(result2.getInt("amount"), user);
 					gift.addLstReserve(res);
 				}
 			} catch (SQLException e) {

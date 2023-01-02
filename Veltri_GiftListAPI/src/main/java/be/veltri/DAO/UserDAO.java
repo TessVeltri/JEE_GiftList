@@ -46,9 +46,11 @@ public class UserDAO implements DAO<User> {
 		try {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeQuery("SELECT * FROM JEE_User WHERE emailUser = '" + obj.getEmail() + "'");
-			if (result.first())
+			if (result.first()) {
 				user = new User(result.getString("nameUser"), result.getString("firstnameUser"), obj.getEmail(),
 						result.getString("passwordUser"));
+				user.setIdUser(result.getInt("idUser"));
+			}
 			return user;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -65,6 +67,7 @@ public class UserDAO implements DAO<User> {
 			while (result.next()) {
 				User user = new User(result.getString("nameUser"), result.getString("firstnameUser"),
 						result.getString("emailUser"), result.getString("passwordUser"));
+				user.setIdUser(result.getInt("idUser"));
 				lstUser.add(user);
 			}
 			result.close();
@@ -81,16 +84,18 @@ public class UserDAO implements DAO<User> {
 		try {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeQuery("SELECT * FROM JEE_User WHERE idUser = '" + id + "'");
-			if (result.first())
+			if (result.first()) {
 				user = new User(result.getString("nameUser"), result.getString("firstnameUser"),
 						result.getString("emailUser"), result.getString("passwordUser"));
+				user.setIdUser(result.getInt("idUser"));
+			}
 			return user;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
-	
+
 	public User login(User obj) {
 		User user = null;
 //		ArrayList<Notification> allNotif = Notification.getAll();
@@ -100,9 +105,12 @@ public class UserDAO implements DAO<User> {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeQuery("SELECT * FROM JEE_User WHERE emailUser = '" + obj.getEmail()
 							+ "' AND passwordUser = '" + obj.getPassword() + "'");
-			if (result.first())
+			if (result.first()) {
 				user = new User(result.getString("nameUser"), result.getString("firstnameUser"), obj.getEmail(),
 						obj.getPassword());
+				user.setIdUser(result.getInt("idUser"));
+			}
+				
 //			for (Notification n : allNotif) {
 //				if (user.getEmail().equals(n.getUser().getEmail()))
 //					user.getLstNotification().add(n);
@@ -113,10 +121,10 @@ public class UserDAO implements DAO<User> {
 //			}
 			for (GiftList gl : allGiftList) {
 				if (user.getEmail().equals(gl.getOwner().getEmail()))
-					user.getMyLists().add(gl);
+					user.addMyList(gl);
 
 				if (gl.getLstParticipant().contains(user))
-					user.getLstGiftList().add(gl);
+					user.addLstGiftList(gl);
 			}
 			return user;
 		} catch (SQLException e) {
@@ -138,6 +146,34 @@ public class UserDAO implements DAO<User> {
 			e.printStackTrace();
 			return -1;
 		}
+	}
+
+	public boolean deleteParticipation(User user, GiftList gl) {
+		int idUser = user.getIdUser();
+		int idGiftList = gl.getIdGiftList();
+		try {
+			this.conn.createStatement().executeUpdate("DELETE FROM JEE_ParticipantList WHERE idUser = '" + idUser + "' "
+					+ "AND idGiftList = '" + idGiftList + "'");
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+
+	public boolean addParticipation(User user, GiftList gl) {
+		int idUser = user.getIdUser();
+		int idGiftList = gl.getIdGiftList();
+		try {
+			this.conn.createStatement().executeUpdate("INSERT INTO JEE_ParticipantList (idUser, idGiftList) "
+					+ " VALUES ('" + idUser + "' , '" + idGiftList + "')");
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+
 	}
 
 }

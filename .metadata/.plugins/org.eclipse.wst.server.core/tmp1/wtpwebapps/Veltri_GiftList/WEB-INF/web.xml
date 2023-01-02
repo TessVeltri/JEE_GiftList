@@ -81,6 +81,14 @@
 		<servlet-name>VerifModifyGift</servlet-name>
 		<servlet-class>be.veltri.SERVLETS.VerifModifyGift</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>AddParticipant</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.AddParticipant</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>VerifAddParticipant</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.VerifAddParticipant</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Connection</servlet-name>
@@ -149,6 +157,14 @@
 	<servlet-mapping>
 		<servlet-name>VerifModifyGift</servlet-name>
 		<url-pattern>/verifModifyGift</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddParticipant</servlet-name>
+		<url-pattern>/addParticipant</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VerifAddParticipant</servlet-name>
+		<url-pattern>/verifAddParticipant</url-pattern>
 	</servlet-mapping>
 
 </web-app>

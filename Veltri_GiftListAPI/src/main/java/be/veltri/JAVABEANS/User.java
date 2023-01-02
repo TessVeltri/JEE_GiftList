@@ -170,8 +170,8 @@ public class User implements Serializable{
     	return userDAO.login(find);
     }
 
-    public static User findById(int id) {
-    	return userDAO.findById(id);
+    public User findById() {
+    	return userDAO.findById(this.getIdUser());
     }
     
     public static ArrayList<User> findAll(){
@@ -188,6 +188,14 @@ public class User implements Serializable{
     
     public int findId () {
     	return userDAO.findId(this);
+    }
+    
+    public boolean deleteParticipation(GiftList gl) {
+    	return userDAO.deleteParticipation(this, gl);
+    }
+    
+    public boolean addParticipation(GiftList gl) {
+    	return userDAO.addParticipation(this, gl);
     }
 
 

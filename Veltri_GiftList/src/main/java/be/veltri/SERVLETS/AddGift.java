@@ -16,41 +16,54 @@ import be.veltri.JAVABEANS.User;
  */
 public class AddGift extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AddGift() {
-        super();
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public AddGift() {
+		super();
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		GiftList addList = (GiftList) request.getSession().getAttribute("addList");
 		String nameList = request.getParameter("nameList");
 		String dateLimit = request.getParameter("limitDate");
 		String isActive = request.getParameter("isActive");
 		String occasion = request.getParameter("occasion");
-		if (addList == null) {
-			 addList = new GiftList (nameList, dateLimit, occasion, EnumStatusList.Active, Boolean.parseBoolean(isActive), null);
+		String idGiftList = request.getParameter("idGiftList");
+
+		if (idGiftList != null && idGiftList != "") {
+			addList = new GiftList();
+			addList.setIdGiftList(Integer.parseInt(idGiftList));
+			addList = addList.findById();
+
 		} else {
-			addList.setNameList(nameList);
-			addList.setLimitDate(dateLimit);
-			addList.setActive(Boolean.parseBoolean(isActive));
-			addList.setOccasion(occasion);
+			if (addList == null) {
+				addList = new GiftList(nameList, dateLimit, occasion, EnumStatusList.Active,
+						Boolean.parseBoolean(isActive), null);
+			} else {
+				addList.setNameList(nameList);
+				addList.setLimitDate(dateLimit);
+				addList.setActive(Boolean.parseBoolean(isActive));
+				addList.setOccasion(occasion);
+			}
 		}
-		
 		request.getSession().setAttribute("addList", addList);
-		request.getRequestDispatcher("/WEB-INF/JSP/AddGift.jsp").forward(request,response);
+		request.getRequestDispatcher("/WEB-INF/JSP/AddGift.jsp").forward(request, response);
 
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

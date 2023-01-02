@@ -48,22 +48,18 @@ body {
 	<div align="center">
 		<h2><u>Active lists</u></h2>
 		<%
-		int order = 0;
 		for (GiftList gl : myLists) {
 			
-		%><button class="folder" onclick="location.href='/Veltri_GiftList/getInfoList?from=my&orderId=<%= order %>'">
+		%><button class="folder" onclick="location.href='/Veltri_GiftList/getInfoList?orderId=<%= gl.getIdGiftList() %>'">
 			<p style="color: red; margin: 5px;">My list</p><%=gl.getNameList()%>
 		  </button>
 		<%
-		order++;
 		}
 		%>
 		<%
-		int order2 = 0;
 		for (GiftList gl : giftLists) {
-		%><button class="folder" onclick="location.href='/Veltri_GiftList/getinfoList?from=other&orderId=<%= order %>'"><%=gl.getNameList()%></button>
+		%><button class="folder" onclick="location.href='/Veltri_GiftList/getinfoList?orderId=<%= gl.getIdGiftList() %>'"><%=gl.getNameList()%></button>
 		<%
-		order2++;
 		}
 		%>
 	</div>

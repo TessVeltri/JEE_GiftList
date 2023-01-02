@@ -30,15 +30,12 @@
     <fullyQualifiedTypeName name="javax.ws.rs.FormParam"/>
     <fullyQualifiedTypeName name="be.veltri.JAVABEANS.Reserve"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
-    <fullyQualifiedTypeName name="be.veltri.ENUMS.EnumStatusList"/>
     <fullyQualifiedTypeName name="be.veltri.ENUMS.EnumStatusGift"/>
     <fullyQualifiedTypeName name="javax.servlet.http.Part"/>
     <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.Gift"/>
     <fullyQualifiedTypeName name="be.veltri.DAO.GiftDAO"/>
     <fullyQualifiedTypeName name="java.util.Base64"/>
-    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.GiftList"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.io.InputStream"/>
     <fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
@@ -46,7 +43,6 @@
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="oracle.sql.DATE"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.User"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonBackReference"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonManagedReference"/>
@@ -54,6 +50,10 @@
     <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
     <fullyQualifiedTypeName name="javax.websocket.server.PathParam"/>
     <fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="javax.ws.rs.DELETE"/>
+    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.Gift"/>
+    <fullyQualifiedTypeName name="be.veltri.ENUMS.EnumStatusList"/>
+    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.User"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.GiftList"/>
 </qualifiedTypeNameHistroy>

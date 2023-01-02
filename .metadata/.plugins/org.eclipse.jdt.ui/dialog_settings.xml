@@ -27,6 +27,8 @@
 		<item key="updateSimilarElementsMatchStrategy" value="1"/>
 	</section>
 	<section name="completion_proposal_size">
+		<item key="size.x" value="652"/>
+		<item key="size.y" value="397"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>

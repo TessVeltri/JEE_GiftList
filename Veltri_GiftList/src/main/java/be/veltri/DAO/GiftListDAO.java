@@ -16,6 +16,7 @@ import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.core.util.MultivaluedMapImpl;
 
 import be.veltri.JAVABEANS.GiftList;
+import be.veltri.JAVABEANS.User;
 
 public class GiftListDAO implements DAO<GiftList>{
 
@@ -124,7 +125,18 @@ public class GiftListDAO implements DAO<GiftList>{
 
 	@Override
 	public GiftList findById(int id) {
-		// TODO Auto-generated method stub
+		ClientResponse responseJSON = resource.path("giftList").path("findById").queryParam("idGiftList",String.valueOf(id))
+				.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
+		int status = responseJSON.getStatus();
+		if (status == 200) {
+			String response = responseJSON.getEntity(String.class);
+			try {
+				return (GiftList) mapper.readValue(response, GiftList.class);
+			} catch (Exception e) {
+				System.out.println(e);
+				return null;
+			}
+		}
 		return null;
 	}
 

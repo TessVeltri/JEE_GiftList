@@ -230,7 +230,7 @@ public class User implements Serializable{
 
     public static User login (String email, String password) {
     	User find = new User ("", "", email, password);
-    	return userDAO.find(find);
+    	return userDAO.login(find);
     }
 
 	public static ArrayList<User> getAll() {
@@ -240,7 +240,21 @@ public class User implements Serializable{
     public boolean create () {
     	return userDAO.create(this);
     }
-
-
+    
+    public User findById() {
+    	return userDAO.findById(this.getIdUser());
+    }
+    
+    public boolean deleteParticipation (GiftList gl) {
+    	return userDAO.deleteParticipation (this, gl);
+    }
+    
+    public boolean addParticipation (GiftList gl) {
+    	return userDAO.addParticipation (this, gl);
+    }
+    
+    public User find () {
+    	return userDAO.find(this);
+    }
 
 }

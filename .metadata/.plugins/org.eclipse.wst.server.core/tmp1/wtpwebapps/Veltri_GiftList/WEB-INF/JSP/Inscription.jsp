@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="be.veltri.JAVABEANS.User" %>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="be.veltri.JAVABEANS.User"%>
 
 <!DOCTYPE html>
 <html>
@@ -33,43 +33,50 @@ table {
 .smallText {
 	font-size: 12px;
 }
+
+#formType {
+	display: none;
+}
 </style>
 <%
-	ArrayList<String> errors = (ArrayList<String>)request.getAttribute("errorsInsert");
-	User user = (User) session.getAttribute("insertUser");
-	if (user == null){
-		user = new User("","","","");
-	}
+ArrayList<String> errors = (ArrayList<String>) request.getAttribute("errorsInsert");
+String idGiftList = request.getParameter("idGiftList");
+User user = (User) session.getAttribute("insertUser");
+if (user == null) {
+	user = new User("", "", "", "");
+}
 %>
 <body>
 	<div class="center">
 		<form action="createUser" method="POST">
+			<input type="text" name="idGiftList" id="formType"
+				value="<%=idGiftList%>" />
 			<h1>Inscription</h1>
 			<table border="1" cellspacing="0" cellpadding="5" align="center">
 				<tr>
 					<td>Name :</td>
-					<td><input type="text" name="name" id="name" value="<%= user.getName() %>"
-						size="20" required/></td>
+					<td><input type="text" name="name" id="name"
+						value="<%=user.getName()%>" size="20" required /></td>
 				</tr>
 				<tr>
 					<td>Firstname :</td>
 					<td><input type="text" name="firstname" id="firstname"
-						value="<%= user.getFirstname() %>" size="20" required/></td>
+						value="<%=user.getFirstname()%>" size="20" required /></td>
 				</tr>
 				<tr>
 					<td>Email :</td>
-					<td><input type="text" name="email" id="email" value="<%= user.getEmail() %>"
-						size="20" required/></td>
+					<td><input type="text" name="email" id="email"
+						value="<%=user.getEmail()%>" size="20" required /></td>
 				</tr>
 				<tr>
 					<td>Password :</td>
-					<td><input type="password" name="password" id="password" value="<%= user.getPassword() %>"
-						size="20" required/></td>
+					<td><input type="password" name="password" id="password"
+						value="<%=user.getPassword()%>" size="20" required /></td>
 				</tr>
 				<tr>
 					<td>Confirm password :</td>
 					<td><input type="password" name="confirmPassword"
-						id="confirmPassword" value="" size="20" required/></td>
+						id="confirmPassword" value="" size="20" required /></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit"
@@ -77,18 +84,18 @@ table {
 				</tr>
 			</table>
 			<p class="smallText" align="center">By Veltri Tess</p>
-			
+
 			<ul>
-			<%
-				if (errors != null){
-					for (String err : errors){
-						%>
-							<li style="color:red;"><%=err%> </li>
-						<%
-					}
+				<%
+				if (errors != null) {
+					for (String err : errors) {
+				%>
+				<li style="color: red;"><%=err%></li>
+				<%
 				}
-				
-			%></ul>
+				}
+				%>
+			</ul>
 		</form>
 	</div>
 </body>

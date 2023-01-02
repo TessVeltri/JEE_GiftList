@@ -83,7 +83,9 @@ public class GiftAPI extends Application {
 	public Response findById(@QueryParam("idGift") int idGift) {
 		if (idGift == 0)
 			return Response.status(Status.BAD_REQUEST).build();
-		Gift gift = Gift.findById(idGift);
+		Gift gift = new Gift();
+		gift.setIdGift(idGift);
+		gift = gift.findById();
 		if (gift == null)
 			return Response.status(Status.SERVICE_UNAVAILABLE).build();
 		else
@@ -96,11 +98,13 @@ public class GiftAPI extends Application {
 	public Response delete(@QueryParam("idGift") int idGift) {
 		if (idGift == 0)
 			return Response.status(Status.BAD_REQUEST).build();
-		Gift gift = Gift.findById(idGift);
+		Gift gift = new Gift();
+		gift.setIdGift(idGift);
+		gift = gift.findById();
 		boolean delete = gift.delete();
 		if (!delete)
 			return Response.status(Status.SERVICE_UNAVAILABLE).build();
 		else
-			return Response.status(Status.NO_CONTENT).entity(gift).build();
+			return Response.status(Status.NO_CONTENT).entity(true).build();
 	}
 }

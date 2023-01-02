@@ -83,9 +83,7 @@ public class GiftDAO implements DAO<Gift> {
 
 	@Override
 	public boolean update(Gift obj) {
-		
 		MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
-
 		parameters.add("idGift", String.valueOf(obj.getIdGift()));
 		parameters.add("name", obj.getName());
 		parameters.add("description", obj.getDescription());
@@ -98,10 +96,7 @@ public class GiftDAO implements DAO<Gift> {
 		
 		String b64 = "";
 		if(obj.getImage() != null && obj.getImage().length > 0)
-		{
 			b64 = Base64.getEncoder().encodeToString(obj.getImage());
-			
-		}
 		parameters.add("image", b64);
 		
 		ClientResponse res = resource.path("gift").path("update").post(ClientResponse.class, parameters);

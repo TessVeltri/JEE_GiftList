@@ -29,41 +29,47 @@ public class InfoList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String idGift = request.getParameter("idGift");
+		String idUser = request.getParameter("idUser");
+		String idGiftList = request.getParameter("idGiftList");
 		ArrayList<String> errors = new ArrayList<>();
 		User user = (User) request.getSession().getAttribute("user");
+		GiftList giftList = new GiftList();
+		if (idGiftList != null) {
+			giftList.setIdGiftList(Integer.parseInt(idGiftList));
+			giftList = giftList.findById();
+		}
 		if (idGift != null) {
-			// delete
+			// delete gift
 			Gift gift = new Gift();
 			gift.setIdGift(Integer.parseInt(idGift));
 			gift = gift.findById();
 			if (gift.getLstReserve().size() > 0) {
 				errors.add("This gift has already been reserved. You can't delete it.");
+				giftList = giftList.findById();
 				request.setAttribute("errorsDeleteGift", errors);
-				for (GiftList gl : user.getMyLists()) {
-					gl = gl.find();
-					for (Gift g : gl.getLstGift()) {
-						if (g.getIdGift() == Integer.parseInt(idGift)) {
-							request.setAttribute("giftList", gl);
-						}
-					}
-				}
+				request.setAttribute("giftList", giftList);
 			} else {
-
-				GiftList myList = null;
-				for (GiftList gl : user.getMyLists()) {
-					gl = gl.find();
-					for (Gift g : gl.getLstGift()) {
-						if (g.getIdGift() == Integer.parseInt(idGift)) {
-							myList = gl;
-
-						}
-					}
-				}
+				GiftList myList = new GiftList();
+				myList.setIdGiftList(Integer.parseInt(idGiftList));
 				boolean delete = gift.delete();
 				if (delete) {
-					myList.deleteLstGift(gift);
+					//myList.deleteLstGift(gift);
+					myList = myList.findById();
 					request.setAttribute("giftList", myList);
 				}
+			}
+		}
+		
+		if (idUser != null) {
+			// delete participant 
+			User participant = new User();
+			participant.setIdUser(Integer.parseInt(idUser));
+			participant = participant.findById();
+			
+			boolean delete = participant.deleteParticipation(giftList);
+			if (delete) {
+				giftList.deleteLstParticipant(participant);
+				request.setAttribute("giftList", giftList);
 			}
 		}
 

@@ -195,7 +195,9 @@ public class GiftList implements Serializable {
 		return giftListDAO.find(this);
 	}
 	
-	
+	public GiftList findById() {
+		return giftListDAO.findById(this.getIdGiftList());
+	}
 
 	public boolean create () {
 		return giftListDAO.create(this);

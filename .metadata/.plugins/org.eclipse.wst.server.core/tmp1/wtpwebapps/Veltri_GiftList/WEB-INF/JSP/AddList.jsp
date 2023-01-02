@@ -96,7 +96,7 @@ if (gl.isActive()) {
 				<%
 				int index = 0;
 				for (Gift g : lstGifts) {
-					
+
 					String b64 = "";
 
 					String image = "";
@@ -122,11 +122,13 @@ if (gl.isActive()) {
 					<td><%=g.getPriority().toString()%></td>
 					<td><%=g.getWebsiteLink()%></td>
 					<td><%=g.getStatusGift().toString()%></td>
-					<td><button type="button" class="btn child" onclick="location.href='/Veltri_GiftList/modifyGift?idGift=<%= index %>&where=local'">
+					<td><button type="button" class="btn child"
+							onclick="location.href='/Veltri_GiftList/modifyGift?idGift=<%=index%>&where=local'">
 							<img width="25px" height="25px"
 								src="/Veltri_GiftList/IMG/pen.png"></img>
 						</button></td>
-					<td><button type="button" class="btn child" onclick="location.href='/Veltri_GiftList/addList?idGift=<%= index %>'">
+					<td><button type="button" class="btn child"
+							onclick="location.href='/Veltri_GiftList/addList?idGift=<%=index%>'">
 							<img width="25px" height="25px"
 								src="/Veltri_GiftList/IMG/delete.png"></img>
 						</button></td>
@@ -137,10 +139,38 @@ if (gl.isActive()) {
 				%>
 			</table>
 
-			<button type="button" onclick="addGiftBtn()">
+			<button type="button" id="addGift" onclick="addGiftBtn()">
 				<img width="30px" height="30px" src="/Veltri_GiftList/IMG/plus.png"></img>
 			</button>
 		</div>
+		<div align="center">
+			<h3>
+				<em>Participant:</em>
+			</h3>
+			<h4>Names</h4>
+			<%
+			for (User u : gl.getLstParticipant()) {
+			%>
+			<div style="display: block;">
+				<%=u.getName()%>
+				<%=u.getFirstname()%>
+				<button class="btn child" onclick="">
+					<img width="25px" height="25px"
+						src="/Veltri_GiftList/IMG/delete.png"></img>
+				</button>
+			</div>
+
+			<%
+			}
+			%>
+
+			<button type="button" id="addParticipant"
+				onclick="addParticipantBtn()">
+				<img width="30px" height="30px" src="/Veltri_GiftList/IMG/plus.png"></img>
+			</button>
+
+		</div>
+
 		<%
 		if (lstGifts.size() > 0) {
 			disabledBtn = "";

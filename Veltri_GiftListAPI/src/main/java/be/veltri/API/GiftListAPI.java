@@ -1,9 +1,11 @@
 package be.veltri.API;
 
 import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -66,6 +68,21 @@ public class GiftListAPI extends Application {
 			return Response.status(Status.SERVICE_UNAVAILABLE).build();
 		else 
 			return Response.status(Status.CREATED).entity(true).build();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/findById")
+	public Response findById(@QueryParam("idGiftList") int idGiftList) {
+		if (idGiftList == 0)
+			return Response.status(Status.BAD_REQUEST).build();
+		GiftList gl = new GiftList();
+		gl.setIdGiftList(idGiftList);
+		gl = gl.findById();
+		if (gl == null)
+			return Response.status(Status.SERVICE_UNAVAILABLE).build();
+		else
+			return Response.status(Status.OK).entity(gl).build();
 	}
 
 }

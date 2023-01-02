@@ -179,8 +179,8 @@ public class Gift implements Serializable{
 		return giftDAO.findAll();
 	}
 	
-	public static Gift findById(int id) {
-		return giftDAO.findById(id);
+	public Gift findById() {
+		return giftDAO.findById(this.getIdGift());
 	}
     
 	public boolean create () {

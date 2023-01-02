@@ -15,8 +15,10 @@ import javax.servlet.http.Part;
 
 import be.veltri.ENUMS.EnumPriority;
 import be.veltri.ENUMS.EnumStatusGift;
+import be.veltri.ENUMS.EnumStatusList;
 import be.veltri.JAVABEANS.Gift;
 import be.veltri.JAVABEANS.GiftList;
+import be.veltri.JAVABEANS.User;
 
 /**
  * Servlet implementation class VerifAddGift
@@ -96,12 +98,43 @@ public class VerifAddGift extends HttpServlet {
 		String imgExt = imgName.substring(i + 1);
 		byte[] image = img.getInputStream().readAllBytes();
 
+		String idGiftList = null;
+		Part idGiftListPart = request.getPart("idGiftList");
+		try (Scanner scanner = new Scanner(idGiftListPart.getInputStream())) {
+			idGiftList = scanner.nextLine(); // read from the part
+		} catch (Exception ex) {
+
+		}
+
 		GiftList gl = (GiftList) request.getSession().getAttribute("addList");
-		Gift gift = new Gift(nameGift, desc, Integer.parseInt(price), EnumPriority.valueOf(priority), weblink,
-				EnumStatusGift.Free, image, imgName, imgExt, gl);
-		gl.addLstGift(gift);
-		request.setAttribute("addList", gl);
-		request.getRequestDispatcher("/addList").forward(request, response);
+		Gift gift = null;
+
+		if (idGiftList != null && idGiftList != "") {
+			gl = new GiftList();
+			gl.setIdGiftList(Integer.parseInt(idGiftList));
+			gl = gl.findById();
+			gl.setStatusList(EnumStatusList.Active);
+			User user = (User) request.getSession().getAttribute("user");
+
+			gl.setOwner(user);
+
+			gift = new Gift(nameGift, desc, Integer.parseInt(price), EnumPriority.valueOf(priority), weblink,
+					EnumStatusGift.Free, image, imgName, imgExt, gl);
+			boolean create = gift.create();
+			if (create) {
+				gl.addLstGift(gift);
+				request.setAttribute("giftList", gl);
+				request.getRequestDispatcher("/infoList").forward(request, response);
+			}
+
+		} else {
+			gl = (GiftList) request.getSession().getAttribute("addList");
+			gift = new Gift(nameGift, desc, Integer.parseInt(price), EnumPriority.valueOf(priority), weblink,
+					EnumStatusGift.Free, image, imgName, imgExt, gl);
+			gl.addLstGift(gift);
+			request.setAttribute("addList", gl);
+			request.getRequestDispatcher("/addList").forward(request, response);
+		}
 
 	}
 

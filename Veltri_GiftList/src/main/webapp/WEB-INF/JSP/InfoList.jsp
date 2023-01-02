@@ -35,6 +35,7 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 	} else {
 	// false -> afficher la date
 	%>
+	<h4> <u>Occasion :</u> <%=gl.getOccasion() %> </h4>
 	<h4>
 
 		<div id="getDate" style="display: block;">
@@ -124,7 +125,7 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 				<td><button type="button" class="btn child" onclick="location.href='/Veltri_GiftList/modifyGift?idGift=<%= g.getIdGift() %>&where=server'">
 						<img width="25px" height="25px" src="/Veltri_GiftList/IMG/pen.png"></img>
 					</button></td>
-				<td><button type="button" class="btn child" onclick="location.href='/Veltri_GiftList/infoList?idGift=<%= g.getIdGift() %>'">
+				<td><button type="button" class="btn child" onclick="location.href='/Veltri_GiftList/infoList?idGift=<%= g.getIdGift() %>&idGiftList=<%= gl.getIdGiftList()%>'">
 						<img width="25px" height="25px"
 							src="/Veltri_GiftList/IMG/delete.png"></img>
 					</button></td>
@@ -133,6 +134,9 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 			}
 			%>
 		</table>
+		<button type="button" id="addGiftBtn" onclick="location.href='/Veltri_GiftList/addGift?idGiftList=<%=gl.getIdGiftList()%>'">
+				<img width="30px" height="30px" src="/Veltri_GiftList/IMG/plus.png"></img>
+		</button>
 	</div>
 	<h3 align="center">
 		<em><u>All participants</u></em>
@@ -146,16 +150,18 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 		<div style="display: block;">
 			<%=u.getName()%>
 			<%=u.getFirstname()%>
-			<button class="btn child" onclick="">
+			<button class="btn child" onclick="location.href='/Veltri_GiftList/infoList?idUser=<%= u.getIdUser() %>&idGiftList=<%= gl.getIdGiftList()%>'">
 				<img width="25px" height="25px"
 					src="/Veltri_GiftList/IMG/delete.png"></img>
 			</button>
 		</div>
 
-
 		<%
 		}
 		%>
+		<button type="button" id="addParticipantBtn" onclick="location.href='/Veltri_GiftList/addParticipant?idGiftList=<%=gl.getIdGiftList()%>'">
+				<img width="30px" height="30px" src="/Veltri_GiftList/IMG/plus.png"></img>
+		</button>
 	</div>
 
 
@@ -173,7 +179,6 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 			getDate.style.display = 'block';
 			modifyDate.style.display = 'none';
 		}
-
 	}
 </script>
 </html>

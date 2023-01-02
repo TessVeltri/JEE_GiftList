@@ -41,12 +41,13 @@ public class ReserveDAO implements DAO<Reserve>{
 	@Override
 	public ArrayList<Reserve> findAll() {
 		ArrayList<Reserve> lstReserve = new ArrayList<>();
-		User user = null;
+		User user = new User();
 		try {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeQuery("SELECT * FROM JEE_Reserve");
 			while (result.next()) {
-				user = User.findById(result.getInt("idUser"));
+				user.setIdUser(result.getInt("idUser"));
+				user = user.findById();
 				Reserve reserve = new Reserve(result.getInt("amount"), user);
 				lstReserve.add(reserve);
 			}

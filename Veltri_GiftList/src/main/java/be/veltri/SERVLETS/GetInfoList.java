@@ -30,30 +30,16 @@ public class GetInfoList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		User user = (User) session.getAttribute("user");
-		String from = request.getParameter("from");
 		String order = request.getParameter("orderId");
 		int orderId = Integer.parseInt(order);
-		if (from.equals("my")) {
-			GiftList gl = user.getMyLists().get(orderId);
-			GiftList giftL = gl.find();
-			if (giftL != null) {
-				request.setAttribute("giftList", giftL);
-				request.getRequestDispatcher("/infoList").forward(request,response);
-			} else {
-				// une erreur est survenue, réessayer plus tard
-			}
+		GiftList gl = new GiftList();
+		gl.setIdGiftList(orderId);
+		gl = gl.findById();
+		if (gl != null) {
+			request.setAttribute("giftList", gl);
+			request.getRequestDispatcher("/infoList").forward(request, response);
 		} else {
-			GiftList gl = user.getLstGiftList().get(orderId);
-			GiftList giftL = gl.find();
-			if (giftL != null) {
-				request.setAttribute("giftList", giftL);
-				request.getRequestDispatcher("/infoList").forward(request,response);
-			} else {
-				// une erreur est survenue, réessayer plus tard
-			}
-			
+			request.getRequestDispatcher("/home").forward(request, response);
 		}
 	}
 
