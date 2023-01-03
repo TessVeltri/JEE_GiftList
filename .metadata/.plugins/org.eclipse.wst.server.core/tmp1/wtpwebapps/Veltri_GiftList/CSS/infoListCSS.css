@@ -99,3 +99,7 @@ thead th:nth-child(4) {
 th, td {
 	padding: 20px;
 }
+
+.deleteBtn {
+	margin-top: 20px;
+}

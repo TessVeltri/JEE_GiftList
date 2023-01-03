@@ -59,12 +59,12 @@ public class Authentication extends HttpServlet {
 					session=request.getSession();
 				}
 				session.setAttribute("user", user);
-				request.getRequestDispatcher("/home").forward(request,response);
+				response.sendRedirect("home");
 			} else {
 				User u = new User("","",email, password);
 				session.setAttribute("userConnect", u);
 				request.setAttribute("errorsConnect", errors);
-				request.getRequestDispatcher("/connection").forward(request,response);
+				response.sendRedirect("connection");
 			}
 		}
 	}

@@ -1,12 +1,15 @@
 package be.veltri.SERVLETS;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import be.veltri.ENUMS.EnumStatusList;
 import be.veltri.JAVABEANS.*;
 
 /**
@@ -31,12 +34,39 @@ public class InfoList extends HttpServlet {
 		String idGift = request.getParameter("idGift");
 		String idUser = request.getParameter("idUser");
 		String idGiftList = request.getParameter("idGiftList");
+		String limitDate = request.getParameter("limitDateModify");
+		String isActive = request.getParameter("isActive");
 		ArrayList<String> errors = new ArrayList<>();
-		User user = (User) request.getSession().getAttribute("user");
 		GiftList giftList = new GiftList();
 		if (idGiftList != null) {
 			giftList.setIdGiftList(Integer.parseInt(idGiftList));
 			giftList = giftList.findById();
+		}
+		if (isActive != null) {
+			// modifier le switch active/inactive
+			EnumStatusList status;
+			if (isActive.equals(EnumStatusList.Active.toString()))
+				status = EnumStatusList.Inactive;
+			else 
+				status = EnumStatusList.Active;
+			giftList.setStatusList(status);
+			boolean update = giftList.update();
+			if (update)
+				request.setAttribute("giftList", giftList);
+		}
+		if (limitDate != null) {
+			// modifier la date (format : 2023-02-26)
+			LocalDate lmtDate = LocalDate.parse(limitDate);
+			if (lmtDate.isBefore(LocalDate.now()) || lmtDate.isEqual(LocalDate.now())) {
+				errors.add("Choose a date after today.");
+				request.setAttribute("errors", errors);
+				request.setAttribute("giftList", giftList);
+			} else {
+				giftList.setLimitDate(limitDate);
+				boolean update = giftList.update();
+				if (update)
+					request.setAttribute("giftList", giftList);
+			}
 		}
 		if (idGift != null) {
 			// delete gift
@@ -46,7 +76,7 @@ public class InfoList extends HttpServlet {
 			if (gift.getLstReserve().size() > 0) {
 				errors.add("This gift has already been reserved. You can't delete it.");
 				giftList = giftList.findById();
-				request.setAttribute("errorsDeleteGift", errors);
+				request.setAttribute("errors", errors);
 				request.setAttribute("giftList", giftList);
 			} else {
 				GiftList myList = new GiftList();

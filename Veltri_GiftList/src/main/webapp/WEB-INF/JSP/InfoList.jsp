@@ -11,7 +11,7 @@
 <jsp:include page="Header.jsp"></jsp:include>
 </head>
 <%
-ArrayList<String> errors = (ArrayList<String>)request.getAttribute("errorsDeleteGift");
+ArrayList<String> errors = (ArrayList<String>)request.getAttribute("errors");
 GiftList gl = (GiftList) request.getAttribute("giftList");
 %>
 <body>
@@ -27,7 +27,7 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 			check = "checked";
 	%>
 	<div>
-		Inactive <label class="switch"> <input onclick=""
+		Inactive <label class="switch"> <input onclick="location.href='/Veltri_GiftList/infoList?idGiftList=<%=gl.getIdGiftList()%>&isActive=<%=status %>'"
 			type="checkbox" <%=check%>> <span class="slider round"></span>
 		</label> Active
 	</div>
@@ -48,9 +48,9 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 		</div>
 		<div id="modifyDate" style="display: none;">
 			<div class="child">Date :</div>
-			<input type="date" name="limitDate" id="limitDate"
+			<input type="date" name="limitDateModify" id="limitDateModify"
 				value=<%=gl.getLimitDate()%> class="child"></input>
-			<button class="btn child" onclick="btnClick()">
+			<button class="btn child" onclick="modifyDateClick()">
 				<img width="25px" height="25px" src="/Veltri_GiftList/IMG/valid.png"></img>
 			</button>
 		</div>
@@ -134,7 +134,7 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 			}
 			%>
 		</table>
-		<button type="button" id="addGiftBtn" onclick="location.href='/Veltri_GiftList/addGift?idGiftList=<%=gl.getIdGiftList()%>'">
+		<button class="btn" type="button" id="addGiftBtn" onclick="location.href='/Veltri_GiftList/addGift?idGiftList=<%=gl.getIdGiftList()%>'">
 				<img width="30px" height="30px" src="/Veltri_GiftList/IMG/plus.png"></img>
 		</button>
 	</div>
@@ -159,8 +159,15 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 		<%
 		}
 		%>
-		<button type="button" id="addParticipantBtn" onclick="location.href='/Veltri_GiftList/addParticipant?idGiftList=<%=gl.getIdGiftList()%>'">
+		<button class="btn" type="button" id="addParticipantBtn" onclick="location.href='/Veltri_GiftList/addParticipant?idGiftList=<%=gl.getIdGiftList()%>'">
 				<img width="30px" height="30px" src="/Veltri_GiftList/IMG/plus.png"></img>
+		</button>
+	</div>
+	
+	<div align="center" class="btn">
+		<button type="button" onclick="location.href= '/Veltri_GiftList/deleteGiftList?idGiftList=<%= gl.getIdGiftList()%>'"><p style="color: red; vertical-align: center;">DELETE THIS LIST</p>
+		<img width="25px" height="25px"
+					src="/Veltri_GiftList/IMG/deleteRed.png"></img>
 		</button>
 	</div>
 
@@ -170,6 +177,7 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 <script>
 	const getDate = document.getElementById("getDate");
 	const modifyDate = document.getElementById("modifyDate");
+	const limitDateModify = document.getElementById("limitDateModify");
 
 	function btnClick() {
 		if (getDate.style.display == 'block') {
@@ -179,6 +187,12 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 			getDate.style.display = 'block';
 			modifyDate.style.display = 'none';
 		}
+	}
+	
+	function modifyDateClick(){
+		window.location.href= '/Veltri_GiftList/infoList?limitDateModify='
+				+ limitDateModify.value + '&idGiftList=<%=gl.getIdGiftList()%>';
+		
 	}
 </script>
 </html>

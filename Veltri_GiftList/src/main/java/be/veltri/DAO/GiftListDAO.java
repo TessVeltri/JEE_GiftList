@@ -59,13 +59,36 @@ public class GiftListDAO implements DAO<GiftList>{
 
 	@Override
 	public boolean delete(GiftList obj) {
-		// TODO Auto-generated method stub
+		ClientResponse res= resource
+				.path("giftList")
+				.path("delete")
+				.queryParam("idGiftList",String.valueOf(obj.getIdGiftList()))
+				.delete(ClientResponse.class);
+		int StatusCode=res.getStatus();
+		if(StatusCode == 204) {
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public boolean update(GiftList obj) {
-		// TODO Auto-generated method stub
+		MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
+		parameters.add("idGiftList", String.valueOf(obj.getIdGiftList()));
+		parameters.add("nameList", obj.getNameList());
+		parameters.add("limitDate", obj.getLimitDate());
+		parameters.add("isActive", String.valueOf(obj.isActive()));
+		parameters.add("occasion", obj.getOccasion());
+		parameters.add("statusList", obj.getStatusList().toString());
+		parameters.add("ownerEmail", obj.getOwner().getEmail());
+		ClientResponse res= resource
+				.path("giftList")
+				.path("update")
+				.post(ClientResponse.class,parameters);
+		int StatusCode=res.getStatus();
+		if(StatusCode == 202) {
+			return true;
+		}
 		return false;
 	}
 

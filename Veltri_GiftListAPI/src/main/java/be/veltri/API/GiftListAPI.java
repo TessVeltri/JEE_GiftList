@@ -1,5 +1,6 @@
 package be.veltri.API;
 
+import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -12,6 +13,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import be.veltri.ENUMS.EnumStatusList;
+import be.veltri.JAVABEANS.Gift;
 import be.veltri.JAVABEANS.GiftList;
 import be.veltri.JAVABEANS.User;
 
@@ -83,6 +85,41 @@ public class GiftListAPI extends Application {
 			return Response.status(Status.SERVICE_UNAVAILABLE).build();
 		else
 			return Response.status(Status.OK).entity(gl).build();
+	}
+	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/update")
+	public Response update(@FormParam("idGiftList") String idGiftList, @FormParam("nameList") String nameList, @FormParam("limitDate") String limitDate,
+			@FormParam("occasion") String occasion, @FormParam("statusList") String statusList,
+			@FormParam("isActive") String isActive, @FormParam("ownerEmail") String ownerEmail) {
+		if (idGiftList == null || nameList == null || limitDate == null || occasion == null || statusList == null)
+			return Response.status(Status.BAD_REQUEST).build();
+		EnumStatusList status = EnumStatusList.valueOf(statusList);
+		User owner = new User("","",ownerEmail, "");
+		GiftList gl = new GiftList (nameList, limitDate, occasion, status, Boolean.parseBoolean(isActive), owner.find());
+		gl.setIdGiftList(Integer.parseInt(idGiftList));
+		boolean update = gl.update();
+		if (!update)
+			return Response.status(Status.SERVICE_UNAVAILABLE).build();
+		else 
+			return Response.status(Status.ACCEPTED).entity(true).build();
+	}
+	
+	@DELETE
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/delete")
+	public Response delete(@QueryParam("idGiftList") int idGiftList) {
+		if (idGiftList == 0)
+			return Response.status(Status.BAD_REQUEST).build();
+		GiftList giftList = new GiftList();
+		giftList.setIdGiftList(idGiftList);
+		giftList = giftList.findById();
+		boolean delete = giftList.delete();
+		if (!delete)
+			return Response.status(Status.SERVICE_UNAVAILABLE).build();
+		else
+			return Response.status(Status.NO_CONTENT).entity(true).build();
 	}
 
 }

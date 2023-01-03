@@ -89,6 +89,10 @@
 		<servlet-name>VerifAddParticipant</servlet-name>
 		<servlet-class>be.veltri.SERVLETS.VerifAddParticipant</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>DeleteGiftList</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.DeleteGiftList</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Connection</servlet-name>
@@ -165,6 +169,10 @@
 	<servlet-mapping>
 		<servlet-name>VerifAddParticipant</servlet-name>
 		<url-pattern>/verifAddParticipant</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteGiftList</servlet-name>
+		<url-pattern>/deleteGiftList</url-pattern>
 	</servlet-mapping>
 
 </web-app>

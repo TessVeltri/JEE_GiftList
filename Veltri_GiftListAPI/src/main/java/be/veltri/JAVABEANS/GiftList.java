@@ -163,6 +163,14 @@ public class GiftList implements Serializable{
 		return giftlistDAO.create(this);
 	}
 	
+	public boolean update () {
+		return giftlistDAO.update(this);
+	}
+	
+	public boolean delete () {
+		return giftlistDAO.delete(this);
+	}
+	
 	public int findId() {
 		return giftlistDAO.findId(this);
 	}

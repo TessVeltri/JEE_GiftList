@@ -1,3 +1,4 @@
+<%@page import="be.veltri.ENUMS.EnumStatusList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
@@ -49,24 +50,49 @@ body {
 		<h2><u>Active lists</u></h2>
 		<%
 		for (GiftList gl : myLists) {
+			if (gl.getStatusList().toString().equals(EnumStatusList.Active.toString())){
 			
 		%><button class="folder" onclick="location.href='/Veltri_GiftList/getInfoList?orderId=<%= gl.getIdGiftList() %>'">
 			<p style="color: red; margin: 5px;">My list</p><%=gl.getNameList()%>
 		  </button>
 		<%
-		}
+		}}
 		%>
 		<%
 		for (GiftList gl : giftLists) {
-		%><button class="folder" onclick="location.href='/Veltri_GiftList/getinfoList?orderId=<%= gl.getIdGiftList() %>'"><%=gl.getNameList()%></button>
+			if (gl.getStatusList().toString().equals(EnumStatusList.Active.toString())){
+		%><button class="folder" onclick="location.href='/Veltri_GiftList/getInfoList?orderId=<%= gl.getIdGiftList() %>'"><%=gl.getNameList()%></button>
 		<%
-		}
+		}}
 		%>
 	</div>
 	<div align="center">
 		<h2><u>Inactive or close lists</u></h2>
+	
+		<%
+		for (GiftList gl : myLists) {
+			if (!gl.getStatusList().toString().equals(EnumStatusList.Active.toString())){
+			
+		%><button class="folder" onclick="location.href='/Veltri_GiftList/getInfoList?orderId=<%= gl.getIdGiftList() %>'">
+			<p style="color: red; margin: 5px;">My list</p><%=gl.getNameList()%>
+		  </button>
+		<%
+		}}
+		%>
+		<%
+		for (GiftList gl : giftLists) {
+			if (!gl.getStatusList().toString().equals(EnumStatusList.Active.toString())){
+		%><button class="folder" onclick="noAccess()"><%=gl.getNameList()%></button>
+		<%
+		}}
+		%>
 	</div>
 	
 </body>
 <jsp:include page="Footer.jsp"></jsp:include>
+<script>
+	function noAccess(){
+		alert("You can't access to inactive or close list");
+	}
+</script>
 </html>

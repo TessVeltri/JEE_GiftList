@@ -109,7 +109,7 @@ public class VerifAddGift extends HttpServlet {
 		GiftList gl = (GiftList) request.getSession().getAttribute("addList");
 		Gift gift = null;
 
-		if (idGiftList != null && idGiftList != "") {
+		if (idGiftList != null && idGiftList != "" && !idGiftList.equals("null")) {
 			gl = new GiftList();
 			gl.setIdGiftList(Integer.parseInt(idGiftList));
 			gl = gl.findById();

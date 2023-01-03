@@ -123,8 +123,10 @@ public class UserDAO implements DAO<User> {
 				if (user.getEmail().equals(gl.getOwner().getEmail()))
 					user.addMyList(gl);
 
-				if (gl.getLstParticipant().contains(user))
-					user.addLstGiftList(gl);
+				for (User u : gl.getLstParticipant()) {
+					if (u.getEmail().equals(user.getEmail()))
+						user.addLstGiftList(gl);
+				}
 			}
 			return user;
 		} catch (SQLException e) {
