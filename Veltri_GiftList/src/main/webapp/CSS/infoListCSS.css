@@ -68,7 +68,6 @@ input:checked+.slider:before {
 	border: transparent;
 	margin-left: 20px;
 }
-
 .child {
 	display: inline-block;
 	vertical-align: middle;
@@ -100,6 +99,3 @@ th, td {
 	padding: 20px;
 }
 
-.deleteBtn {
-	margin-top: 20px;
-}

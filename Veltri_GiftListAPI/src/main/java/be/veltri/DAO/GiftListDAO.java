@@ -94,7 +94,6 @@ public class GiftListDAO implements DAO<GiftList> {
 							+ "WHERE idGiftList = '" + obj.getIdGiftList() + "'");
 			return true;
 		} catch (SQLException e) {
-
 			e.printStackTrace();
 			return false;
 		}

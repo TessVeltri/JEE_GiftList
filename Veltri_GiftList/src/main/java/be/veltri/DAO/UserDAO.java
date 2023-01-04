@@ -62,7 +62,20 @@ public class UserDAO implements DAO<User> {
 
 	@Override
 	public boolean update(User obj) {
-		// TODO Auto-generated method stub
+		MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
+		parameters.add("idUser", String.valueOf(obj.getIdUser()));
+		parameters.add("name", obj.getName());
+		parameters.add("firstname", obj.getFirstname());
+		parameters.add("email", obj.getEmail());
+		parameters.add("password", obj.getPassword());
+		ClientResponse res= resource
+				.path("user")
+				.path("update")
+				.post(ClientResponse.class,parameters);
+		int StatusCode=res.getStatus();
+		if(StatusCode == 202) {
+			return true;
+		}
 		return false;
 	}
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="javax.naming.Context"/>
     <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
@@ -13,7 +12,6 @@
     <fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
     <fullyQualifiedTypeName name="javax.ws.rs.core.Response.Status"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
-    <fullyQualifiedTypeName name="be.veltri.DAO.NotificationDAO"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="be.veltri.DAO.ReserveDAO"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.SerializationFeature"/>
@@ -22,14 +20,12 @@
     <fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="be.veltri.DAO.GiftListDAO"/>
-    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.Notification"/>
     <fullyQualifiedTypeName name="javax.ws.rs.core.Application"/>
     <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
     <fullyQualifiedTypeName name="javax.ws.rs.POST"/>
     <fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
     <fullyQualifiedTypeName name="javax.ws.rs.FormParam"/>
     <fullyQualifiedTypeName name="be.veltri.JAVABEANS.Reserve"/>
-    <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="be.veltri.ENUMS.EnumStatusGift"/>
     <fullyQualifiedTypeName name="javax.servlet.http.Part"/>
     <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
@@ -52,8 +48,12 @@
     <fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
     <fullyQualifiedTypeName name="javax.ws.rs.DELETE"/>
     <fullyQualifiedTypeName name="be.veltri.JAVABEANS.Gift"/>
-    <fullyQualifiedTypeName name="be.veltri.ENUMS.EnumStatusList"/>
-    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.User"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="be.veltri.JAVABEANS.GiftList"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="be.veltri.ENUMS.EnumStatusList"/>
+    <fullyQualifiedTypeName name="be.veltri.DAO.NotificationDAO"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.Notification"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.User"/>
 </qualifiedTypeNameHistroy>

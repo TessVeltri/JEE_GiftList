@@ -1,11 +1,16 @@
 package be.veltri.SERVLETS;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import be.veltri.JAVABEANS.Notification;
+import be.veltri.JAVABEANS.User;
 
 /**
  * Servlet implementation class MyNotifications
@@ -24,6 +29,15 @@ public class MyNotifications extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ArrayList<Notification> allNotifs = Notification.findAll();
+		User user = (User) request.getSession().getAttribute("user");
+		user.getLstNotification().clear();
+		for (Notification notif : allNotifs) {
+			if (notif.getUser().getIdUser() == user.getIdUser()) {
+				user.addLstNotification(notif);
+			}
+		}
+		request.getSession().setAttribute("user", user);
 		request.getRequestDispatcher("/WEB-INF/JSP/MyNotifications.jsp").forward(request,response);
 	}
 

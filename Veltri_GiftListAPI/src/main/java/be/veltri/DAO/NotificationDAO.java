@@ -3,9 +3,16 @@ package be.veltri.DAO;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
+import be.veltri.ENUMS.EnumPriority;
+import be.veltri.ENUMS.EnumStatusGift;
+import be.veltri.JAVABEANS.Gift;
 import be.veltri.JAVABEANS.Notification;
+import be.veltri.JAVABEANS.Reserve;
 import be.veltri.JAVABEANS.User;
 
 public class NotificationDAO implements DAO<Notification> {
@@ -14,8 +21,16 @@ public class NotificationDAO implements DAO<Notification> {
 
 	@Override
 	public boolean create(Notification obj) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			this.conn.createStatement()
+					.executeUpdate("INSERT INTO JEE_Notification (commentNotif, isRead, idUser) VALUES ('"
+							+ obj.getComment() + "', 'N', '" + obj.getUser().getIdUser() + "')");
+			return true;
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
@@ -26,8 +41,21 @@ public class NotificationDAO implements DAO<Notification> {
 
 	@Override
 	public boolean update(Notification obj) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			String read = "N";
+			if (obj.isRead())
+				read = "Y";
+
+			this.conn.createStatement()
+					.executeUpdate("UPDATE JEE_Notification SET commentNotif = '" + obj.getComment() + "', isRead = '"
+							+ read + "', idUser = '" + obj.getUser().getIdUser() + "' WHERE idNotification = '"
+							+ obj.getIdNotif() + "'");
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+
 	}
 
 	@Override
@@ -39,15 +67,17 @@ public class NotificationDAO implements DAO<Notification> {
 	@Override
 	public ArrayList<Notification> findAll() {
 		ArrayList<Notification> lstNotif = new ArrayList<>();
-		User user = new User();
+
 		try {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeQuery("SELECT * FROM JEE_Notification");
 			while (result.next()) {
+				User user = new User();
 				user.setIdUser(result.getInt("idUser"));
 				user = user.findById();
 				Notification notif = new Notification(result.getString("commentNotif"), result.getBoolean("isRead"),
 						user);
+				notif.setIdNotif(result.getInt("idNotification"));
 				lstNotif.add(notif);
 			}
 			result.close();
@@ -60,8 +90,22 @@ public class NotificationDAO implements DAO<Notification> {
 
 	@Override
 	public Notification findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Notification notif = null;
+		try {
+			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
+					.executeQuery("SELECT * FROM JEE_Notification WHERE idNotification = '" + id + "'");
+			if (result.first()) {
+				User user = new User();
+				user.setIdUser(result.getInt("idUser"));
+				user = user.findById();
+				notif = new Notification(result.getString("commentNotif"), result.getBoolean("isRead"), user);
+				notif.setIdNotif(result.getInt("idNotification"));
+			}
+			return notif;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override

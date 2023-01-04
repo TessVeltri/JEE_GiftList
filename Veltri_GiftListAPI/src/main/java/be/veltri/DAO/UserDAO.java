@@ -3,6 +3,7 @@ package be.veltri.DAO;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import be.veltri.JAVABEANS.GiftList;
@@ -36,8 +37,16 @@ public class UserDAO implements DAO<User> {
 
 	@Override
 	public boolean update(User obj) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			this.conn.createStatement()
+					.executeUpdate("UPDATE JEE_User SET nameUser = '" + obj.getName() + "', firstnameUser = '"
+							+ obj.getFirstname() + "', emailUser = '" + obj.getEmail() + "', passwordUser = '"
+							+ obj.getPassword() + "' WHERE idUser = '" + obj.getIdUser() + "'");
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
@@ -87,7 +96,7 @@ public class UserDAO implements DAO<User> {
 			if (result.first()) {
 				user = new User(result.getString("nameUser"), result.getString("firstnameUser"),
 						result.getString("emailUser"), result.getString("passwordUser"));
-				user.setIdUser(result.getInt("idUser"));
+				user.setIdUser(id);
 			}
 			return user;
 		} catch (SQLException e) {
@@ -110,7 +119,7 @@ public class UserDAO implements DAO<User> {
 						obj.getPassword());
 				user.setIdUser(result.getInt("idUser"));
 			}
-				
+
 //			for (Notification n : allNotif) {
 //				if (user.getEmail().equals(n.getUser().getEmail()))
 //					user.getLstNotification().add(n);

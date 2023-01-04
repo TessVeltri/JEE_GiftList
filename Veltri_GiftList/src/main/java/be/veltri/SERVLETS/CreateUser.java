@@ -50,14 +50,6 @@ public class CreateUser extends HttpServlet {
 
 		String idGiftList = request.getParameter("idGiftList");
 
-//		String nameTmp = name.substring(0, 1).toUpperCase();
-//		String nameEnd = name.substring(1);
-//		name = nameTmp + nameEnd;
-//		
-//		String firstnameTmp = firstname.substring(0, 1).toUpperCase();
-//		String firstnameEnd = firstname.substring(1);
-//		firstname = firstnameTmp + firstnameEnd;
-
 		ArrayList<String> errors = new ArrayList<>();
 
 		if (name == null || firstname == null || email == null || password == null || confirmPassword == null

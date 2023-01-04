@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import be.veltri.JAVABEANS.GiftList;
+import be.veltri.JAVABEANS.Notification;
 import be.veltri.JAVABEANS.User;
 
 /**
@@ -59,17 +60,22 @@ public class VerifAddParticipant extends HttpServlet {
 				errors.add("User is already in this list.");
 		}
 
-		boolean created = false;
 		if (errors.size() == 0) {
-			created = participant.addParticipation(gl);
-			if (!created) {
-				// ???
+			boolean create = participant.addParticipation(gl);
+			if (create) {
+				Notification notif = new Notification(
+						"You have been added to the following gift list: " + gl.getNameList(), false, participant);
+				boolean notifCreate = notif.create();
+				if (notifCreate) {
+					gl = gl.findById();
+					request.setAttribute("giftList", gl);
+					request.getRequestDispatcher("/WEB-INF/JSP/InfoList.jsp").forward(request, response);
+				}
 			}
-
 		}
 		gl = gl.findById();
-		
-		request.setAttribute("errorsDeleteGift", errors);
+
+		request.setAttribute("errors", errors);
 		request.setAttribute("giftList", gl);
 		request.getRequestDispatcher("/WEB-INF/JSP/InfoList.jsp").forward(request, response);
 	}

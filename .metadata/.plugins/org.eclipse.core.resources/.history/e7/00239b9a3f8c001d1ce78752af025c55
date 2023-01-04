@@ -1,0 +1,35 @@
+package be.veltri.API;
+
+import javax.ws.rs.FormParam;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.Application;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+
+import be.veltri.JAVABEANS.Notification;
+import be.veltri.JAVABEANS.User;
+
+@Path("/notif")
+public class NotificationAPI extends Application {
+	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/create")
+	public Response create(@FormParam("comment") String comment, @FormParam("isRead") String isRead,
+			@FormParam("idUser") String idUser) {
+		if (comment == null || isRead == null || idUser == null)
+			return Response.status(Status.BAD_REQUEST).build();
+		User user = new User();
+		user.setIdUser(Integer.parseInt(idUser));
+		user = user.findById();
+		Notification notif = new Notification(comment, Boolean.parseBoolean(isRead), user);
+		boolean create = notif.create();
+		if (!create)
+			return Response.status(Status.SERVICE_UNAVAILABLE).build();
+		else
+			return Response.status(Status.CREATED).entity(true).build();
+	}
+}

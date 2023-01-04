@@ -1,0 +1,32 @@
+<%@page import="be.veltri.JAVABEANS.User"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+body {
+	margin-left: 50px;
+}
+</style>
+<jsp:include page="Header.jsp"></jsp:include>
+<%
+	User user = (User) session.getAttribute("user");
+
+%>
+<body>
+<h1>My account</h1>
+<div align="center">
+	<h3>Email adress : <%=user.getEmail() %></h3>
+	<h3>Modify email adress : <input type="text"/></h3>
+	<h3>Password : <%= user.getPassword() %></h3>
+	<h3>Modify password : <input type="text"/></h3>
+	
+</div>
+
+</body>
+<jsp:include page="Footer.jsp"></jsp:include>
+</html>

@@ -63,14 +63,8 @@ public class VerifAddList extends HttpServlet {
 				index++;
 			}
 			if (lstGiftErr.size()==0) {
-				// redirect
-			} else {
-				// cadeau intel pas passé
+				response.sendRedirect("home");
 			}
-		} else {
-			// une erreur est survenue
-		}
-		
+		}		
 	}
-
 }

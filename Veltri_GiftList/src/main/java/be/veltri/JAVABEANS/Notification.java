@@ -1,6 +1,9 @@
 package be.veltri.JAVABEANS;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+
+import be.veltri.DAO.NotificationDAO;
 
 public class Notification implements Serializable{
 
@@ -10,6 +13,8 @@ public class Notification implements Serializable{
     private String comment;
     private boolean isRead;
     private User user;
+    
+    public static NotificationDAO notifDAO = new NotificationDAO();
     
     // Constructeurs
 	public Notification() {}
@@ -56,6 +61,22 @@ public class Notification implements Serializable{
 	}
 	
 	// Méthodes
+
+	public boolean create () {
+		return notifDAO.create(this);
+	}
+	
+	public static ArrayList<Notification> findAll (){
+		return notifDAO.findAll();
+	}
+	
+	public Notification findById() {
+		return notifDAO.findById(this.getIdNotif());
+	}
+	
+	public boolean update () {
+		return notifDAO.update(this);
+	}
 
 
 }

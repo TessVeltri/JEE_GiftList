@@ -144,31 +144,9 @@ if (gl.isActive()) {
 			</button>
 		</div>
 		<div align="center">
-			<h3>
-				<em>Participant:</em>
-			</h3>
-			<h4>Names</h4>
-			<%
-			for (User u : gl.getLstParticipant()) {
-			%>
-			<div style="display: block;">
-				<%=u.getName()%>
-				<%=u.getFirstname()%>
-				<button class="btn child" onclick="">
-					<img width="25px" height="25px"
-						src="/Veltri_GiftList/IMG/delete.png"></img>
-				</button>
-			</div>
-
-			<%
-			}
-			%>
-
-			<button type="button" id="addParticipant"
-				onclick="addParticipantBtn()">
-				<img width="30px" height="30px" src="/Veltri_GiftList/IMG/plus.png"></img>
-			</button>
-
+			<h4>
+				<em>You can add participants after create the list.</em>
+			</h4>
 		</div>
 
 		<%

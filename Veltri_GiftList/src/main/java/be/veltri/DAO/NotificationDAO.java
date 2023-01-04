@@ -3,15 +3,22 @@ package be.veltri.DAO;
 import java.net.URI;
 import java.util.ArrayList;
 
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.UriBuilder;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
+import com.sun.jersey.core.util.MultivaluedMapImpl;
 
+import be.veltri.JAVABEANS.Gift;
 import be.veltri.JAVABEANS.Notification;
+import be.veltri.JAVABEANS.User;
 
 public class NotificationDAO implements DAO<Notification> {
 
@@ -34,7 +41,18 @@ public class NotificationDAO implements DAO<Notification> {
 	
 	@Override
 	public boolean create(Notification obj) {
-		// TODO Auto-generated method stub
+		MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
+		parameters.add("comment", obj.getComment());
+		parameters.add("isRead", String.valueOf(obj.isRead()));
+		parameters.add("idUser", String.valueOf(obj.getUser().getIdUser()));
+		ClientResponse res= resource
+				.path("notif")
+				.path("create")
+				.post(ClientResponse.class,parameters);
+		int StatusCode=res.getStatus();
+		if(StatusCode == 201) {
+			return true;
+		}
 		return false;
 	}
 
@@ -46,7 +64,17 @@ public class NotificationDAO implements DAO<Notification> {
 
 	@Override
 	public boolean update(Notification obj) {
-		// TODO Auto-generated method stub
+		MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
+		parameters.add("idNotif", String.valueOf(obj.getIdNotif()));
+		parameters.add("comment", obj.getComment());
+		parameters.add("isRead", String.valueOf(obj.isRead()));
+		parameters.add("idUser", String.valueOf(obj.getUser().getIdUser()));
+		
+		ClientResponse res = resource.path("notif").path("update").post(ClientResponse.class, parameters);
+		int StatusCode = res.getStatus();
+		if (StatusCode == 202) {
+			return true;
+		}
 		return false;
 	}
 
@@ -58,8 +86,17 @@ public class NotificationDAO implements DAO<Notification> {
 
 	@Override
 	public ArrayList<Notification> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String res = resource.path("notif").path("all").get(String.class);
+		ArrayList<Notification> notifs = new ArrayList<>();
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			notifs = mapper.readValue(res, new TypeReference<ArrayList<Notification>>() {
+			});
+			return notifs;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
 	}
 
 	@Override
@@ -70,7 +107,18 @@ public class NotificationDAO implements DAO<Notification> {
 
 	@Override
 	public Notification findById(int id) {
-		// TODO Auto-generated method stub
+		ClientResponse responseJSON = resource.path("notif").path("findById").queryParam("idNotif",String.valueOf(id))
+				.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
+		int status = responseJSON.getStatus();
+		if (status == 200) {
+			String response = responseJSON.getEntity(String.class);
+			try {
+				return (Notification) mapper.readValue(response, Notification.class);
+			} catch (Exception e) {
+				System.out.println(e);
+				return null;
+			}
+		}
 		return null;
 	}
 

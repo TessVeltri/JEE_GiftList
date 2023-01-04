@@ -93,6 +93,10 @@
 		<servlet-name>DeleteGiftList</servlet-name>
 		<servlet-class>be.veltri.SERVLETS.DeleteGiftList</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ReadNotification</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.ReadNotification</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Connection</servlet-name>
@@ -173,6 +177,10 @@
 	<servlet-mapping>
 		<servlet-name>DeleteGiftList</servlet-name>
 		<url-pattern>/deleteGiftList</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReadNotification</servlet-name>
+		<url-pattern>/readNotification</url-pattern>
 	</servlet-mapping>
 
 </web-app>

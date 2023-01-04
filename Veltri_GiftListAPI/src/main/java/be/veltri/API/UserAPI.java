@@ -1,6 +1,7 @@
 package be.veltri.API;
 
 import java.util.ArrayList;
+import java.util.Base64;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
@@ -14,6 +15,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import be.veltri.ENUMS.EnumPriority;
+import be.veltri.ENUMS.EnumStatusGift;
+import be.veltri.JAVABEANS.Gift;
 import be.veltri.JAVABEANS.GiftList;
 import be.veltri.JAVABEANS.User;
 
@@ -126,5 +130,21 @@ public class UserAPI extends Application {
 			return Response.status(Status.SERVICE_UNAVAILABLE).build();
 		else
 			return Response.status(Status.OK).entity(true).build();
+	}
+	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/update")
+	public Response update(@FormParam("idUser") String idUser, @FormParam("name") String name, @FormParam("firstname") String firstname,
+			@FormParam("email") String email, @FormParam("password") String password) {
+		if (idUser == null || name == null || firstname == null || email == null || password == null)
+			return Response.status(Status.BAD_REQUEST).build();
+		User user = new User(name, firstname, email, password);
+		user.setIdUser(Integer.parseInt(idUser));
+		boolean update = user.update();
+		if (!update)
+			return Response.status(Status.SERVICE_UNAVAILABLE).build();
+		else
+			return Response.status(Status.ACCEPTED).entity(true).build();
 	}
 }

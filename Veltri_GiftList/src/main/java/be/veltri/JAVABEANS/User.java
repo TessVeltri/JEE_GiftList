@@ -256,5 +256,9 @@ public class User implements Serializable{
     public User find () {
     	return userDAO.find(this);
     }
+    
+    public boolean update () {
+    	return userDAO.update(this);
+    }
 
 }

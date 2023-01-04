@@ -63,6 +63,10 @@ public class InfoList extends HttpServlet {
 				request.setAttribute("giftList", giftList);
 			} else {
 				giftList.setLimitDate(limitDate);
+				LocalDate date = LocalDate.parse(limitDate);
+				if (date.isAfter(LocalDate.now())) {
+					giftList.setStatusList(EnumStatusList.Active);
+				}
 				boolean update = giftList.update();
 				if (update)
 					request.setAttribute("giftList", giftList);

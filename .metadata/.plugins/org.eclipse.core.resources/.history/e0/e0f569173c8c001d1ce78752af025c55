@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+body {
+	margin-left: 50px;
+}
+.box{
+	width:"300px";
+	height:"200px";
+	border: 1px;
+	border-color: black;
+}
+</style>
+<jsp:include page="Header.jsp"></jsp:include>
+<body>
+<h1>My notification</h1>
+
+<div align="center" >
+<div class="box">
+	<tr>
+		<th>Comment</th>
+	</tr>
+	
+</div></div>
+
+</body>
+<jsp:include page="Footer.jsp"></jsp:include>
+</html>

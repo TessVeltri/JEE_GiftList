@@ -197,6 +197,10 @@ public class User implements Serializable{
     public boolean addParticipation(GiftList gl) {
     	return userDAO.addParticipation(this, gl);
     }
+    
+    public boolean update () {
+    	return userDAO.update(this);    
+    }
 
 
 }

@@ -62,7 +62,19 @@ public class Notification implements Serializable{
 	
 	// Méthodes
 
-	public static ArrayList<Notification> getAll (){
+	public boolean create () {
+		return notifDAO.create(this);
+	}
+	
+	public boolean update () {
+		return notifDAO.update(this);
+	}
+	
+	public Notification findById() {
+		return notifDAO.findById(this.getIdNotif());
+	}
+	
+	public static ArrayList<Notification> findAll (){
 		return notifDAO.findAll();
 	}
 
