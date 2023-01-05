@@ -35,7 +35,7 @@ table {
 }
 </style>
 <%
-	ArrayList<String> errors = (ArrayList<String>)request.getAttribute("errorsConnect");
+	ArrayList<String> errors = (ArrayList<String>)session.getAttribute("errorsConnect");
 	User user = (User) session.getAttribute("userConnect");
 	if (user == null) {
 		user = new User("", "", "", "");

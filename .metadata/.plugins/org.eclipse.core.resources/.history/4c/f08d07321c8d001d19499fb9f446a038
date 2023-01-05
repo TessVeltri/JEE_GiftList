@@ -1,0 +1,104 @@
+package be.veltri.DAO;
+
+import java.net.URI;
+import java.util.ArrayList;
+
+import javax.ws.rs.core.UriBuilder;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.client.config.ClientConfig;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
+
+import be.veltri.JAVABEANS.Notification;
+import be.veltri.JAVABEANS.Reserve;
+import be.veltri.JAVABEANS.User;
+
+public class ReserveDAO implements DAO<Reserve>{
+
+	private WebResource resource;
+	private static String apiUrl;
+	private Client client;
+	private ObjectMapper mapper;
+
+	private static URI getBaseUri() {
+		return UriBuilder.fromUri(apiUrl).build();
+	}
+
+	public ReserveDAO() {
+		ClientConfig config = new DefaultClientConfig();
+		client = Client.create(config);
+		apiUrl = getApiUrl();
+		resource = client.resource(getBaseUri());
+		mapper = new ObjectMapper();
+	}
+	
+	@Override
+	public boolean create(Reserve obj) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(Reserve obj) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(Reserve obj) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Reserve find(Reserve obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Reserve> findAll() {
+		String res = resource.path("reserve").path("all").get(String.class);
+		ArrayList<Reserve> reserves = new ArrayList<>();
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			reserves = mapper.readValue(res, new TypeReference<ArrayList<Reserve>>() {
+			});
+			return reserves;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public int findId(Reserve obj) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Reserve findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public ArrayList<Reserve> findAllByUser (User user){
+		String res = resource.path("reserve").path("allByUser")
+				.queryParam("idUser", String.valueOf(user.getIdUser())).get(String.class);
+		ArrayList<Reserve> reserves = new ArrayList<>();
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			reserves = mapper.readValue(res, new TypeReference<ArrayList<Reserve>>() {
+			});
+			return reserves;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+
+}

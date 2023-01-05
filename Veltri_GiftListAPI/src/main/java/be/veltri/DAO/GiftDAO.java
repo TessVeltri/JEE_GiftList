@@ -110,13 +110,15 @@ public class GiftDAO implements DAO<Gift> {
 		try {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeQuery("SELECT * FROM JEE_Gift WHERE idGift = '" + id + "'");
-			if (result.first())
+			if (result.first()) {
+				gl.setIdGiftList(result.getInt("idGiftList"));
 				gift = new Gift(result.getString("nameGift"), result.getString("description"),
 						result.getInt("averagePrice"), EnumPriority.valueOf(result.getString("priority")),
 						result.getString("websiteLink"), EnumStatusGift.valueOf(result.getString("statusGift")),
 						result.getBytes("image"), result.getString("nameImage"), result.getString("extensionImage"),
 						gl);
-			gift.setIdGift(result.getInt("idGift"));
+				gift.setIdGift(result.getInt("idGift"));
+			}
 			try {
 				ResultSet result2 = this.conn
 						.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
@@ -124,7 +126,7 @@ public class GiftDAO implements DAO<Gift> {
 				while (result2.next()) {
 					user.setIdUser(result2.getInt("idUser"));
 					user = user.findById();
-					Reserve res = new Reserve(result2.getInt("amount"), user);
+					Reserve res = new Reserve(result2.getInt("amount"), user, gift);
 					gift.addLstReserve(res);
 				}
 			} catch (SQLException e) {

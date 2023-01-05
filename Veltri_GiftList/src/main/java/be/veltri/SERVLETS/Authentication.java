@@ -46,7 +46,7 @@ public class Authentication extends HttpServlet {
 			errors.add("Complete all fields");
 			User u = new User("","",email, password);
 			session.setAttribute("userConnect", u);
-			request.setAttribute("errorsConnect", errors);
+			session.setAttribute("errorsConnect", errors);
 			request.getRequestDispatcher("/connection").forward(request,response);
 		} else {
 			User user = User.login(email, password);
@@ -63,7 +63,7 @@ public class Authentication extends HttpServlet {
 			} else {
 				User u = new User("","",email, password);
 				session.setAttribute("userConnect", u);
-				request.setAttribute("errorsConnect", errors);
+				session.setAttribute("errorsConnect", errors);
 				response.sendRedirect("connection");
 			}
 		}

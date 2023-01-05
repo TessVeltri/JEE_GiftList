@@ -3,17 +3,21 @@ package be.veltri.DAO;
 import java.net.URI;
 import java.util.ArrayList;
 
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriBuilder;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 
+import be.veltri.JAVABEANS.Notification;
 import be.veltri.JAVABEANS.Reserve;
+import be.veltri.JAVABEANS.User;
 
-public class ReserveDAO implements DAO<Reserve>{
+public class ReserveDAO implements DAO<Reserve> {
 
 	private WebResource resource;
 	private static String apiUrl;
@@ -31,7 +35,7 @@ public class ReserveDAO implements DAO<Reserve>{
 		resource = client.resource(getBaseUri());
 		mapper = new ObjectMapper();
 	}
-	
+
 	@Override
 	public boolean create(Reserve obj) {
 		// TODO Auto-generated method stub
@@ -58,8 +62,17 @@ public class ReserveDAO implements DAO<Reserve>{
 
 	@Override
 	public ArrayList<Reserve> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String res = resource.path("reserve").path("all").get(String.class);
+		ArrayList<Reserve> reserves = new ArrayList<>();
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			reserves = mapper.readValue(res, new TypeReference<ArrayList<Reserve>>() {
+			});
+			return reserves;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
 	}
 
 	@Override
@@ -72,6 +85,21 @@ public class ReserveDAO implements DAO<Reserve>{
 	public Reserve findById(int id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public ArrayList<Reserve> findAllByUser(User user) {
+		String res = resource.path("reserve").path("allByUser").queryParam("idUser", String.valueOf(user.getIdUser()))
+				.accept(MediaType.APPLICATION_JSON).get(String.class);
+		ArrayList<Reserve> reserves = new ArrayList<>();
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			reserves = mapper.readValue(res, new TypeReference<ArrayList<Reserve>>() {
+			});
+			return reserves;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
 	}
 
 }

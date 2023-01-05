@@ -12,17 +12,19 @@ public class Reserve implements Serializable{
     private int idReserve;
     private int amount;
     private User user;
+    private Gift gift;
     
     private static ReserveDAO reserveDAO = new ReserveDAO();
 
 	// Constructeurs
     public Reserve() {}
 
-	public Reserve(int amount, User user) {
+	public Reserve(int amount, User user, Gift gift) {
 		super();
 		this.idReserve = 0;
 		this.amount = amount;
 		this.user = user;
+		this.gift = gift;
 	}
 
 	// Getters et Setters
@@ -49,11 +51,23 @@ public class Reserve implements Serializable{
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
+	public Gift getGift() {
+		return gift;
+	}
+
+	public void setGift(Gift gift) {
+		this.gift = gift;
+	}
 
 	// Méthodes
     
-	public static ArrayList<Reserve> getAll (){
+	public static ArrayList<Reserve> findAll (){
 		return reserveDAO.findAll();
+	}
+	
+	public static ArrayList<Reserve> findAllByUser (User user){
+		return reserveDAO.findAllByUser(user);
 	}
 
 }

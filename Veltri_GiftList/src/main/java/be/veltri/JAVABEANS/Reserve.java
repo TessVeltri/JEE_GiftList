@@ -1,7 +1,10 @@
 package be.veltri.JAVABEANS;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
+
+import be.veltri.DAO.ReserveDAO;
 
 public class Reserve implements Serializable{
 
@@ -9,16 +12,20 @@ public class Reserve implements Serializable{
     private static final long serialVersionUID = -3078588241404049583L;
     private int idReserve;
     private int amount;
+    private Gift gift;
     private User user;
+    
+    private static ReserveDAO reserveDAO = new ReserveDAO();
 
 	// Constructeurs
     public Reserve() {}
 
-	public Reserve(int amount, User user) {
+	public Reserve(int amount, User user, Gift gift) {
 		super();
 		this.idReserve = 0;
 		this.amount = amount;
 		this.user = user;
+		this.gift = gift;
 	}
 
 	// Getters et Setters
@@ -45,6 +52,14 @@ public class Reserve implements Serializable{
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
+	public Gift getGift() {
+		return gift;
+	}
+
+	public void setGift(Gift gift) {
+		this.gift = gift;
+	}
 
 	// Méthodes
     
@@ -64,5 +79,14 @@ public class Reserve implements Serializable{
 		Reserve other = (Reserve) obj;
 		return amount == other.amount && Objects.equals(user, other.user);
 	}
+	
+	public static ArrayList<Reserve> findAll (){
+		return reserveDAO.findAll();
+	}
+	
+	public static ArrayList<Reserve> findAllByUser (User user){
+		return reserveDAO.findAllByUser(user);
+	}
+	
 	
 }
