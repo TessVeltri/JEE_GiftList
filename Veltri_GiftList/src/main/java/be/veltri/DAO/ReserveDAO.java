@@ -4,14 +4,17 @@ import java.net.URI;
 import java.util.ArrayList;
 
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.UriBuilder;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
+import com.sun.jersey.core.util.MultivaluedMapImpl;
 
 import be.veltri.JAVABEANS.Notification;
 import be.veltri.JAVABEANS.Reserve;
@@ -38,13 +41,32 @@ public class ReserveDAO implements DAO<Reserve> {
 
 	@Override
 	public boolean create(Reserve obj) {
-		// TODO Auto-generated method stub
+		MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
+		parameters.add("amount", String.valueOf(obj.getAmount()));
+		parameters.add("idGift", String.valueOf(obj.getGift().getIdGift()));
+		parameters.add("idUser", String.valueOf(obj.getUser().getIdUser()));
+		ClientResponse res= resource
+				.path("reserve")
+				.path("create")
+				.post(ClientResponse.class,parameters);
+		int StatusCode=res.getStatus();
+		if(StatusCode == 201) {
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public boolean delete(Reserve obj) {
-		// TODO Auto-generated method stub
+		ClientResponse res= resource
+				.path("reserve")
+				.path("delete")
+				.queryParam("idReserve",String.valueOf(obj.getIdReserve()))
+				.delete(ClientResponse.class);
+		int StatusCode=res.getStatus();
+		if(StatusCode == 204) {
+			return true;
+		}
 		return false;
 	}
 

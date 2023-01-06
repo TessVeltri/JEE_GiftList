@@ -23,6 +23,10 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 	<h2>
 		List :
 		<%=gl.getNameList()%></h2>
+	<h4>
+		<u>Occasion :</u>
+		<%=gl.getOccasion()%>
+	</h4>
 	<%
 	if (gl.isActive()) {
 		// true -> afficher le status
@@ -41,10 +45,7 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 	} else {
 	// false -> afficher la date
 	%>
-	<h4>
-		<u>Occasion :</u>
-		<%=gl.getOccasion()%>
-	</h4>
+
 	<h4>
 
 		<div id="getDate" style="display: block;">
@@ -120,7 +121,11 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 				<td><%=g.getDescription()%></td>
 				<td><%=g.getAveragePrice()%></td>
 				<td><%=g.getPriority().toString()%></td>
-				<td><%=g.getWebsiteLink()%></td>
+				<% if (g.getWebsiteLink() != null) {%>
+				<td><a href="<%=g.getWebsiteLink()%>">Link</a></td>
+				<%} else { %>
+				<td>-</td>
+				<%} %>
 				<td><%=g.getStatusGift().toString()%></td>
 				<td>
 					<%
@@ -208,7 +213,8 @@ GiftList gl = (GiftList) request.getAttribute("giftList");
 	
 	function modifyDateClick(){
 		window.location.href= '/Veltri_GiftList/infoList?limitDateModify='
-				+ limitDateModify.value + '&idGiftList=<%=gl.getIdGiftList()%>';
+				+ limitDateModify.value + '&idGiftList=<%=gl.getIdGiftList()%>
+	';
 
 	}
 </script>

@@ -32,7 +32,6 @@ public class NotificationAPI extends Application {
 			return Response.status(Status.BAD_REQUEST).build();
 		User user = new User();
 		user.setIdUser(Integer.parseInt(idUser));
-		user = user.findById();
 		Notification notif = new Notification(comment, Boolean.parseBoolean(isRead), user);
 		boolean create = notif.create();
 		if (!create)

@@ -107,8 +107,6 @@ public class UserDAO implements DAO<User> {
 
 	public User login(User obj) {
 		User user = null;
-//		ArrayList<Notification> allNotif = Notification.getAll();
-//		ArrayList<Reserve> allReserve = Reserve.getAll();
 		ArrayList<GiftList> allGiftList = GiftList.getAll();
 		try {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
@@ -120,14 +118,6 @@ public class UserDAO implements DAO<User> {
 				user.setIdUser(result.getInt("idUser"));
 			}
 
-//			for (Notification n : allNotif) {
-//				if (user.getEmail().equals(n.getUser().getEmail()))
-//					user.getLstNotification().add(n);
-//			}
-//			for (Reserve r : allReserve) {
-//				if (user.getEmail().equals(r.getUser().getEmail()))
-//					user.getLstReserve().add(r);
-//			}
 			for (GiftList gl : allGiftList) {
 				if (user.getEmail().equals(gl.getOwner().getEmail()))
 					user.addMyList(gl);

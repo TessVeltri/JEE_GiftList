@@ -100,7 +100,6 @@ public class GiftAPI extends Application {
 			return Response.status(Status.BAD_REQUEST).build();
 		Gift gift = new Gift();
 		gift.setIdGift(idGift);
-		gift = gift.findById();
 		boolean delete = gift.delete();
 		if (!delete)
 			return Response.status(Status.SERVICE_UNAVAILABLE).build();

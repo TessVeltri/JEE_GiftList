@@ -1,0 +1,47 @@
+<%@page import="be.veltri.JAVABEANS.Gift"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Reserve a gift</title>
+</head>
+<jsp:include page="Header.jsp"></jsp:include>
+<style>
+body {
+	margin-left: 50px;
+}
+</style>
+<%
+Gift gift = (Gift) request.getAttribute("gift");
+%>
+<body>
+	<h2>Reserve a gift</h2>
+	<form>
+	<h4>
+		Name of the gift :
+		<%=gift.getName()%></h4>
+
+	<%
+	if (gift.getLstReserve().size() == 0) {
+	%>
+	<div>
+		Reserve totally <input type="checkbox" name="totally" id="totally"
+			onclick="checkClick()" checked />
+	</div>
+	<%
+	}
+	%>
+	
+	<div>
+		Reserve partially <input type="number" name="partially" id="partially"/>
+	</div>
+
+
+	<button type="submit">RESERVE</button>
+	</form>
+
+</body>
+<jsp:include page="Footer.jsp"></jsp:include>
+</html>

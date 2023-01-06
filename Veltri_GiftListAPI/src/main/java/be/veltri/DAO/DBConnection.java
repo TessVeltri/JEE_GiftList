@@ -8,14 +8,15 @@ public class DBConnection {
 	public static void setConnection(Connection conn) {
 		DBConnection.conn = conn;
 	}
+
 	private String userName = "STUDENT03_17";
 	private String password = "condorcet17";
-	
+
 	private String ip = "193.190.64.10";
 	private String port = "1522";
 	private String serviceName = "XEPDB1";
-	private String chaineConnexion = "jdbc:oracle:thin:@//"+ip+":"+port+"/"+serviceName;
-	
+	private String chaineConnexion = "jdbc:oracle:thin:@//" + ip + ":" + port + "/" + serviceName;
+
 	private DBConnection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -29,7 +30,8 @@ public class DBConnection {
 
 	public static Connection getInstance() {
 		if (conn == null)
-            new DBConnection();
+			new DBConnection();
+
 		return conn;
 	}
 }

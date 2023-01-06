@@ -88,5 +88,13 @@ public class Reserve implements Serializable{
 		return reserveDAO.findAllByUser(user);
 	}
 	
+	public boolean create () {
+		return reserveDAO.create(this);
+	}
+	
+	public boolean delete () {
+		return reserveDAO.delete(this);
+	}
+	
 	
 }

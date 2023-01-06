@@ -42,14 +42,20 @@ if (gl == null) {
 ArrayList<Gift> lstGifts = gl.getLstGift();
 String checked;
 String disabled;
+String requiredSwitch;
+String requiredDate;
 String disabledBtn = "disabled";
 String hideTxt = "";
 if (gl.isActive()) {
 	checked = "checked";
 	disabled = "disabled";
+	requiredSwitch = "required";
+	requiredDate = "";
 } else {
 	checked = "";
 	disabled = "";
+	requiredSwitch = "";
+	requiredDate = "required";
 }
 %>
 <body>
@@ -62,11 +68,11 @@ if (gl.isActive()) {
 		<div>
 			<div class="form child">
 				<b>Date : </b><input type="date" name="limitDate" id="limitDate"
-					value="<%=gl.getLimitDate()%>" <%=disabled%> />
+					value="<%=gl.getLimitDate()%>" <%=disabled%> <%= requiredDate%>/>
 			</div>
 			<div class="form child">
 				<b>Active/Inactive mode : </b><input type="checkbox" name="isActive"
-					id="isActive" onclick="checkClick()" <%=checked%> required />
+					id="isActive" onclick="checkClick()" <%=checked%> <%= requiredSwitch%> />
 			</div>
 		</div>
 		<div>

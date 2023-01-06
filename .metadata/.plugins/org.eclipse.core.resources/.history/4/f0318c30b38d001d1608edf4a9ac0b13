@@ -1,0 +1,60 @@
+package be.veltri.SERVLETS;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import be.veltri.JAVABEANS.Gift;
+import be.veltri.JAVABEANS.Reserve;
+import be.veltri.JAVABEANS.User;
+
+/**
+ * Servlet implementation class VerifAddReserve
+ */
+public class VerifAddReserve extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public VerifAddReserve() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.sendRedirect("infoListParticipant");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String totally = request.getParameter("totally");
+		String partially = request.getParameter("partially");
+		Gift gift = (Gift) request.getSession().getAttribute("gift");
+		User user = (User) request.getSession().getAttribute("user");
+		
+		if (Boolean.parseBoolean(totally) == true) {
+			Reserve res = new Reserve(gift.getAveragePrice(), user, gift);
+			boolean create = res.create();
+			if (create) {
+				doGet(request, response);
+			}
+		} else {
+			int amount = Integer.parseInt(partially);
+			Reserve res = new Reserve(amount, user, gift);
+			boolean create = res.create();
+			if (create) {
+				doGet(request, response);
+			}
+		}
+	}
+
+}

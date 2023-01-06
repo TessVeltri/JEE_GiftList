@@ -61,7 +61,7 @@ body {
 		<%
 		for (GiftList gl : giftLists) {
 			if (gl.getStatusList().toString().equals(EnumStatusList.Active.toString())){
-		%><button class="folder" onclick="location.href='/Veltri_GiftList/getInfoList?orderId=<%= gl.getIdGiftList() %>'"><%=gl.getNameList()%></button>
+		%><button class="folder" onclick="location.href='/Veltri_GiftList/getInfoListParticipant?orderId=<%= gl.getIdGiftList() %>'"><%=gl.getNameList()%></button>
 		<%
 		}}
 		%>

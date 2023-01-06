@@ -98,7 +98,6 @@ public class GiftDAO implements DAO<Gift> {
 
 	@Override
 	public Gift find(Gift obj) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -127,6 +126,7 @@ public class GiftDAO implements DAO<Gift> {
 					user.setIdUser(result2.getInt("idUser"));
 					user = user.findById();
 					Reserve res = new Reserve(result2.getInt("amount"), user, gift);
+					res.setIdReserve(result2.getInt("idShare"));
 					gift.addLstReserve(res);
 				}
 			} catch (SQLException e) {
@@ -142,26 +142,11 @@ public class GiftDAO implements DAO<Gift> {
 
 	@Override
 	public ArrayList<Gift> findAll() {
-//		ArrayList<Gift> lstGift = new ArrayList<>();
-//		try {
-//			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
-//					.executeQuery("SELECT * FROM Jee_Gift");
-//			while (result.next()) {
-//				Gift gift = new Gift();
-//				lstGift.add(gift);
-//			}
-//			result.close();
-//			return lstGift;
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//			return null;
-//		}
 		return null;
 	}
 
 	@Override
 	public int findId(Gift obj) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

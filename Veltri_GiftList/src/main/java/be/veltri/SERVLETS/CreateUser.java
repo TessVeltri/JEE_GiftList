@@ -89,14 +89,14 @@ public class CreateUser extends HttpServlet {
 					else
 						request.getSession().setAttribute("user", insertUser);
 				}
-				request.getRequestDispatcher("/WEB-INF/JSP/Home.jsp").forward(request, response);
+				response.sendRedirect("home");
 			}
 
 			else
 				System.out.println("Erreur");
 
 		} else {
-			request.getRequestDispatcher("/WEB-INF/JSP/Inscription.jsp").forward(request, response);
+			response.sendRedirect("inscription");
 		}
 
 	}

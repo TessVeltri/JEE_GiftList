@@ -3,6 +3,8 @@ package be.veltri.JAVABEANS;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import be.veltri.DAO.ReserveDAO;
 
 public class Reserve implements Serializable{
@@ -44,6 +46,7 @@ public class Reserve implements Serializable{
 		this.amount = amount;
 	}
 
+	
 	public User getUser() {
 		return user;
 	}
@@ -52,6 +55,7 @@ public class Reserve implements Serializable{
 		this.user = user;
 	}
 	
+	@JsonBackReference
 	public Gift getGift() {
 		return gift;
 	}
@@ -68,6 +72,14 @@ public class Reserve implements Serializable{
 	
 	public static ArrayList<Reserve> findAllByUser (User user){
 		return reserveDAO.findAllByUser(user);
+	}
+	
+	public boolean create () {
+		return reserveDAO.create(this);
+	}
+	
+	public boolean delete () {
+		return reserveDAO.delete(this);
 	}
 
 }

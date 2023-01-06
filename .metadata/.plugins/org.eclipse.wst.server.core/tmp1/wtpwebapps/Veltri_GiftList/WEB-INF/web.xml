@@ -97,6 +97,22 @@
 		<servlet-name>ReadNotification</servlet-name>
 		<servlet-class>be.veltri.SERVLETS.ReadNotification</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>GetInfoListParticipant</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.GetInfoListParticipant</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>InfoListParticipant</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.InfoListParticipant</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AddReserve</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.AddReserve</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>VerifAddReserve</servlet-name>
+		<servlet-class>be.veltri.SERVLETS.VerifAddReserve</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Connection</servlet-name>
@@ -181,6 +197,22 @@
 	<servlet-mapping>
 		<servlet-name>ReadNotification</servlet-name>
 		<url-pattern>/readNotification</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetInfoListParticipant</servlet-name>
+		<url-pattern>/getInfoListParticipant</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>InfoListParticipant</servlet-name>
+		<url-pattern>/infoListParticipant</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddReserve</servlet-name>
+		<url-pattern>/addReserve</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VerifAddReserve</servlet-name>
+		<url-pattern>/verifAddReserve</url-pattern>
 	</servlet-mapping>
 
 </web-app>

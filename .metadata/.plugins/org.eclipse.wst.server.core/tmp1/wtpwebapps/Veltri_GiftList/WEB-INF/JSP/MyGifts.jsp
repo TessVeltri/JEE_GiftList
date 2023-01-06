@@ -39,6 +39,11 @@ body {
 		<td><%= r.getGift().getName() %></td>
 		<td><%= r.getAmount() %></td>
 		<td><%= r.getGift().getGiftList().getNameList() %></td>
+		<td><button type="button" class="btn child"
+						onclick="location.href='/Veltri_GiftList/myGifts?idReserve=<%=r.getIdReserve()%>'">
+						<img width="25px" height="25px"
+							src="/Veltri_GiftList/IMG/delete.png"></img>
+					</button></td>
 	</tr>
 	<%
 		}

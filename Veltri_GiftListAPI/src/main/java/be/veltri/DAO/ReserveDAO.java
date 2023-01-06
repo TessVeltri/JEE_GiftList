@@ -17,14 +17,27 @@ public class ReserveDAO implements DAO<Reserve> {
 
 	@Override
 	public boolean create(Reserve obj) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			this.conn.createStatement()
+					.executeUpdate("INSERT INTO JEE_Reserve (amount, idUser, idGift) VALUES ('"
+							+ obj.getAmount() + "', '"+ obj.getUser().getIdUser() +"', '" + obj.getGift().getIdGift() + "')");
+			return true;
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
 	public boolean delete(Reserve obj) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			this.conn.createStatement().executeUpdate("DELETE FROM JEE_Reserve WHERE idShare = '" + obj.getIdReserve() + "'");
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
@@ -53,6 +66,7 @@ public class ReserveDAO implements DAO<Reserve> {
 				gift.setIdGift(result.getInt("idGift"));
 				gift = gift.findById();
 				Reserve reserve = new Reserve(result.getInt("amount"), user, gift);
+				reserve.setIdReserve(result.getInt("idShare"));
 				lstReserve.add(reserve);
 			}
 			result.close();
@@ -81,7 +95,7 @@ public class ReserveDAO implements DAO<Reserve> {
 		try {
 			ResultSet result = this.conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
 					.executeQuery(""
-							+ "SELECT JEE_Gift.idGift, JEE_Gift.nameGift, JEE_GiftList.idGiftList, JEE_GiftList.nameList, JEE_Reserve.amount " 
+							+ "SELECT JEE_Reserve.idShare,JEE_Gift.idGift, JEE_Gift.nameGift, JEE_GiftList.idGiftList, JEE_GiftList.nameList, JEE_Reserve.amount " 
 							+ "FROM JEE_Reserve "
 							+ "INNER JOIN JEE_Gift ON JEE_Gift.idGift = JEE_Reserve.idGift "
 							+ "INNER JOIN JEE_User ON JEE_User.idUser = JEE_Reserve.idUser "
@@ -98,6 +112,7 @@ public class ReserveDAO implements DAO<Reserve> {
 				
 				gift.setGiftList(gl);
 				Reserve reserve = new Reserve(result.getInt("amount"), user, gift);
+				reserve.setIdReserve(result.getInt("idShare"));
 				lstReserve.add(reserve);
 			}
 			result.close();

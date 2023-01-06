@@ -3,6 +3,8 @@ package be.veltri.JAVABEANS;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import be.veltri.DAO.UserDAO;
 
 public class User implements Serializable{
@@ -116,6 +118,7 @@ public class User implements Serializable{
 		this.lstNotification = lstNotification;
 	}
 
+	@JsonManagedReference
 	public ArrayList<Reserve> getLstReserve() {
 		return lstReserve;
 	}
