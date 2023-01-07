@@ -214,5 +214,34 @@
 		<servlet-name>VerifAddReserve</servlet-name>
 		<url-pattern>/verifAddReserve</url-pattern>
 	</servlet-mapping>
+	
+	<filter>
+		<filter-name>AuthenticationFilter</filter-name>
+		<filter-class>be.veltri.FILTERS.AuthenticationFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<servlet-name>AddGift</servlet-name>
+		<servlet-name>AddList</servlet-name>
+		<servlet-name>AddParticipant</servlet-name>
+		<servlet-name>AddReserve</servlet-name>
+		<servlet-name>DeleteGiftList</servlet-name>
+		<servlet-name>GetInfoList</servlet-name>
+		<servlet-name>GetInfoListParticipant</servlet-name>
+		<servlet-name>Home</servlet-name>
+		<servlet-name>InfoList</servlet-name>
+		<servlet-name>InfoListParticipant</servlet-name>
+		<servlet-name>ModifyGift</servlet-name>
+		<servlet-name>MyAccount</servlet-name>
+		<servlet-name>MyGifts</servlet-name>
+		<servlet-name>MyNotifications</servlet-name>
+		<servlet-name>ReadNotification</servlet-name>
+		<servlet-name>VerifAddGift</servlet-name>
+		<servlet-name>VerifAddList</servlet-name>
+		<servlet-name>VerifAddParticipant</servlet-name>
+		<servlet-name>VerifAddReserve</servlet-name>
+		<servlet-name>VerifModifyGift</servlet-name>
+	</filter-mapping>
 
 </web-app>

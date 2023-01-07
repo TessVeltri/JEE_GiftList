@@ -74,13 +74,14 @@ public class CreateUser extends HttpServlet {
 		request.setAttribute("errorsInsert", errors);
 		if (errors.size() == 0) {
 			boolean insert = insertUser.create();
+			insertUser = insertUser.find();
 			if (insert) {
 
-				if (idGiftList != null && idGiftList != "") {
+				if (idGiftList != null && idGiftList != "" && !idGiftList.equals("null")) {
 					GiftList gl = new GiftList();
 					gl.setIdGiftList(Integer.parseInt(idGiftList));
 					gl = gl.findById();
-					insertUser = insertUser.find();
+					//insertUser = insertUser.find();
 					
 					boolean inserted = insertUser.addParticipation(gl);
 					if(!inserted) {
@@ -89,14 +90,15 @@ public class CreateUser extends HttpServlet {
 					else
 						request.getSession().setAttribute("user", insertUser);
 				}
-				response.sendRedirect("home");
+				request.getSession().setAttribute("user", insertUser);
+				request.getRequestDispatcher("/home").forward(request, response);
 			}
 
 			else
 				System.out.println("Erreur");
 
 		} else {
-			response.sendRedirect("inscription");
+			request.getRequestDispatcher("/inscription").forward(request, response);
 		}
 
 	}

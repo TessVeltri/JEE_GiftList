@@ -53,7 +53,7 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="be.veltri.JAVABEANS.Gift"/>
     <fullyQualifiedTypeName name="be.veltri.JAVABEANS.GiftList"/>
-    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.User"/>
     <fullyQualifiedTypeName name="be.veltri.JAVABEANS.Reserve"/>
     <fullyQualifiedTypeName name="be.veltri.ENUMS.EnumStatusGift"/>
+    <fullyQualifiedTypeName name="be.veltri.JAVABEANS.User"/>
 </qualifiedTypeNameHistroy>
